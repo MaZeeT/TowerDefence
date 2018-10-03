@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23575820720024258}
   - component: {fileID: 65527851484286530}
   - component: {fileID: 114268553948011516}
-  - component: {fileID: 114602598818625294}
   m_Layer: 0
   m_Name: EnemyMinion
   m_TagString: Enemy
@@ -110,14 +109,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
---- !u!114 &114602598818625294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1943475994666652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d128573e7b0a04746abf52ef81f8435f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
