@@ -7,6 +7,8 @@ TagManager:
   - pointA
   - Enemy
   - Base
+  - EnemySpawn
+  - Overload
   layers:
   - Default
   - TransparentFX
