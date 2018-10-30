@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class EnemySpecs : MonoBehaviour {
 
-    GameObject playerBase;
+    GameObject playerBase, Overlord;
     public int health = 5;
-
+   
 	// Use this for initialization
 	void Start () {
         playerBase = GameObject.FindGameObjectWithTag("Base");
+        Overlord = GameObject.FindGameObjectWithTag("Overlord");
+
+
     }
 
     public void Damaged(int amount) {
         health -= amount;
         if (health <= 0)
         {
+            
             Destroy(gameObject);
         }
     }
