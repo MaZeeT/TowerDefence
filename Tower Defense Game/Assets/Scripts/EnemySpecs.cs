@@ -5,23 +5,14 @@ using UnityEngine;
 public class EnemySpecs : MonoBehaviour {
 
     GameObject playerBase, Overlord;
+
+    [Header("Minion Stats")]
     public int health = 5;
    
 	// Use this for initialization
 	void Start () {
         playerBase = GameObject.FindGameObjectWithTag("Base");
         Overlord = GameObject.FindGameObjectWithTag("Overlord");
-
-
-    }
-
-    public void Damaged(int amount) {
-        health -= amount;
-        if (health <= 0)
-        {
-            
-            Destroy(gameObject);
-        }
     }
 
     // Update is called once per frame
@@ -47,4 +38,16 @@ public class EnemySpecs : MonoBehaviour {
         }
 
     }
+
+    public void Damaged(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            EnemyWaves e = Overlord.GetComponent<EnemyWaves>();
+            e.MinionDead(1);
+            Destroy(gameObject);
+        }
+    }
+
 }
