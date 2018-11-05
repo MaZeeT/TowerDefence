@@ -39,14 +39,15 @@ public class EnemySpecs : MonoBehaviour {
 
     }
 
-    public void Damaged(int amount)
+    public void Damaged(int damageValue)
     {
-        health -= amount;
+        health -= damageValue;
         if (health <= 0)
         {
-            EnemyWaves e = Overlord.GetComponent<EnemyWaves>();
-            e.MinionDead(1);
+            EnemyWaves enemy = Overlord.GetComponent<EnemyWaves>();
+            enemy.MinionDead(1);    
             Destroy(gameObject);
+           
         }
     }
 

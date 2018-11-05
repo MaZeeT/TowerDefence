@@ -8,7 +8,8 @@ TagManager:
   - Enemy
   - Base
   - EnemySpawn
-  - Overload
+  - Overlord
+  - buildMaterial
   layers:
   - Default
   - TransparentFX

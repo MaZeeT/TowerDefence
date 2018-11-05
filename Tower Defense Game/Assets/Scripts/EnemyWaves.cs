@@ -64,10 +64,9 @@ public class EnemyWaves : MonoBehaviour
         }
     }
 
-
-    public void MinionDead(int amount)
+    public void MinionDead(int minionAmount)
     {
-        minionsAlive -= amount;
+        minionsAlive -= minionAmount;
         if (minionsAlive <= 0 && done)
         {
             spawnTime = initialSpawntime;
