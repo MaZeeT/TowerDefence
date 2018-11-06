@@ -10,6 +10,8 @@ TagManager:
   - EnemySpawn
   - Overlord
   - buildMaterial
+  - Tower
+  - TowerUpgradeAble
   layers:
   - Default
   - TransparentFX
