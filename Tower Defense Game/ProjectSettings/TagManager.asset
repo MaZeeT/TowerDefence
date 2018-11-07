@@ -12,6 +12,7 @@ TagManager:
   - buildMaterial
   - Tower
   - TowerUpgradeAble
+  - VRHand2
   layers:
   - Default
   - TransparentFX
