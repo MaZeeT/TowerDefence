@@ -7,24 +7,27 @@ public class ButtonHandler : MonoBehaviour {
     public bool button2;
     public bool button3;
 
-    public GameObject TowerFoundation;
-    public GameObject BuildingBall;
+    public GameObject Hand;
+    BuildingMenu buildingMenu;
+
 
     void OnTriggerEnter(Collider Other)
     {
         if (Other.tag == "VRHand2")
         {
-            if (button1)
+            buildingMenu = Hand.GetComponent<BuildingMenu>();
+            
+            if (button1 && !buildingMenu.holding)
             {
-                Vector3 vec = new Vector3(Other.transform.position.x, 0.01f, Other.transform.position.z);
-                Instantiate(TowerFoundation, vec, Quaternion.identity);
+                buildingMenu.holdingFoundation = true;
+                buildingMenu.holding = true;                         
             }
-            if (button2)
+            if (button2 && !buildingMenu.holding)
             {
-                Vector3 vec = new Vector3(Other.transform.position.x, 0.01f, Other.transform.position.z);
-                Instantiate(BuildingBall, vec, Quaternion.identity);
+                buildingMenu.holdingBall = true;
+                buildingMenu.holding = true;
             }
-            if (button3)
+            if (button3 && !buildingMenu.holding)
             {
                 //does not do anything
             }
