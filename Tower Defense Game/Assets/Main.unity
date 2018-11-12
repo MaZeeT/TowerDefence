@@ -201,15 +201,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonHolder: {fileID: 1717734745}
-  buttonEnabled: 0
-  holding: 0
-  holdingFoundation: 0
-  holdingBall: 0
+  builderPointer: {fileID: 372043263}
   TowerFoundation: {fileID: 1262091464697418, guid: 29011c4928d29f443a820c61f91bd573,
     type: 2}
   BuildingBall: {fileID: 1978990498244210, guid: 8615d0f35c9d4024bb5b07149ff65716,
     type: 2}
   Hand: {fileID: 1026285178}
+  buttonEnabled: 0
+  holding: 0
+  holdingFoundation: 0
+  holdingBall: 0
 --- !u!114 &227947988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +271,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: ba554c772410f934284d8ded98ae9329,
     type: 3}
   m_PrefabInternal: {fileID: 298361720}
+--- !u!1 &372043263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372043264}
+  - component: {fileID: 372043265}
+  m_Layer: 26
+  m_Name: LazerPointer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &372043264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372043263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1026285179}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &372043265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372043263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e8a839a7c5b7e4580c59e305fb5f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  color: {r: 0.46226418, g: 0.10684408, b: 0.36513254, a: 0}
+  thickness: 0.002
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
 --- !u!1001 &444962387
 Prefab:
   m_ObjectHideFlags: 0
@@ -677,6 +725,11 @@ MeshFilter:
 --- !u!1 &1026285178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1288239960}
+--- !u!4 &1026285179 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 485514, guid: dc06161b6d97feb419f45f03b62e14b9,
     type: 2}
   m_PrefabInternal: {fileID: 1288239960}
 --- !u!135 &1026285180
