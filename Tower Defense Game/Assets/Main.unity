@@ -184,33 +184,45 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 144230, guid: dc06161b6d97feb419f45f03b62e14b9,
     type: 2}
   m_PrefabInternal: {fileID: 1288239960}
---- !u!135 &227947987
-SphereCollider:
+--- !u!4 &227947986 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 476540, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1288239960}
+--- !u!114 &227947987
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227947985}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.05
-  m_Center: {x: 0, y: -0.03, z: 0.03}
---- !u!54 &227947988
-Rigidbody:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1dc688dcc04fd408ecafe3260606e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHolder: {fileID: 1717734745}
+  buttonEnabled: 0
+  holding: 0
+  holdingFoundation: 0
+  holdingBall: 0
+  TowerFoundation: {fileID: 1262091464697418, guid: 29011c4928d29f443a820c61f91bd573,
+    type: 2}
+  BuildingBall: {fileID: 1978990498244210, guid: 8615d0f35c9d4024bb5b07149ff65716,
+    type: 2}
+  Hand: {fileID: 1026285178}
+--- !u!114 &227947988
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227947985}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37c2cf88f7c59f4c8cf5d3812568143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 4
+  origin: {fileID: 0}
 --- !u!1001 &298361720
 Prefab:
   m_ObjectHideFlags: 0
@@ -667,11 +679,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9,
     type: 2}
   m_PrefabInternal: {fileID: 1288239960}
---- !u!4 &1026285179 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 485514, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1288239960}
 --- !u!135 &1026285180
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -679,7 +686,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026285178}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.05
@@ -699,6 +706,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1026285183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1026285178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37c2cf88f7c59f4c8cf5d3812568143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 3
+  origin: {fileID: 0}
 --- !u!1 &1027402048
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,10 +819,7 @@ MonoBehaviour:
   button1: 0
   button2: 1
   button3: 0
-  TowerFoundation: {fileID: 1262091464697418, guid: 29011c4928d29f443a820c61f91bd573,
-    type: 2}
-  BuildingBall: {fileID: 1978990498244210, guid: 8615d0f35c9d4024bb5b07149ff65716,
-    type: 2}
+  Hand: {fileID: 227947985}
 --- !u!1001 &1076963466
 Prefab:
   m_ObjectHideFlags: 0
@@ -1481,10 +1498,7 @@ MonoBehaviour:
   button1: 1
   button2: 0
   button3: 0
-  TowerFoundation: {fileID: 1262091464697418, guid: 29011c4928d29f443a820c61f91bd573,
-    type: 2}
-  BuildingBall: {fileID: 1978990498244210, guid: 8615d0f35c9d4024bb5b07149ff65716,
-    type: 2}
+  Hand: {fileID: 227947985}
 --- !u!1 &1358548970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,10 +1854,7 @@ MonoBehaviour:
   button1: 0
   button2: 0
   button3: 1
-  TowerFoundation: {fileID: 1262091464697418, guid: 29011c4928d29f443a820c61f91bd573,
-    type: 2}
-  BuildingBall: {fileID: 1978990498244210, guid: 8615d0f35c9d4024bb5b07149ff65716,
-    type: 2}
+  Hand: {fileID: 227947985}
 --- !u!1001 &1578986266
 Prefab:
   m_ObjectHideFlags: 0
@@ -1933,13 +1944,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1717734745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1332584902}
   - {fileID: 1027402049}
   - {fileID: 1499723741}
-  m_Father: {fileID: 1026285179}
+  m_Father: {fileID: 227947986}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1803644266
