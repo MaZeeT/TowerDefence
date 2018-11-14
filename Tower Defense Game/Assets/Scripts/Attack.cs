@@ -20,7 +20,7 @@ public class Attack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         InvokeRepeating("FindTarget", 0f, 0.5f);
-	}
+	}// Start end
 
     void FindTarget() {
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -44,7 +44,7 @@ public class Attack : MonoBehaviour {
         {
             target = nearestEnemy.transform;
         }
-    }
+    }// FindTarget end
 
 	// Update is called once per frame
 	void Update () {
@@ -60,14 +60,14 @@ public class Attack : MonoBehaviour {
 
         if (fireCountdown <= 0f)
         {
-            shoot();
+            Shoot();
             fireCountdown = 1f / fireRate;
         }
 
         fireCountdown -= Time.deltaTime;
-    }
+    }// Update end
 
-    void shoot() {
+    void Shoot() {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
@@ -75,10 +75,10 @@ public class Attack : MonoBehaviour {
         {
             bullet.Seek(target);
         }
-    }
+    }// Shoot end
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, range);
-    }
+    }// OnDrawGizmosSelected end
 }

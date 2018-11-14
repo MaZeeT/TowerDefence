@@ -5,13 +5,14 @@ using Valve.VR;
 public class BuildingMenu: MonoBehaviour
 {
     SteamVR_TrackedObject obj; // finding the controller
-    // Setup functioner
+    [Header("Setup")]
     public GameObject buttonHolder; //empty object that contains the buttons
     public GameObject builderPointer;
     public GameObject TowerFoundation;
     public GameObject BuildingBall;
     public GameObject Hand;
 
+    [Header("Debug")]
     public bool buttonEnabled; // saying whether or the empty object is enabled
 
     // Public booleans, need to be accesed in other scripts
@@ -29,14 +30,14 @@ public class BuildingMenu: MonoBehaviour
         holdingFoundation = false;
         holdingBall = false;
         holding = false;
-    }
+    } // Start end
 
     void Update()
     {
 
         MenuOpen();
         PlaceObject();
-    }
+    } // Update end
 
     void MenuOpen () {
 
@@ -55,7 +56,7 @@ public class BuildingMenu: MonoBehaviour
                 buttonEnabled = false;
             }
         }
-    }
+    }// MenuOpen end
 
     void PlaceObject() {
 
@@ -95,5 +96,5 @@ public class BuildingMenu: MonoBehaviour
 
             }
         }
-    } // placeObjecft end
+    } // PlaceObjecft end
 } // BuildingMenu end

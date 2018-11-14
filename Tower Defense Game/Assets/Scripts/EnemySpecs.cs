@@ -13,7 +13,7 @@ public class EnemySpecs : MonoBehaviour {
 	void Start () {
         playerBase = GameObject.FindGameObjectWithTag("Base");
         Overlord = GameObject.FindGameObjectWithTag("Overlord");
-    }
+    }// Start end
 
     // Update is called once per frame
     void Update()
@@ -37,7 +37,7 @@ public class EnemySpecs : MonoBehaviour {
             transform.position += new Vector3(0, 0, 1 * Time.deltaTime * -1);
         }
 
-    }
+    }// Update end
 
     public void Damaged(int damageValue)
     {
@@ -49,6 +49,6 @@ public class EnemySpecs : MonoBehaviour {
             Destroy(gameObject);
            
         }
-    }
+    }// Damaged end
 
 }

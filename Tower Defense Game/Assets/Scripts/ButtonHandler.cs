@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonHandler : MonoBehaviour {
+    [Header("Setup")]
     public bool button1;
     public bool button2;
     public bool button3;
-
     public GameObject Hand;
     BuildingMenu buildingMenu;
 
@@ -32,5 +32,5 @@ public class ButtonHandler : MonoBehaviour {
                 //does not do anything
             }
         }
-    }
-}
+    }// OnTriggerEnter end
+}// ButtonHandler end

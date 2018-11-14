@@ -29,7 +29,7 @@ public class EnemyWaves : MonoBehaviour
 
         count = initialCount;
         spawnTime = initialSpawntime;
-    }
+    }// Start end
 
     // Update is called once per frame
     void Update()
@@ -37,13 +37,13 @@ public class EnemyWaves : MonoBehaviour
         spawnTime -= Time.deltaTime;
         // skal rettes til at udregnes baseret på enemy wave level
          SpawnWave();
-    }
+    }// Update end
 
     void SpawnEnemy()
     {
         Instantiate(Warrior, enemySpawnPoint, Quaternion.identity);
         minionsAlive++;
-    }
+    }// SpawnEnemy end
 
     void SpawnWave() {
         if (spawnTime <= 0 && minionSpawning <= 0 && !done){
@@ -62,7 +62,7 @@ public class EnemyWaves : MonoBehaviour
                 spawning = false;
             }
         }
-    }
+    }// SpawnWave end
 
     public void MinionDead(int minionAmount)
     {
@@ -72,5 +72,5 @@ public class EnemyWaves : MonoBehaviour
             spawnTime = initialSpawntime;
             done = false;
         }
-    }
+    }/// MinionDead end
 }
