@@ -9,16 +9,6 @@ public class BaseSpecs : MonoBehaviour {
     [Header("Setup")]
     public int Health;
 
-	// Use this for initialization
-	void Start () {
-		
-	}//Start end
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}// Update end
-
     void OnTriggerEnter(Collider Other) {
         if (Other.tag == "Enemy") {
             Health--;

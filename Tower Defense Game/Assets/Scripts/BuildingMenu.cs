@@ -4,14 +4,14 @@ using Valve.VR;
 
 public class BuildingMenu: MonoBehaviour
 {
+
+    Vector3 BenjaminPoints = new Vector3();
     SteamVR_TrackedObject obj; // finding the controller
     [Header("Setup")]
     public GameObject buttonHolder; //empty object that contains the buttons
-    public GameObject builderPointer;
-    public GameObject TowerFoundation;
-    public GameObject BuildingBall;
     public GameObject Hand;
-
+    public GameObject builderBullet;
+   
     [Header("Debug")]
     public bool buttonEnabled; // saying whether or the empty object is enabled
 
@@ -30,6 +30,8 @@ public class BuildingMenu: MonoBehaviour
         holdingFoundation = false;
         holdingBall = false;
         holding = false;
+       
+
     } // Start end
 
     void Update()
@@ -61,36 +63,42 @@ public class BuildingMenu: MonoBehaviour
     void PlaceObject() {
 
         var device = SteamVR_Controller.Input(3);
+      
+
 
         if (holdingFoundation) {
 
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                builderPointer.SetActive(true);
+                Debug.DrawRay(Hand.transform.position, Hand.transform.forward * 50, Color.red);
+                
             }
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) {
+                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y + 1, Hand.transform.position.z + 1);
+                Instantiate(builderBullet, vec, Hand.transform.rotation);
+                GameObject T;
+                T = GameObject.FindGameObjectWithTag("builderBullet");
+                T.GetComponent<BuilderBullet>().buildString = "TowerFoundation";
 
-                Vector3 vec = new Vector3(Hand.transform.position.x, 0.01f, Hand.transform.position.z);
-                Instantiate(TowerFoundation, vec, Quaternion.identity);
-
-                builderPointer.SetActive(false);
                 holdingFoundation = false;
                 holding = false;
             }
+            
 
         }
         if (holdingBall) {
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)) {
+                Debug.DrawRay(Hand.transform.position, Hand.transform.forward * 50, Color.red);
 
-                builderPointer.SetActive(true);
             }
 
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) {
+                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y + 1, Hand.transform.position.z + 1);
+                Instantiate(builderBullet, vec, Hand.transform.rotation);
+                GameObject T;
+                T = GameObject.FindGameObjectWithTag("builderBullet");
+                T.GetComponent<BuilderBullet>().buildString = "BuildingBall";
 
-                Vector3 vec = new Vector3(Hand.transform.position.x, 0.01f, Hand.transform.position.z);
-                Instantiate(BuildingBall, vec, Quaternion.identity);
-
-                builderPointer.SetActive(false);
                 holdingBall = false;
                 holding = false;
 

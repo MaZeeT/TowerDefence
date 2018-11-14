@@ -13,6 +13,9 @@ TagManager:
   - Tower
   - TowerUpgradeAble
   - VRHand2
+  - PathPoint
+  - EnemyPath
+  - BuilderBullet
   layers:
   - Default
   - TransparentFX
