@@ -5,7 +5,6 @@ using UnityEngine;
 public class Minion : MonoBehaviour {
 
     GameObject overlord, playerBase, enemyPath, enemySpawn;
-    //List<GameObject>fleePath = new List<GameObject>();
     public bool flee = false;
     string msg;
 
@@ -14,24 +13,19 @@ public class Minion : MonoBehaviour {
     public float moveSpeed;
 
     [Header("Variables")]
-    // private List<GameObject> path;
     public GameObject pathList;
     List<GameObject> path;
-    public GameObject nextPoint;
     public int pathIndex;
 
 
     // Use this for initialization
     void Start () {
         path = pathList.gameObject.GetComponent<PathPointList>().getPathList();
-        //List<GameObject> pathList = path.GetComponent<PathPointList>().getPathList();
     }// Start end
 
     // Update is called once per frame
     void Update()
-    {
-//        moveTo(nextPoint);
-        
+    {      
         if (flee){
             moveTo(path[pathIndex]);
         }
@@ -77,8 +71,4 @@ public class Minion : MonoBehaviour {
     {
         msg = "I'm fucked";
     }
-
-    public void MovePoint(GameObject nextPoint) {
-        this.nextPoint = nextPoint;
-    }// MovePoint end
 }
