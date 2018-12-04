@@ -9,7 +9,7 @@ public class Minion : MonoBehaviour {
     string msg;
 
     [Header("Minion Stats")]
-    public int health = 5;
+    public int health;
     public float moveSpeed;
 
     [Header("Variables")]
@@ -58,13 +58,19 @@ public class Minion : MonoBehaviour {
     {
         health -= damageValue;
         flee = true;
+
         generateIntel(); // need to be moved. at the moment it generate intel when fired on.
         if (health <= 0)
         {
-            EnemyWaves enemy = overlord.GetComponent<EnemyWaves>();
-            enemy.MinionDead(1);
             Destroy(gameObject);
+           
+            //the 2 below breaks this if statements and the Minion will not despawn on 0hp
+
+            //EnemyWaves enemy = overlord.GetComponent<EnemyWaves>();
+            //enemy.MinionDead(1);
+            
         }
+
     }// Damaged end
 
     void generateIntel()
