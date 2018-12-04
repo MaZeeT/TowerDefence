@@ -25,6 +25,7 @@ public class Attack : MonoBehaviour {
     void FindTarget() {
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag(enemyTag);
         float shortestDistance = Mathf.Infinity;
+        
         GameObject nearestEnemy = null;
 
 
@@ -43,6 +44,10 @@ public class Attack : MonoBehaviour {
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+        }
+        if (nearestEnemy != null && shortestDistance >= range)
+        {
+            target = null;
         }
     }// FindTarget end
 
