@@ -12,6 +12,7 @@ public class EnemyWaves : MonoBehaviour
     public GameObject enemySpawn;
 
     [Header("Wave Stats")]
+    public string msg;
     public float spawnTime;
     public int waveCount = 0;
     public float count;
@@ -28,7 +29,7 @@ public class EnemyWaves : MonoBehaviour
         enemySpawnPoint = enemySpawn.transform.position;
 
         count = initialCount;
-        spawnTime = initialSpawntime;
+        //spawnTime = initialSpawntime;
     }// Start end
 
     // Update is called once per frame
@@ -36,6 +37,11 @@ public class EnemyWaves : MonoBehaviour
     {
         spawnTime -= Time.deltaTime;
         // skal rettes til at udregnes baseret på enemy wave level
+        if (msg == "I'm fucked") {
+            msg = "";
+            SpawnEnemy();
+            Debug.Log("spawned");
+        }
          SpawnWave();
     }// Update end
 
@@ -73,4 +79,7 @@ public class EnemyWaves : MonoBehaviour
             done = false;
         }
     }/// MinionDead end
+
+     
+    
 }

@@ -1547,7 +1547,8 @@ MonoBehaviour:
   Overlord: {fileID: 1233437370}
   Warrior: {fileID: 1835083521099620, guid: 189b4ddd530dc39439aa53bf78d5cb81, type: 2}
   enemySpawn: {fileID: 1358548970}
-  spawnTime: 30
+  msg: 
+  spawnTime: 3
   waveCount: 0
   count: 0
   minionSpawning: 0
@@ -2527,7 +2528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathR: {fileID: 0}
-  pathF: {fileID: 0}
+  pathF: {fileID: 81379439}
   pathL: {fileID: 0}
 --- !u!1 &1717734745
 GameObject:
@@ -2674,7 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathR: {fileID: 0}
-  pathF: {fileID: 0}
+  pathF: {fileID: 81379439}
   pathL: {fileID: 0}
 --- !u!1001 &1803644266
 Prefab:

@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class EnemySpecs : MonoBehaviour {
 
-    GameObject nextPoint, overlord, playerBase, enemyPath;
+    GameObject overlord, playerBase, enemyPath, enemySpawn;
+    List<GameObject>fleePath = new List<GameObject>();
+    public bool flee = false;
+    string msg;
 
     [Header("Minion Stats")]
     public int health = 5;
-   
-	// Use this for initialization
-	void Start () {
+    public GameObject nextPoint;
+
+    // Use this for initialization
+    void Start () {
+        enemySpawn = GameObject.FindGameObjectWithTag("EnemySpawn");
         enemyPath = GameObject.FindGameObjectWithTag("EnemyPath");
         playerBase = GameObject.FindGameObjectWithTag("Base");
         overlord = GameObject.FindGameObjectWithTag("Overlord");
         nextPoint = enemyPath;
+        fleePath.Add(enemySpawn);
+        msg = "I'm fine";
     }// Start end
 
     // Update is called once per frame
     void Update()
     {
+        if (flee) {
+            nextPoint = fleePath[fleePath.Count-1];
+        }
         var currentPosition = transform.position;
         if (nextPoint.transform.position.x != currentPosition.x && nextPoint.transform.position.x > currentPosition.x)
         {
@@ -43,19 +53,34 @@ public class EnemySpecs : MonoBehaviour {
 
     void OnTriggerEnter(Collider Other) {
         if (Other.tag == "PathPoint") {
-            MovePoint(Other.gameObject.GetComponent<PathPoints>().pathF);
+            if (flee == false)
+            {
+                fleePath.Add(Other.gameObject);
+                List<GameObject> pathPoints = Other.gameObject.GetComponent<PathPoints>().GetBetterList();
+                int randomNumber = Random.Range(0, pathPoints.Count);
+                MovePoint(pathPoints[randomNumber]);
+            }
+            else {
+                fleePath.RemoveAt(fleePath.Count - 1);
+            }
+        } else if (Other.tag == "EnemySpawn" && flee == true)
+        {
+            EnemyWaves enemy = overlord.GetComponent<EnemyWaves>();
+            enemy.msg = this.msg;
+            Destroy(gameObject);
         }
     }// OnTriggerEnter end
 
     public void Damaged(int damageValue)
     {
         health -= damageValue;
+        flee = true;
+        msg = "I'm fucked";
         if (health <= 0)
         {
             EnemyWaves enemy = overlord.GetComponent<EnemyWaves>();
-            enemy.MinionDead(1);    
+            enemy.MinionDead(1);
             Destroy(gameObject);
-           
         }
     }// Damaged end
 
