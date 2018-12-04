@@ -727,8 +727,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4459507979146216}
   - component: {fileID: 95287150982024936}
-  - component: {fileID: 114450374670891710}
   - component: {fileID: 65510392679834896}
+  - component: {fileID: 114328866050479990}
   m_Layer: 0
   m_Name: Knight Warrior - List Pathing
   m_TagString: Enemy
@@ -1677,7 +1677,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114450374670891710
+--- !u!114 &114328866050479990
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1685,12 +1685,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835083521099620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24d47162d178f245aec8fbc9292fa07, type: 3}
+  m_Script: {fileID: 11500000, guid: cbfeceb022ad68e4d88e232204f0467c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flee: 0
   health: 5
-  nextPoint: {fileID: 0}
+  moveSpeed: 1
+  pathList: {fileID: 1356385699165988, guid: 8b4eb7f5fd64dfb4d8052d9136f760c6, type: 2}
+  pathIndex: 0
 --- !u!137 &137267977978606030
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

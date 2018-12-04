@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4762255587663266}
   - component: {fileID: 114348512839950926}
   m_Layer: 0
-  m_Name: Path
+  m_Name: PathList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,3 +61,4 @@ MonoBehaviour:
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
   pathPoint9: {fileID: 1922080309571736, guid: 3af14ac630262b64aa53fbe504dabea3, type: 2}
+  path: []

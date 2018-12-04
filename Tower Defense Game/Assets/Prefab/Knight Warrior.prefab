@@ -727,8 +727,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4459507979146216}
   - component: {fileID: 95287150982024936}
-  - component: {fileID: 114450374670891710}
   - component: {fileID: 65510392679834896}
+  - component: {fileID: 114450374670891710}
   m_Layer: 0
   m_Name: Knight Warrior
   m_TagString: Enemy
@@ -1688,7 +1688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24d47162d178f245aec8fbc9292fa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flee: 0
   health: 5
+  nextPoint: {fileID: 0}
 --- !u!137 &137267977978606030
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
