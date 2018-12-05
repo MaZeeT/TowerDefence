@@ -10,6 +10,7 @@ public class Attack : MonoBehaviour {
     public float range = 10f;
     public float fireRate = 1f;
     private float fireCountdown = 0f;
+    public string type;
 
     [Header("Setup")]
     public string enemyTag = "Enemy";
@@ -68,13 +69,14 @@ public class Attack : MonoBehaviour {
             Shoot();
             fireCountdown = 1f / fireRate;
         }
-
         fireCountdown -= Time.deltaTime;
     }// Update end
 
     void Shoot() {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.type = "Water";
+      //  Debug.Log(bullet.type);
 
         if (bullet != null)
         {

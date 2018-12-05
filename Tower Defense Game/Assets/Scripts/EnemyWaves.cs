@@ -58,7 +58,11 @@ public class EnemyWaves : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(Warrior, enemySpawnPoint, Quaternion.identity);
+        GameObject test = GameObject.Instantiate(Warrior, enemySpawnPoint, Quaternion.identity) as GameObject;
+        EnemySpecs testE = test.GetComponent<EnemySpecs>();
+        testE.weakness = "Water";
+        testE.resistance = "Fire";
+        
         minionsAlive++;
     }// SpawnEnemy end
 
@@ -90,7 +94,4 @@ public class EnemyWaves : MonoBehaviour
             done = false;
         }
     }/// MinionDead end
-
-     
-    
 }
