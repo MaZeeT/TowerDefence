@@ -11,6 +11,7 @@ public class EnemySpecs : MonoBehaviour {
 
     [Header("Minion Stats")]
     public int health = 5;
+    public string type;
     public GameObject nextPoint;
 
     // Use this for initialization

@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 65952245300476296}
   m_Layer: 0
   m_Name: Swordsman Warrior
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1779,6 +1779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flee: 0
   health: 5
+  type: 
   nextPoint: {fileID: 0}
 --- !u!114 &114858331014463338
 MonoBehaviour:

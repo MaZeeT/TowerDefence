@@ -1690,6 +1690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flee: 0
   health: 5
+  type: 
   nextPoint: {fileID: 0}
 --- !u!137 &137267977978606030
 SkinnedMeshRenderer:

@@ -116,6 +116,7 @@ MonoBehaviour:
     type: 2}
   BuildingBall: {fileID: 1978990498244210, guid: 8615d0f35c9d4024bb5b07149ff65716,
     type: 2}
+  buildString: 
 --- !u!135 &135178172797420400
 SphereCollider:
   m_ObjectHideFlags: 1

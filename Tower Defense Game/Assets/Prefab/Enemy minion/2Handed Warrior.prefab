@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4201734516312458}
   - component: {fileID: 95732439025906018}
   - component: {fileID: 114456381153222804}
+  - component: {fileID: 114265467930536162}
+  - component: {fileID: 65338103794908770}
   m_Layer: 0
   m_Name: 2Handed Warrior
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,6 +1662,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757984084628830}
   m_Mesh: {fileID: 4300012, guid: 781a15e490c144941adf6440cf6b6cdd, type: 3}
+--- !u!65 &65338103794908770
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023146183451214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95732439025906018
 Animator:
   serializedVersion: 3
@@ -1678,6 +1692,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114265467930536162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023146183451214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24d47162d178f245aec8fbc9292fa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flee: 0
+  health: 5
+  type: 
+  nextPoint: {fileID: 0}
 --- !u!114 &114456381153222804
 MonoBehaviour:
   m_ObjectHideFlags: 1

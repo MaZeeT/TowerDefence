@@ -384,9 +384,11 @@ GameObject:
   - component: {fileID: 4336351354811128}
   - component: {fileID: 95578054106325392}
   - component: {fileID: 114164561604038712}
+  - component: {fileID: 114300371950336906}
+  - component: {fileID: 65131666288830854}
   m_Layer: 0
   m_Name: Hammer Warrior
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,6 +1662,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182614048434838}
   m_Mesh: {fileID: 4300020, guid: c04a63d584e38cb49a59057edbeb4e2c, type: 3}
+--- !u!65 &65131666288830854
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382382697999334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95578054106325392
 Animator:
   serializedVersion: 3
@@ -1691,6 +1705,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95578054106325392}
   warrior: 10
+--- !u!114 &114300371950336906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382382697999334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24d47162d178f245aec8fbc9292fa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flee: 0
+  health: 5
+  type: 
+  nextPoint: {fileID: 0}
 --- !u!137 &137092553058653284
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
