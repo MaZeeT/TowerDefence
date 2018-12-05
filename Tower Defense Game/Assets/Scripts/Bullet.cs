@@ -34,8 +34,10 @@ public class Bullet : MonoBehaviour {
 	}
 
     void DamageTarget() {
-        EnemySpecs e = target.GetComponent<EnemySpecs>();
-        e.Damaged(damage);
+        //EnemySpecs e = target.GetComponent<EnemySpecs>();
+        Minion m = target.GetComponent<Minion>();
+       // e.Damaged(damage);
+        m.Damaged(damage);
         Destroy(gameObject);
     }
 }
