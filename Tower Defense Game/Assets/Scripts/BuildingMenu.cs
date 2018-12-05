@@ -11,7 +11,8 @@ public class BuildingMenu: MonoBehaviour
     public GameObject buttonHolder; //empty object that contains the buttons
     public GameObject Hand;
     public GameObject builderBullet;
-   
+    public GameObject cube;
+
     [Header("Debug")]
     public bool buttonEnabled; // saying whether or the empty object is enabled
 
@@ -36,7 +37,6 @@ public class BuildingMenu: MonoBehaviour
 
     void Update()
     {
-
         MenuOpen();
         PlaceObject();
     } // Update end
@@ -105,4 +105,5 @@ public class BuildingMenu: MonoBehaviour
             }
         }
     } // PlaceObjecft end
+
 } // BuildingMenu end

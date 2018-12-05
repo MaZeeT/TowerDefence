@@ -9,6 +9,17 @@ public class EnemyWaves : MonoBehaviour
     [Header("Setup")]
     public GameObject Overlord;
     public GameObject Warrior;
+    public GameObject TwoHandedWarrior;
+    public GameObject Archer;
+    public GameObject BruteWarrior;
+    public GameObject Crossbow;
+    public GameObject HammerWarrior;
+    public GameObject KarateWarrior;
+    public GameObject Mage;
+    public GameObject Ninja;
+    public GameObject Sorceress;
+    public GameObject Spearman;
+    public GameObject Swordsman;
     public GameObject enemySpawn;
 
     [Header("Wave Stats")]
