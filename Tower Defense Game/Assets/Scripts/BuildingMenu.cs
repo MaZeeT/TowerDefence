@@ -76,8 +76,7 @@ public class BuildingMenu: MonoBehaviour
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) {
                 Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y + 1, Hand.transform.position.z + 1);
                 Instantiate(builderBullet, vec, Hand.transform.rotation);
-                GameObject T;
-                T = GameObject.FindGameObjectWithTag("builderBullet");
+                GameObject T = GameObject.FindGameObjectWithTag("builderBullet");
                 T.GetComponent<BuilderBullet>().buildString = "TowerFoundation";
 
                 holdingFoundation = false;

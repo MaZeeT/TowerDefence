@@ -9,7 +9,8 @@ public class Attack : MonoBehaviour {
     [Header("Attributes")]
     public float range = 10f;
     public float fireRate = 1f;
-    private float fireCountdown = 0f;
+    public float fireCountdown = 0f;
+    public string type;
 
     [Header("Setup")]
     public string enemyTag = "Enemy";
