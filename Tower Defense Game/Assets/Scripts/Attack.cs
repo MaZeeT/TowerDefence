@@ -9,7 +9,11 @@ public class Attack : MonoBehaviour {
     [Header("Attributes")]
     public float range = 10f;
     public float fireRate = 1f;
+<<<<<<< HEAD
     public float fireCountdown = 0f;
+=======
+    private float fireCountdown = 0f;
+>>>>>>> Main2
     public string type;
 
     [Header("Setup")]
@@ -69,13 +73,14 @@ public class Attack : MonoBehaviour {
             Shoot();
             fireCountdown = 1f / fireRate;
         }
-
         fireCountdown -= Time.deltaTime;
     }// Update end
 
     void Shoot() {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.type = "Water";
+      //  Debug.Log(bullet.type);
 
         if (bullet != null)
         {

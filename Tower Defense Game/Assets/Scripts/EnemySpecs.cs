@@ -8,12 +8,18 @@ public class EnemySpecs : MonoBehaviour {
     List<GameObject>fleePath = new List<GameObject>();
     public bool flee = false;
     string msg;
-
+    public string weakness;
+    public string resistance;
+ 
     [Header("Minion Stats")]
+<<<<<<< HEAD
     public int health = 5;
     public string type;
+=======
+    public int health = 20;
+>>>>>>> Main2
     public GameObject nextPoint;
-
+   
     // Use this for initialization
     void Start () {
         enemySpawn = GameObject.FindGameObjectWithTag("EnemySpawn");
@@ -72,10 +78,26 @@ public class EnemySpecs : MonoBehaviour {
         }
     }// OnTriggerEnter end
 
-    public void Damaged(int damageValue)
+    public void Damaged(int damageValue, string type)
     {
-        health -= damageValue;
-        flee = true;
+       // Debug.Log(type);
+        Debug.Log(weakness);
+        if (weakness == type)
+        {
+            health -= damageValue * 2;
+            Debug.Log("weak");
+        }
+        else if (resistance == type)
+        {
+            health -= damageValue / 2;
+            Debug.Log("Strong");
+        }
+        else {
+            health -= damageValue;
+            Debug.Log("normal");
+        }
+       
+       // flee = true;
         msg = "I'm fucked";
         if (health <= 0)
         {
@@ -87,5 +109,5 @@ public class EnemySpecs : MonoBehaviour {
 
     public void MovePoint(GameObject nextPoint) {
         this.nextPoint = nextPoint;
-    }// MovePoint end
+    }// MovePoint end  
 }

@@ -7,7 +7,8 @@ public class Bullet : MonoBehaviour {
     private Transform target;
 
     public float speed = 50f;
-    public int damage = 1;
+    public int damage = 2;
+    public string type;
 
     public void Seek(Transform _target) {
         target = _target;
@@ -34,10 +35,10 @@ public class Bullet : MonoBehaviour {
 	}
 
     void DamageTarget() {
-        //EnemySpecs e = target.GetComponent<EnemySpecs>();
-        Minion m = target.GetComponent<Minion>();
-       // e.Damaged(damage);
-        m.Damaged(damage);
+        EnemySpecs e = target.GetComponent<EnemySpecs>();
+      //  Minion m = target.GetComponent<Minion>();
+        e.Damaged(damage,type);
+      //  m.Damaged(damage);
         Destroy(gameObject);
     }
 }

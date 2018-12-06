@@ -1689,8 +1689,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flee: 0
+<<<<<<< HEAD
   health: 5
   type: 
+=======
+  weakness: 
+  resistance: 
+  health: 20
+>>>>>>> Main2
   nextPoint: {fileID: 0}
 --- !u!137 &137267977978606030
 SkinnedMeshRenderer:
