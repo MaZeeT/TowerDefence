@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Overlord: {fileID: 1860467729049072}
-  Warrior: {fileID: 1835083521099620, guid: 189b4ddd530dc39439aa53bf78d5cb81, type: 2}
+  Warrior: {fileID: 1122271600642970, guid: 189b4ddd530dc39439aa53bf78d5cb81, type: 2}
   TwoHandedWarrior: {fileID: 1023146183451214, guid: ce3802021916392448e805e7b3027575,
     type: 2}
   Archer: {fileID: 1861560617656914, guid: ad0f1e0182234114fabfd31d04d5b51a, type: 2}

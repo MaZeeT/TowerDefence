@@ -12,12 +12,8 @@ public class EnemySpecs : MonoBehaviour {
     public string resistance;
  
     [Header("Minion Stats")]
-<<<<<<< HEAD
-    public int health = 5;
-    public string type;
-=======
     public int health = 20;
->>>>>>> Main2
+    public string type;
     public GameObject nextPoint;
    
     // Use this for initialization
