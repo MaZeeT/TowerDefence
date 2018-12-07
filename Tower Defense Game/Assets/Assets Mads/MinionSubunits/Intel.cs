@@ -6,7 +6,7 @@ public class Intel : MonoBehaviour
 {
     public bool reportIntel = false;
     public string intel;
-    private int health;
+    private float health;
     
     void Update()
     {

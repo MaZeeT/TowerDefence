@@ -18,8 +18,17 @@ public class Attack : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-	// Use this for initialization
-	void Start () {
+    public enum DropDown
+    {   //the different damageTypes the bullet can deal
+        physical,
+        fire,
+        water,
+        lightning
+    };
+    public DropDown damageType;
+
+    // Use this for initialization
+    void Start () {
         InvokeRepeating("FindTarget", 0f, 0.5f);
 	}// Start end
 
@@ -74,7 +83,7 @@ public class Attack : MonoBehaviour {
     void Shoot() {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
-        bullet.type = "Water";
+        bullet.type = damageType.ToString();
       //  Debug.Log(bullet.type);
 
         if (bullet != null)

@@ -259,11 +259,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 10
   fireRate: 1
+  fireCountdown: 0
+  type: 
   enemyTag: Enemy
   towerRotation: {fileID: 4361785714089162}
   bulletPrefab: {fileID: 1831175801423330, guid: d2f8c9d1377a7134191d5110bce85471,
     type: 2}
   firePoint: {fileID: 4738437093563896}
+  damageType: 0
 --- !u!136 &136033757829447702
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
     [Header("Defensive Stats")]
-    public int health;
+    public float health;
     public int resistancePhysical;
     public int resistanceFire;
     public int resistanceWater;
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour {
                 break;
         }
         
-        health = health - damageValue;
+        health = health - (float)(damageValue * (100-resistance) / 100);
 
         if (health <= 0)
         {
