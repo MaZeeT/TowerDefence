@@ -34,8 +34,8 @@ public class Health : MonoBehaviour {
                 break;
         }
         
-        health = health - (float)(damageValue * (100-resistance) / 100);
-
+        health = health - (float)damageValue * ((float)(100-resistance) / 100);
+        
         if (health <= 0)
         {
             Destroy(gameObject);

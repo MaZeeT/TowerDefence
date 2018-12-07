@@ -2047,6 +2047,11 @@ Prefab:
       propertyPath: pathList
       value: 
       objectReference: {fileID: 1979833948}
+    - target: {fileID: 114136266014127236, guid: 165df88e0b3301140b07b0d26af4c18c,
+        type: 2}
+      propertyPath: resistanceFire
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   m_IsPrefabAsset: 0
@@ -2759,6 +2764,11 @@ Prefab:
       propertyPath: pathList
       value: 
       objectReference: {fileID: 24172025}
+    - target: {fileID: 114136266014127236, guid: 165df88e0b3301140b07b0d26af4c18c,
+        type: 2}
+      propertyPath: resistanceFire
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   m_IsPrefabAsset: 0
@@ -3696,6 +3706,11 @@ Prefab:
       propertyPath: pathList
       value: 
       objectReference: {fileID: 355803414}
+    - target: {fileID: 114136266014127236, guid: 165df88e0b3301140b07b0d26af4c18c,
+        type: 2}
+      propertyPath: resistancePhysical
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   m_IsPrefabAsset: 0
