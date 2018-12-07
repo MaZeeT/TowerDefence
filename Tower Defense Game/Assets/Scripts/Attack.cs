@@ -46,8 +46,7 @@ public class Attack : MonoBehaviour {
         {
             target = nearestEnemy.transform;
         }
-        if (nearestEnemy != null && shortestDistance >= range)
-        {
+        else { 
             target = null;
         }
     }// FindTarget end

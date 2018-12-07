@@ -14,7 +14,6 @@ public class Bullet : MonoBehaviour {
         target = _target;
     }
 	
-	// Update is called once per frame
 	void Update () {
 
         if (target == null) {
@@ -35,10 +34,8 @@ public class Bullet : MonoBehaviour {
 	}
 
     void DamageTarget() {
-        EnemySpecs e = target.GetComponent<EnemySpecs>();
-      //  Minion m = target.GetComponent<Minion>();
-        e.Damaged(damage,type);
-      //  m.Damaged(damage);
+        Health e = target.GetComponent<Health>();   
+        e.TakeDamage(damage,type);
         Destroy(gameObject);
     }
 }

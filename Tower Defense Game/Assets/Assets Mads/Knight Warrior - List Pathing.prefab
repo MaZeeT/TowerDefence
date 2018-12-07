@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 95287150982024936}
   - component: {fileID: 65510392679834896}
   - component: {fileID: 114328866050479990}
+  - component: {fileID: 114625589958703734}
   m_Layer: 0
   m_Name: Knight Warrior - List Pathing
   m_TagString: Enemy
@@ -1693,6 +1694,17 @@ MonoBehaviour:
   moveSpeed: 1
   pathList: {fileID: 1356385699165988, guid: 8b4eb7f5fd64dfb4d8052d9136f760c6, type: 2}
   pathIndex: 0
+--- !u!114 &114625589958703734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835083521099620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163d65e18a7510b45b999308f54397ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137267977978606030
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
