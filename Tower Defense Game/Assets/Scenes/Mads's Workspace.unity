@@ -494,9 +494,9 @@ Transform:
   m_LocalPosition: {x: -3.9317324, y: -1.6231766, z: -71.5153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 880410025}
   - {fileID: 1302346724}
   - {fileID: 179979243}
+  - {fileID: 2046515756}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -934,6 +934,7 @@ MonoBehaviour:
   Hand: {fileID: 653534814}
   builderBullet: {fileID: 1959487187605302, guid: 424df0c34d427824f953fb868d4acb61,
     type: 2}
+  cube: {fileID: 0}
   buttonEnabled: 0
   holding: 0
   holdingFoundation: 0
@@ -1046,62 +1047,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab24c9649d670974fbba9de3b40351ad, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &678543512
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 275059154}
-    m_Modifications:
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.003411
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.6231766
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -31.08509
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_Name
-      value: Knight Warrior - List Pathing Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 114328866050479990, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
-      propertyPath: pathList
-      value: 
-      objectReference: {fileID: 355803414}
-    - target: {fileID: 114328866050479990, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &679120746
 Prefab:
   m_ObjectHideFlags: 0
@@ -1211,7 +1156,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 703885497}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &703885499
 Camera:
   m_ObjectHideFlags: 0
@@ -1377,11 +1322,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3230bf240b33fb94e8270d86f9e59098, type: 3}
---- !u!4 &880410025 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c,
-    type: 2}
-  m_PrefabInternal: {fileID: 678543512}
 --- !u!1 &891913229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1481,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Overlord: {fileID: 947721739}
   Warrior: {fileID: 1835083521099620, guid: 189b4ddd530dc39439aa53bf78d5cb81, type: 2}
+  TwoHandedWarrior: {fileID: 0}
+  Archer: {fileID: 0}
+  BruteWarrior: {fileID: 0}
+  Crossbow: {fileID: 0}
+  HammerWarrior: {fileID: 0}
+  KarateWarrior: {fileID: 0}
+  Mage: {fileID: 0}
+  Ninja: {fileID: 0}
+  Sorceress: {fileID: 0}
+  Spearman: {fileID: 0}
+  Swordsman: {fileID: 0}
   enemySpawn: {fileID: 1640656018}
   msg: 
   spawnTime: 60
@@ -1928,22 +1879,25 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
       propertyPath: m_Name
       value: Knight Warrior - List Pathing Left
       objectReference: {fileID: 0}
-    - target: {fileID: 114328866050479990, guid: 165df88e0b3301140b07b0d26af4c18c,
+    - target: {fileID: 0}
+      propertyPath: pathList
+      value: 
+      objectReference: {fileID: 1979833948}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152070411865120, guid: 165df88e0b3301140b07b0d26af4c18c,
         type: 2}
       propertyPath: pathList
       value: 
       objectReference: {fileID: 1979833948}
-    - target: {fileID: 114328866050479990, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   m_IsPrefabAsset: 0
@@ -2697,22 +2651,25 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
       propertyPath: m_Name
       value: Knight Warrior - List Pathing Mid
       objectReference: {fileID: 0}
-    - target: {fileID: 114328866050479990, guid: 165df88e0b3301140b07b0d26af4c18c,
+    - target: {fileID: 0}
+      propertyPath: pathList
+      value: 
+      objectReference: {fileID: 24172025}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152070411865120, guid: 165df88e0b3301140b07b0d26af4c18c,
         type: 2}
       propertyPath: pathList
       value: 
       objectReference: {fileID: 24172025}
-    - target: {fileID: 114328866050479990, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   m_IsPrefabAsset: 0
@@ -3555,6 +3512,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4762255587663266, guid: 8b4eb7f5fd64dfb4d8052d9136f760c6,
     type: 2}
   m_PrefabInternal: {fileID: 1420656703}
+--- !u!1001 &2035789886
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 275059154}
+    m_Modifications:
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.6231766
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -31.164864
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_Name
+      value: Knight Warrior - List Pathing Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pathList
+      value: 
+      objectReference: {fileID: 24172025}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152070411865120, guid: 165df88e0b3301140b07b0d26af4c18c,
+        type: 2}
+      propertyPath: pathList
+      value: 
+      objectReference: {fileID: 355803414}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &2046515756 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c,
+    type: 2}
+  m_PrefabInternal: {fileID: 2035789886}
 --- !u!1 &2071233515
 GameObject:
   m_ObjectHideFlags: 0

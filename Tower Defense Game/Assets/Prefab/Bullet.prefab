@@ -97,4 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   damage: 1
-  type: 
+  type: Physical

@@ -728,8 +728,10 @@ GameObject:
   - component: {fileID: 4459507979146216}
   - component: {fileID: 95287150982024936}
   - component: {fileID: 65510392679834896}
-  - component: {fileID: 114328866050479990}
-  - component: {fileID: 114625589958703734}
+  - component: {fileID: 114136266014127236}
+  - component: {fileID: 114152070411865120}
+  - component: {fileID: 114235665365919554}
+  - component: {fileID: 114108323589478932}
   m_Layer: 0
   m_Name: Knight Warrior - List Pathing
   m_TagString: Enemy
@@ -1678,7 +1680,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114328866050479990
+--- !u!114 &114108323589478932
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1686,15 +1688,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835083521099620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbfeceb022ad68e4d88e232204f0467c, type: 3}
+  m_Script: {fileID: 11500000, guid: 65acd01cb355450469ef0770444706d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flee: 0
+--- !u!114 &114136266014127236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835083521099620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca009196a9deb14a851f77bad0be8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   health: 5
-  moveSpeed: 1
+  resistancePhysical: 0
+  resistanceFire: 0
+  resistanceWater: 0
+  resistanceLightning: 0
+--- !u!114 &114152070411865120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835083521099620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e5ec81b9d6dff4a8e2fabab61e7c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
   pathList: {fileID: 1356385699165988, guid: 8b4eb7f5fd64dfb4d8052d9136f760c6, type: 2}
   pathIndex: 0
---- !u!114 &114625589958703734
+--- !u!114 &114235665365919554
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1702,9 +1729,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835083521099620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163d65e18a7510b45b999308f54397ae, type: 3}
+  m_Script: {fileID: 11500000, guid: d9b7cdea8692efd448a560ddc9688a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reportIntel: 0
+  intel: 
 --- !u!137 &137267977978606030
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
