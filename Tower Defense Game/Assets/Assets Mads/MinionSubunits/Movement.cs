@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-    GameObject overlord, enemySpawn;
-    //GameObject playerBase, enemyPath; Un-used for now
+    GameObject overlord;
+    //GameObject playerBase, enemyPath, enemySpawn; Un-used for now
 
     private bool reportIntel;
 

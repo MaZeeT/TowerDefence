@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 95121580770978710}
   - component: {fileID: 114672675691964980}
   - component: {fileID: 65967940627739852}
+  - component: {fileID: 114881205430090322}
   m_Layer: 0
   m_Name: Knight Warrior
   m_TagString: Player
@@ -1694,6 +1695,17 @@ MonoBehaviour:
   health: 20
   type: 
   nextPoint: {fileID: 0}
+--- !u!114 &114881205430090322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122271600642970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65acd01cb355450469ef0770444706d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137684447183319218
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
