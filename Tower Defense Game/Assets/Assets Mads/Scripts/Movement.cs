@@ -7,10 +7,46 @@ public class Movement : MonoBehaviour {
     [Header("Movement")]
     public float moveSpeed;
 
-    public void moveTo(GameObject point)
+
+    private bool HaveReached(Vector3 direction)
     {
-        Vector3 direction = point.transform.position - transform.position;
+        if (direction.magnitude <= moveSpeed * Time.deltaTime)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void move(Vector3 direction)
+    {
         transform.Translate(direction.normalized * moveSpeed * Time.deltaTime, Space.World);
     }
 
+    // Public overloaded caller function for core logic
+    public bool Reached(GameObject target)
+    {
+        Vector3 dir = target.transform.position - transform.position;
+        return HaveReached(dir);
+    }
+
+    public bool Reached(Transform target)
+    {
+        Vector3 dir = target.position - transform.position;
+        return HaveReached(dir);
+    }
+
+    public void moveTo(GameObject point)
+    {
+        Vector3 direction = point.transform.position - transform.position;
+        move(direction);
+    }
+
+    public void moveTo(Transform point)
+    {
+        Vector3 direction = point.position - transform.position;
+        move(direction);
+    }
 }

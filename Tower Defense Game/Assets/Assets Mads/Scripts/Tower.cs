@@ -5,16 +5,22 @@ using UnityEngine;
 public class Tower : MonoBehaviour {
 
     private GameObject target;
+    private float reloadTime;
 
     [Header("Attributes")]
     public float range = 10f;
-    public float fireRate = 1f;
+    public float roundsPerMinut;
     public float fireCountdown = 0f;
+
+    [Header("Projectile Settings")]
+    public float speed;
+    public int damageAmount;
+    public DropDown damageType;
 
     [Header("Setup")]
     public string enemyTag = "Enemy";
     public Transform towerRotation;
-    public GameObject bulletPrefab;
+    public GameObject projectilePrefab;
     public Transform firePoint;
 
     public enum DropDown
@@ -24,26 +30,25 @@ public class Tower : MonoBehaviour {
         water,
         lightning
     };
-    public DropDown damageType;
+    
 
     void Start()
     {
         InvokeRepeating("FindTarget", 0f, 0.5f);
+        reloadTime = 60.0f / roundsPerMinut;
     }
 
     void Update()
     {
         FindTarget();
         if (target == null)
-        {
-            return;
-        }
+            return;       
         Aim(target);
         if (fireCountdown <= 0f)
         {
             
             Shoot(target);
-            fireCountdown = 1f / fireRate;
+            fireCountdown = 1f / roundsPerMinut;
         }
         fireCountdown -= Time.deltaTime;
     }
@@ -61,7 +66,7 @@ public class Tower : MonoBehaviour {
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
-                nearestTarget = target;
+                nearestTarget = target; //.GetComponent<Health>().hitbox;
             }
         }
 
@@ -87,9 +92,12 @@ public class Tower : MonoBehaviour {
 
     void Shoot(GameObject target)
     {
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Projectile>().setType(damageType.ToString());
+        GameObject bullet = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Projectile>().setTarget(target);
+        bullet.GetComponent<Projectile>().setSpeed(speed);
+        bullet.GetComponent<Projectile>().setDamageAmount(damageAmount);
+        bullet.GetComponent<Projectile>().setType(damageType.ToString());
+        
     }
 
     private void OnDrawGizmosSelected()

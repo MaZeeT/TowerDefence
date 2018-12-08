@@ -4,27 +4,17 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
     private GameObject target;
-
-    public float speed = 50f;
-    public int damage = 2;
-    private string type;
-
-    public void setTarget(GameObject target)
-    {
-        this.target = target;
-    }
-
-    public void setType(string type)
-    {
-        this.type = type;
-    }
+    private float speed = 50f;
+    private int damageAmount;
+    private string damageType;
 
     void Update()
     {
+        Movement movement = GetComponent<Movement>();
         gotTarget();
-        //checkMagnitude();
-        GetComponent<Movement>().moveTo(target);
-        
+        if (movement.Reached(target))
+            Damage(target);
+        movement.moveTo(target);       
     }
 
     void gotTarget()
@@ -35,21 +25,32 @@ public class Projectile : MonoBehaviour {
             return;
         }
     }
-    /*
-    void checkMagnitude()
-    {
-        if (dir.magnitude <= speed * Time.deltaTime)
-        {
-            DamageTarget();
-            return;
-        }
-    }*/
 
-    void DamageTarget()
+    void Damage(GameObject target)
     {
-        Health e = target.GetComponent<Health>();
-        e.TakeDamage(damage, type);
+        target.GetComponent<Health>().TakeDamage(damageAmount, damageType);
         Destroy(this.gameObject);
+    }
+
+    //setters
+    public void setTarget(GameObject target)
+    {
+        this.target = target;
+    }
+
+    public void setSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    public void setDamageAmount(int damageAmount)
+    {
+        this.damageAmount = damageAmount;
+    }
+
+    public void setType(string damageType)
+    {
+        this.damageType = damageType;
     }
 
 }

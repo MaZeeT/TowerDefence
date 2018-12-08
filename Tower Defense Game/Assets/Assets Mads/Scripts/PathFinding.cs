@@ -5,9 +5,8 @@ using UnityEngine;
 public class PathFinding : MonoBehaviour {
 
     GameObject overlord;
-    //GameObject playerBase, enemyPath, enemySpawn; Un-used for now
-
-    private bool reportIntel;
+    Movement movement;
+    bool reportIntel;
 
     [Header("Pathing")]
     public GameObject pathList;
@@ -16,22 +15,24 @@ public class PathFinding : MonoBehaviour {
 
     void Start()
     {
+        movement = GetComponent<Movement>();
         overlord = GameObject.FindGameObjectWithTag("Overlord");
         path = pathList.gameObject.GetComponent<PathPointList>().getPathList();
     }
 
     void Update()
     {
-        reportIntel = GetComponent<Intel>().reportIntel;
+        if (pathIndex != 0) reportIntel = GetComponent<Intel>().reportIntel;
+
+        if (movement.Reached(path[pathIndex]) && reportIntel == true) pathIndex--;
+
         if (reportIntel)
         {
-            GetComponent<Movement>().moveTo(path[pathIndex]);
-            //moveTo(path[pathIndex]);
+            movement.moveTo(path[pathIndex]);
         }
         else
         {
-            GetComponent<Movement>().moveTo(path[pathIndex + 1]);
-            //moveTo(path[pathIndex + 1]);
+            movement.moveTo(path[pathIndex + 1]);
         }
     }
 
