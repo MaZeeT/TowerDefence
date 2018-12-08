@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4764439892762618}
+  - component: {fileID: 114691356723563940}
   - component: {fileID: 114953672638361832}
   m_Layer: 0
   m_Name: TowerWater
@@ -246,6 +247,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016277116160662}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114691356723563940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373549246296118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc07536cd9df6fa45ac9fa5206b243ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  fireRate: 1
+  fireCountdown: 0
+  enemyTag: Enemy
+  towerRotation: {fileID: 4738337232313802}
+  bulletPrefab: {fileID: 1831175801423330, guid: d2f8c9d1377a7134191d5110bce85471,
+    type: 2}
+  firePoint: {fileID: 0}
+  damageType: 2
 --- !u!114 &114953672638361832
 MonoBehaviour:
   m_ObjectHideFlags: 1

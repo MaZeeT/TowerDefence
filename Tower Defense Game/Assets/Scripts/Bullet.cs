@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
-
-    
+public class Bullet : MonoBehaviour {    
     private Transform target;
 
     public float speed = 50f;
@@ -31,8 +29,8 @@ public class Bullet : MonoBehaviour {
             DamageTarget();
             return;
         }
-
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        //GetComponent<Movement>().moveTo(target);
+       // transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 	}
 
     void DamageTarget() {
