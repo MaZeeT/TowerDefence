@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
 
-    public GameObject hitbox;
     [Header("Defensive Stats")]
     public float health;
     public int resistancePhysical;

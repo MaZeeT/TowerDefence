@@ -25,6 +25,11 @@ public class Movement : MonoBehaviour {
         transform.Translate(direction.normalized * moveSpeed * Time.deltaTime, Space.World);
     }
 
+    public void setSpeed(float speed)
+    {
+        this.moveSpeed = speed;
+    }
+
     // Public overloaded caller function for core logic
     public bool Reached(GameObject target)
     {

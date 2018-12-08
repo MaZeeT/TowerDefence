@@ -258,14 +258,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
-  fireRate: 1
-  fireCountdown: 0
+  roundsPerMinut: 30
+  reloadProgress: 0
   speed: 50
   damageAmount: 2
   damageType: 0
   enemyTag: Enemy
   towerRotation: {fileID: 4763986423233808}
-  bulletPrefab: {fileID: 1831175801423330, guid: e36edb3e9af9a1f4382fb0aedd916f91,
+  projectilePrefab: {fileID: 1831175801423330, guid: e36edb3e9af9a1f4382fb0aedd916f91,
     type: 2}
   firePoint: {fileID: 4433899742208862}
 --- !u!136 &136058294582008266

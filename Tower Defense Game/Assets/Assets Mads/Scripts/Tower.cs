@@ -5,12 +5,12 @@ using UnityEngine;
 public class Tower : MonoBehaviour {
 
     private GameObject target;
-    private float reloadTime;
 
     [Header("Attributes")]
-    public float range = 10f;
+    public float range;
     public float roundsPerMinut;
-    public float fireCountdown = 0f;
+    private float reloadTime;
+    public float reloadProgress = 0f;
 
     [Header("Projectile Settings")]
     public float speed;
@@ -44,13 +44,24 @@ public class Tower : MonoBehaviour {
         if (target == null)
             return;       
         Aim(target);
-        if (fireCountdown <= 0f)
-        {
-            
+        if (reloading() == false)
+        {            
             Shoot(target);
-            fireCountdown = 1f / roundsPerMinut;
+            reloadProgress = 0;
         }
-        fireCountdown -= Time.deltaTime;
+    }
+
+    bool reloading()
+    {
+        if (reloadTime >= reloadProgress)
+        {
+            reloadProgress += Time.deltaTime;
+            return true;
+        }
+        else
+        {           
+            return false;
+        }
     }
 
     void FindTarget()

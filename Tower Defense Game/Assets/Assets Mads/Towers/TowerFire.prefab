@@ -86,7 +86,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4503829657196466}
   - component: {fileID: 114221881551348064}
-  - component: {fileID: 114500809321788220}
   m_Layer: 0
   m_Name: TowerFire
   m_TagString: TowerUpgradeAble
@@ -259,36 +258,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
-  fireRate: 1
-  fireCountdown: 0
+  roundsPerMinut: 30
+  reloadProgress: 0
   speed: 50
   damageAmount: 2
   damageType: 1
   enemyTag: Enemy
   towerRotation: {fileID: 4126413236547094}
-  bulletPrefab: {fileID: 1831175801423330, guid: d2f8c9d1377a7134191d5110bce85471,
+  projectilePrefab: {fileID: 1831175801423330, guid: e36edb3e9af9a1f4382fb0aedd916f91,
     type: 2}
   firePoint: {fileID: 4622564948815286}
---- !u!114 &114500809321788220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1320856553919600}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc5fa0cbd9a36249ac771ffbbb4ee87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 10
-  fireRate: 1
-  fireCountdown: 0
-  enemyTag: Enemy
-  towerRotation: {fileID: 4126413236547094}
-  bulletPrefab: {fileID: 1831175801423330, guid: d2f8c9d1377a7134191d5110bce85471,
-    type: 2}
-  firePoint: {fileID: 4622564948815286}
-  damageType: 1
 --- !u!136 &136448869900131832
 CapsuleCollider:
   m_ObjectHideFlags: 1

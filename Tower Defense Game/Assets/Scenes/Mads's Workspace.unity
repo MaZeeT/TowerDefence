@@ -2255,8 +2255,7 @@ Prefab:
       propertyPath: pathList
       value: 
       objectReference: {fileID: 1979833948}
-    - target: {fileID: 114486138970331998, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -2295,6 +2294,21 @@ Prefab:
     - target: {fileID: 4764439892762618, guid: c1afd4e52dbdfec4d934d2ba22306427, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114691356723563940, guid: c1afd4e52dbdfec4d934d2ba22306427,
+        type: 2}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114691356723563940, guid: c1afd4e52dbdfec4d934d2ba22306427,
+        type: 2}
+      propertyPath: roundsPerMinut
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114691356723563940, guid: c1afd4e52dbdfec4d934d2ba22306427,
+        type: 2}
+      propertyPath: range
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1afd4e52dbdfec4d934d2ba22306427, type: 2}
@@ -2703,7 +2717,7 @@ MeshCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c,
     type: 2}
-  m_PrefabInternal: {fileID: 1435018258}
+  m_PrefabInternal: {fileID: 1560648781}
 --- !u!1001 &1396771212
 Prefab:
   m_ObjectHideFlags: 0
@@ -2892,75 +2906,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33829d07fa97e7749826b89efd4492fa, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1435018258
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 275059154}
-    m_Modifications:
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.9278634
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.6231766
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -31.164864
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-      propertyPath: m_Name
-      value: Knight Warrior - List Pathing Mid
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: pathList
-      value: 
-      objectReference: {fileID: 24172025}
-    - target: {fileID: 0}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114152070411865120, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
-      propertyPath: pathList
-      value: 
-      objectReference: {fileID: 24172025}
-    - target: {fileID: 114940236059785722, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
-      propertyPath: pathList
-      value: 
-      objectReference: {fileID: 24172025}
-    - target: {fileID: 114486138970331998, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1455057234
 GameObject:
@@ -3154,6 +3099,57 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ba554c772410f934284d8ded98ae9329, type: 3}
+--- !u!1001 &1560648781
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 275059154}
+    m_Modifications:
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.9278634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.6231766
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -31.164864
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459507979146216, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+      propertyPath: m_Name
+      value: Knight Warrior - List Pathing Mid
+      objectReference: {fileID: 0}
+    - target: {fileID: 114940236059785722, guid: 165df88e0b3301140b07b0d26af4c18c,
+        type: 2}
+      propertyPath: pathList
+      value: 
+      objectReference: {fileID: 24172025}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1643767584
 Prefab:
   m_ObjectHideFlags: 0
@@ -3843,8 +3839,7 @@ Prefab:
       propertyPath: pathList
       value: 
       objectReference: {fileID: 355803414}
-    - target: {fileID: 114486138970331998, guid: 165df88e0b3301140b07b0d26af4c18c,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

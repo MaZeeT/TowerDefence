@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
     private GameObject target;
-    private float speed = 50f;
+    private float speed;
     private int damageAmount;
     private string damageType;
 
     void Update()
     {
         Movement movement = GetComponent<Movement>();
+        movement.setSpeed(speed);
         gotTarget();
         if (movement.Reached(target))
             Damage(target);
