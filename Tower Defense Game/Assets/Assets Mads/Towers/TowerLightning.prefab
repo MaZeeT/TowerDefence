@@ -265,7 +265,7 @@ MonoBehaviour:
   damageType: 3
   enemyTag: Enemy
   towerRotation: {fileID: 4329691073359826}
-  projectilePrefab: {fileID: 1831175801423330, guid: e36edb3e9af9a1f4382fb0aedd916f91,
+  projectilePrefab: {fileID: 1831175801423330, guid: 4a4735c8d6ef9f8469eba86c9121df60,
     type: 2}
   firePoint: {fileID: 4292888703288120}
 --- !u!136 &136034548486144712

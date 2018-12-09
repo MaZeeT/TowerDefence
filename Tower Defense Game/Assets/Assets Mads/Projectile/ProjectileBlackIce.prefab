@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114175982857326098}
   - component: {fileID: 114888864717703674}
   m_Layer: 0
-  m_Name: BulletPhysical
+  m_Name: ProjectileFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: c9ffaaeb1db1f8647a8985126f8683fd, type: 2}
+  - {fileID: 2100000, guid: 7b122529efebd5346a656e675fcf4e6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
