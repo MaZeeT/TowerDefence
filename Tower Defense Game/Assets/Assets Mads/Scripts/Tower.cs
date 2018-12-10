@@ -115,4 +115,9 @@ public class Tower : MonoBehaviour {
     {
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
+    public GameObject GetTarget()
+    {
+        return target;
+    }
 }
