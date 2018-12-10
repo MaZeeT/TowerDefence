@@ -13,10 +13,9 @@ public class TowerTypeUpgrade : MonoBehaviour
     public GameObject TowerPhysical;
 
     // Upgrades tower to the specific tower type
-    void OnCollisionEnter(Collider Other)
+    private void OnCollisionEnter(Collision Other)
     {
-        Debug.Log("fuck");
-        if (Other.tag == "BasicTower")
+        if (Other.gameObject.tag == "BasicTower")
         {
 
             Vector3 vec = Other.gameObject.transform.position;
