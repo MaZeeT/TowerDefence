@@ -50,21 +50,10 @@ public class EnemyWaves : MonoBehaviour
         // skal rettes til at udregnes baseret på enemy wave level
         if (msg == "I'm fucked") {
             msg = "";
-            SpawnEnemy();
             Debug.Log("spawned");
         }
          SpawnWave();
     }// Update end
-
-    void SpawnEnemy()
-    {
-        GameObject test = GameObject.Instantiate(Warrior, enemySpawnPoint, Quaternion.identity) as GameObject;
-        EnemySpecs testE = test.GetComponent<EnemySpecs>();
-        testE.weakness = "Water";
-        testE.resistance = "Fire";
-        
-        minionsAlive++;
-    }// SpawnEnemy end
 
     void SpawnWave() {
         if (spawnTime <= 0 && minionSpawning <= 0 && !done){
@@ -76,7 +65,6 @@ public class EnemyWaves : MonoBehaviour
         if (spawning){
             count -= Time.deltaTime;
             if (count <= 0 && minionSpawning > 0){
-                SpawnEnemy();
                 minionSpawning--;
                 count = initialCount;
             } else if (minionSpawning == 0) {

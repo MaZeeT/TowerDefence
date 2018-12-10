@@ -772,8 +772,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4804373171015862}
   - component: {fileID: 95820927543078168}
-  - component: {fileID: 114300363348326166}
-  - component: {fileID: 114039570599448880}
   - component: {fileID: 65359200529706734}
   m_Layer: 0
   m_Name: Mage Warrior
@@ -1648,36 +1646,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114039570599448880
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1955882942978132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24d47162d178f245aec8fbc9292fa07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flee: 0
-  weakness: 
-  resistance: 
-  health: 5
-  type: 
-  nextPoint: {fileID: 0}
---- !u!114 &114300363348326166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1955882942978132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7ef17c21ec457409514db055acb92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 95820927543078168}
-  warrior: 5
 --- !u!137 &137547003508363640
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
