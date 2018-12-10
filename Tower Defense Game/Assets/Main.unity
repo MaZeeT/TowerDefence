@@ -1596,7 +1596,7 @@ Prefab:
         type: 2}
       propertyPath: testPath
       value: 
-      objectReference: {fileID: 1108126274}
+      objectReference: {fileID: 627882171}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
   m_IsPrefabAsset: 0

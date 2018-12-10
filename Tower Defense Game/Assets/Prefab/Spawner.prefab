@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db771af019cffc4ca61a9d1be9ea4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testing: 0
+  periode: 1
   testPath: {fileID: 0}
   testMinion: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-  spawnLocation: {x: 0, y: 0, z: 0}

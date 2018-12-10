@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4531932740352502}
   - component: {fileID: 114623903217925466}
   - component: {fileID: 114763127202052926}
+  - component: {fileID: 114898373756830064}
   m_Layer: 0
   m_Name: Overlord
   m_TagString: Overlord
@@ -95,3 +96,15 @@ MonoBehaviour:
   count: 0
   minionSpawning: 0
   minionsAlive: 0
+--- !u!114 &114898373756830064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860467729049072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d425c76f6457d0741920bf9a58cc5d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
