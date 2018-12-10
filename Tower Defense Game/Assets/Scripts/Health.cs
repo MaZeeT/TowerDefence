@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class Health : MonoBehaviour
+{
 
     [Header("Defensive Stats")]
     public float health;
@@ -12,9 +13,8 @@ public class Health : MonoBehaviour {
     public int resistanceLightning;
     private int resistance;
 
-    public void TakeDamage (int damageValue, string damageType)
+    public void TakeDamage(int damageValue, string damageType, string objTag)
     {
-        
         switch (damageType)
         {
             case "physical":
@@ -34,9 +34,9 @@ public class Health : MonoBehaviour {
                 Debug.Log("Lightning dmg");
                 break;
         }
-        
-        health = health - (float)damageValue * ((float)(100-resistance) / 100);
-        
+
+        health = health - (float)damageValue * ((float)(100 - resistance) / 100);
+
         if (health <= 0)
         {
             Destroy(gameObject);
