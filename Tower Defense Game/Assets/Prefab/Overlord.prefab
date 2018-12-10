@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432d129362323cb4d9ddcdc67967ae91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  Warrior: {fileID: 0}
+  spawner: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
+  Warrior: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   msg: 
   spawnTime: 0
   waveCount: 0

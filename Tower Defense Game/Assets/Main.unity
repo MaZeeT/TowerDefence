@@ -931,6 +931,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1860467729049072, guid: d6c0a860dfb0ecd41897398d7f38cf4b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114623903217925466, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
+        type: 2}
+      propertyPath: Warrior
+      value: 
+      objectReference: {fileID: 1656169700}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c0a860dfb0ecd41897398d7f38cf4b, type: 2}
   m_IsPrefabAsset: 0
@@ -977,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c98da013de978614baa560fc2faecb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathPoint0: {fileID: 1660142904681312, guid: 3253419982dd24748adb902fcbfafea5, type: 2}
+  pathPoint0: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
   pathPoint1: {fileID: 1787504555}
   pathPoint2: {fileID: 1344762714}
   pathPoint3: {fileID: 1663215356}
@@ -1252,15 +1261,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114533821184826494, guid: e948d99d6b29c364393f5382f6023d29,
         type: 2}
+      propertyPath: testPath
+      value: 
+      objectReference: {fileID: 1108126274}
+    - target: {fileID: 114533821184826494, guid: e948d99d6b29c364393f5382f6023d29,
+        type: 2}
       propertyPath: testMinion
       value: 
       objectReference: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c,
         type: 2}
-    - target: {fileID: 114533821184826494, guid: e948d99d6b29c364393f5382f6023d29,
-        type: 2}
-      propertyPath: testPath
-      value: 
-      objectReference: {fileID: 1108126274}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
   m_IsPrefabAsset: 0
@@ -1829,7 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c98da013de978614baa560fc2faecb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathPoint0: {fileID: 1660142904681312, guid: 3253419982dd24748adb902fcbfafea5, type: 2}
+  pathPoint0: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
   pathPoint1: {fileID: 1787504555}
   pathPoint2: {fileID: 1770461391}
   pathPoint3: {fileID: 1349286827}
@@ -3087,7 +3096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c98da013de978614baa560fc2faecb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathPoint0: {fileID: 1660142904681312, guid: 3253419982dd24748adb902fcbfafea5, type: 2}
+  pathPoint0: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
   pathPoint1: {fileID: 1787504555}
   pathPoint2: {fileID: 1955578909}
   pathPoint3: {fileID: 1671818183}
@@ -3233,6 +3242,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1605246155}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1656169700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154921429}
 --- !u!1001 &1656295054
 Prefab:
   m_ObjectHideFlags: 0
@@ -3610,6 +3624,11 @@ Prefab:
     - target: {fileID: 4503829657196466, guid: b71ad81b55e1dd749b862acb2ae7fa90, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198986674242161136, guid: b71ad81b55e1dd749b862acb2ae7fa90,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71ad81b55e1dd749b862acb2ae7fa90, type: 2}

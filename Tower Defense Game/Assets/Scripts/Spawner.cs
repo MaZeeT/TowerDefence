@@ -8,12 +8,16 @@ public class Spawner : MonoBehaviour {
 
     public PathPointList testPath;
     public GameObject testMinion;
+    public Vector3 spawnLocation;
+        
+        
+
 
     void Spawn(GameObject minionType, PathPointList path)
     {
         pathList = path.getPathList();
         Vector3 goTo = pathList[0].transform.position - transform.position;
-        GameObject newMinion = GameObject.Instantiate(minionType, goTo, Quaternion.identity) as GameObject;
+        GameObject newMinion = GameObject.Instantiate(minionType, spawnLocation, Quaternion.identity) as GameObject;
     }
 
     void test()
@@ -23,8 +27,9 @@ public class Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        spawnLocation = this.transform.position;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

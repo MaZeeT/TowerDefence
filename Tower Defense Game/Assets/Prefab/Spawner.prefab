@@ -125,4 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testPath: {fileID: 0}
-  testMinion: {fileID: 0}
+  testMinion: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+  spawnLocation: {x: 0, y: 0, z: 0}

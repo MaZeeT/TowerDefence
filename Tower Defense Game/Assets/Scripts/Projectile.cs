@@ -13,17 +13,30 @@ public class Projectile : MonoBehaviour {
         Movement movement = GetComponent<Movement>();
         movement.setSpeed(speed);
         gotTarget();
-        if (movement.Reached(target))
-            Damage(target);
-        movement.moveTo(target);       
-    }
 
-    void gotTarget()
-    {
-        if(target == null)
+        if (gotTarget() == true)
+        {
+            if (movement.Reached(target))
+                Damage(target);
+            movement.moveTo(target);
+        }
+        else
         {
             Destroy(this.gameObject);
-            return;
+        }
+
+        
+    }
+
+    bool gotTarget()
+    {
+        if(target == null)
+        {   
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 

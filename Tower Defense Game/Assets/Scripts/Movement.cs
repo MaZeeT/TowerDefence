@@ -33,8 +33,8 @@ public class Movement : MonoBehaviour {
     // Public overloaded caller function for core logic
     public bool Reached(GameObject target)
     {
-        Vector3 dir = target.transform.position - transform.position;
-        return HaveReached(dir);
+            Vector3 dir = target.transform.position - transform.position;
+            return HaveReached(dir);   
     }
 
     public bool Reached(Transform target)

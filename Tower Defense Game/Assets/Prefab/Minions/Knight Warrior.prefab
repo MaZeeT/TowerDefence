@@ -732,6 +732,7 @@ GameObject:
   - component: {fileID: 114152070411865120}
   - component: {fileID: 114940236059785722}
   - component: {fileID: 114235665365919554}
+  - component: {fileID: 114110615535348936}
   m_Layer: 0
   m_Name: Knight Warrior
   m_TagString: Enemy
@@ -1680,6 +1681,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114110615535348936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835083521099620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfc8f1d6c6856b4883b173ede5fa23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114136266014127236
 MonoBehaviour:
   m_ObjectHideFlags: 1
