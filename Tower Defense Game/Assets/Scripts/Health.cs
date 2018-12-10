@@ -18,20 +18,16 @@ public class Health : MonoBehaviour {
         switch (damageType)
         {
             case "physical":
-                resistance = resistancePhysical;
-                Debug.Log("Physical dmg");
+                resistance = resistancePhysical;                
                 break;
             case "fire":
-                resistance = resistanceFire;
-                Debug.Log("Fire dmg");
+                resistance = resistanceFire;                
                 break;
             case "water":
-                resistance = resistanceWater;
-                Debug.Log("Water dmg");
+                resistance = resistanceWater;                
                 break;
             case "lightning":
-                resistance = resistanceLightning;
-                Debug.Log("Lightning dmg");
+                resistance = resistanceLightning;                
                 break;
         }
         
@@ -40,11 +36,6 @@ public class Health : MonoBehaviour {
         if (health <= 0)
         {
             Destroy(gameObject);
-
-            //the 2 below breaks this if statements and the Minion will not despawn on 0hp
-
-            //EnemyWaves enemy = overlord.GetComponent<EnemyWaves>();
-            //enemy.MinionDead(1);
         }
     }// Damaged end
 }

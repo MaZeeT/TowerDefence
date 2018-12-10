@@ -53,4 +53,17 @@ public class PathFinding : MonoBehaviour {
         }
     }
 
+    public void setPathList(GameObject pathList)
+    {
+        this.pathList = pathList;
+    }
+
+    public void setPathList(List<GameObject> pathList)
+    {
+        this.path = pathList;
+    }
+
+    
+
+    
 }

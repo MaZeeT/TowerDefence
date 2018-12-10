@@ -25,8 +25,7 @@ public class PathPointList : MonoBehaviour {
     {
         if (point != null)
         {
-            path.Add(point);
-            Debug.Log(point.name);
+            path.Add(point);            
         }
     }
 

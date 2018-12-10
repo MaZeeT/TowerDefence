@@ -52,7 +52,7 @@ public class Overlord : MonoBehaviour {
         if (msg == "I'm fucked")
         {
             msg = "";
-            SpawnEnemy();
+         //   SpawnEnemy();
             Debug.Log("spawned");
         }
         SpawnWave();
