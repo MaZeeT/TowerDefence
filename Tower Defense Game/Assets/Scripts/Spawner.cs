@@ -9,7 +9,8 @@ public class Spawner : MonoBehaviour {
     public GameObject testPath;
     public GameObject testMinion;
     public Vector3 spawnPoint;
-                
+    public float time;
+    public float periode;
 
     void Spawn(GameObject minionType, GameObject path)
     {
@@ -27,6 +28,7 @@ public class Spawner : MonoBehaviour {
         // spawnPoint = transform.position;    
         // GameObject minion = GameObject.Instantiate(minionType, spawnPoint, Quaternion.identity) as GameObject;
         // minion.GetComponent<PathFinding>().setPathList(path);
+        Debug.Log("spawn() called");
     }
 
     void InstantiateMinion(GameObject minion, Vector3 spawnPoint, GameObject path)
@@ -34,6 +36,7 @@ public class Spawner : MonoBehaviour {
         GameObject newMinion;
         newMinion = GameObject.Instantiate(minion, spawnPoint, Quaternion.identity);
         newMinion.GetComponent<PathFinding>().setPathList(path);
+        Debug.Log("Instantiate called");
     }
 
     void Test()
@@ -43,11 +46,14 @@ public class Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float time = 2;
-        if (time <= Time.deltaTime)
-        {
-            time = time + Time.deltaTime;
+        
+        if (time > periode)
+        {           
+            time = 0;
             Test();
+            
         }
-	}
+        time = time + Time.deltaTime;
+
+    }
 }
