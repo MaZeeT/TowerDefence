@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour {
 
     void Damage(GameObject target)
     {
-        target.GetComponent<Health>().TakeDamage(damageAmount, damageType);
+        target.GetComponent<Health>().TakeDamage(damageAmount, damageType, target.tag);
         Destroy(this.gameObject);
     }
 

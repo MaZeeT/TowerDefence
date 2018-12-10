@@ -10,8 +10,8 @@ public class BuildingMenu: MonoBehaviour
     [Header("Setup")]
     public GameObject buttonHolder; //empty object that contains the buttons
     public GameObject Hand;
-    public GameObject builderBullet;
-    public GameObject cube;
+    public GameObject TowerFoundation;
+    public GameObject BuildingBall;
 
     [Header("Debug")]
     public bool buttonEnabled; // saying whether or the empty object is enabled
@@ -74,10 +74,8 @@ public class BuildingMenu: MonoBehaviour
                 
             }
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) {
-                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y + 1, Hand.transform.position.z + 1);
-                Instantiate(builderBullet, vec, Hand.transform.rotation);
-                GameObject T = GameObject.FindGameObjectWithTag("builderBullet");
-                T.GetComponent<BuilderBullet>().buildString = "TowerFoundation";
+                Vector3 vec = new Vector3(Hand.transform.position.x, 0.1f, Hand.transform.position.z);
+                Instantiate(TowerFoundation, vec, Quaternion.identity);
 
                 holdingFoundation = false;
                 holding = false;
@@ -92,11 +90,8 @@ public class BuildingMenu: MonoBehaviour
             }
 
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) {
-                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y + 1, Hand.transform.position.z + 1);
-                Instantiate(builderBullet, vec, Hand.transform.rotation);
-                GameObject T;
-                T = GameObject.FindGameObjectWithTag("builderBullet");
-                T.GetComponent<BuilderBullet>().buildString = "BuildingBall";
+                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y, Hand.transform.position.z);
+                Instantiate(BuildingBall, vec, Hand.transform.rotation);
 
                 holdingBall = false;
                 holding = false;
