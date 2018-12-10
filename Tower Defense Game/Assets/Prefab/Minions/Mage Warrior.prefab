@@ -773,6 +773,11 @@ GameObject:
   - component: {fileID: 4804373171015862}
   - component: {fileID: 95820927543078168}
   - component: {fileID: 65359200529706734}
+  - component: {fileID: 114786716580879436}
+  - component: {fileID: 114277761522832070}
+  - component: {fileID: 114371693713303158}
+  - component: {fileID: 114126320512313256}
+  - component: {fileID: 114640466283948080}
   m_Layer: 0
   m_Name: Mage Warrior
   m_TagString: Enemy
@@ -1465,7 +1470,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1955882942978132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.4325905, y: 0.01, z: -44.925}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4833692738333486}
@@ -1646,6 +1651,71 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114126320512313256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955882942978132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b7cdea8692efd448a560ddc9688a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reportIntel: 0
+  intel: 
+--- !u!114 &114277761522832070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955882942978132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e5ec81b9d6dff4a8e2fabab61e7c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+--- !u!114 &114371693713303158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955882942978132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe07925ac072e84a8b3024db22f9bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathList: {fileID: 0}
+  pathIndex: 0
+--- !u!114 &114640466283948080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955882942978132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfc8f1d6c6856b4883b173ede5fa23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114786716580879436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955882942978132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca009196a9deb14a851f77bad0be8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 6
+  resistancePhysical: 0
+  resistanceFire: 25
+  resistanceWater: 25
+  resistanceLightning: 25
 --- !u!137 &137547003508363640
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

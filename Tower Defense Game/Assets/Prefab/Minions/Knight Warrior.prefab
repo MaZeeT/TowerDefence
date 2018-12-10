@@ -1703,11 +1703,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca009196a9deb14a851f77bad0be8a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  resistancePhysical: 0
-  resistanceFire: 0
-  resistanceWater: 0
-  resistanceLightning: 0
+  health: 10
+  resistancePhysical: 25
+  resistanceFire: 10
+  resistanceWater: 10
+  resistanceLightning: 10
 --- !u!114 &114152070411865120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e5ec81b9d6dff4a8e2fabab61e7c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
 --- !u!114 &114235665365919554
 MonoBehaviour:
   m_ObjectHideFlags: 1

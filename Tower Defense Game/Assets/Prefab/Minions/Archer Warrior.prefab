@@ -790,6 +790,11 @@ GameObject:
   - component: {fileID: 4120046031117586}
   - component: {fileID: 95141417733502256}
   - component: {fileID: 65593710764772612}
+  - component: {fileID: 114450977483233224}
+  - component: {fileID: 114859987311406620}
+  - component: {fileID: 114716259893732142}
+  - component: {fileID: 114937244657833012}
+  - component: {fileID: 114311548645117204}
   m_Layer: 0
   m_Name: Archer Warrior
   m_TagString: Enemy
@@ -958,7 +963,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861560617656914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.6199903, y: 0.01, z: -45.000313}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4500442758753926}
@@ -1708,6 +1713,71 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114311548645117204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861560617656914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfc8f1d6c6856b4883b173ede5fa23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114450977483233224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861560617656914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca009196a9deb14a851f77bad0be8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 8
+  resistancePhysical: 10
+  resistanceFire: 10
+  resistanceWater: 10
+  resistanceLightning: 10
+--- !u!114 &114716259893732142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861560617656914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe07925ac072e84a8b3024db22f9bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathList: {fileID: 0}
+  pathIndex: 0
+--- !u!114 &114859987311406620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861560617656914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e5ec81b9d6dff4a8e2fabab61e7c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+--- !u!114 &114937244657833012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861560617656914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b7cdea8692efd448a560ddc9688a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reportIntel: 0
+  intel: 
 --- !u!137 &137027534891704730
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
