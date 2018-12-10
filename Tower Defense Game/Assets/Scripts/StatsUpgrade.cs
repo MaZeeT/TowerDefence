@@ -22,12 +22,12 @@ public class StatsUpgrade : MonoBehaviour {
         //the test button, which add a level per click
         if (testUpgrade == true)
         {
-            upgradeStates();
+            upgradeStats();
             testUpgrade = false;
         }
     }
 
-    public void upgradeStates()
+    public void upgradeStats()
     {
         if(upgradeLevel < maxLevel) { 
         upgradeLevel++;

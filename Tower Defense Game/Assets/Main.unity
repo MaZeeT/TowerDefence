@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -330,10 +330,13 @@ MonoBehaviour:
     type: 2}
   BuildingBall: {fileID: 1360281860362932, guid: 860ecc87a12add14d980aadbf36e7cd8,
     type: 2}
+  UpgradeObject: {fileID: 1125939378456408, guid: e8197fcb3632326468a74fa4f69a0dab,
+    type: 2}
   buttonEnabled: 0
   holding: 0
   holdingFoundation: 0
   holdingBall: 0
+  holdingUpgrade: 0
 --- !u!114 &236448685
 MonoBehaviour:
   m_ObjectHideFlags: 0

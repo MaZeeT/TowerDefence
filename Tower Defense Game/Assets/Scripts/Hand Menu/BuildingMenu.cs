@@ -13,6 +13,7 @@ public class BuildingMenu : MonoBehaviour
     public GameObject Hand;
     public GameObject TowerFoundation;
     public GameObject BuildingBall;
+    public GameObject UpgradeObject;
 
     [Header("Debug")]
     public bool buttonEnabled; // saying whether or the empty object is enabled
@@ -21,8 +22,8 @@ public class BuildingMenu : MonoBehaviour
     public bool holding;
     public bool holdingFoundation;
     public bool holdingBall;
-
-
+    public bool holdingUpgrade;
+    
 
     void Start()
     {
@@ -32,7 +33,8 @@ public class BuildingMenu : MonoBehaviour
         holdingFoundation = false;
         holdingBall = false;
         holding = false;
-
+        holdingUpgrade = false;    
+        
 
     } // Start end
 
@@ -60,6 +62,7 @@ public class BuildingMenu : MonoBehaviour
                 buttonHolder.SetActive(false);
                 buttonEnabled = false;
             }
+            
         }
     }// MenuOpen end
 
@@ -118,6 +121,18 @@ public class BuildingMenu : MonoBehaviour
                 holding = false;
 
             }
+        }
+        if (holdingUpgrade) {
+
+            if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) {
+
+                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y, Hand.transform.position.z);
+                Instantiate(UpgradeObject, vec, Hand.transform.rotation);
+
+                holdingUpgrade = false;
+                holding = false;
+            }
+
         }
     } // PlaceObjecft end
 

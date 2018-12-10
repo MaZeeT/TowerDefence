@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4107503533468388}
   - component: {fileID: 33696780762548662}
   - component: {fileID: 23927550663862912}
-  - component: {fileID: 136336409560514370}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -39,6 +38,7 @@ GameObject:
   - component: {fileID: 4764439892762618}
   - component: {fileID: 114691356723563940}
   - component: {fileID: 114849344697240382}
+  - component: {fileID: 65176761387160372}
   m_Layer: 0
   m_Name: TowerWater
   m_TagString: TowerUpgradeAble
@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 4122895699178434}
   - component: {fileID: 33203331547735270}
   - component: {fileID: 23498789012705318}
-  - component: {fileID: 136724585393171172}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -156,7 +155,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373549246296118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.7990122, y: 0.1, z: -28.509161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4738337232313802}
@@ -247,6 +246,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016277116160662}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65176761387160372
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373549246296118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &114691356723563940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,29 +296,3 @@ MonoBehaviour:
   upgradeRange: 1
   upgradeDamage: 1
   testUpgrade: 0
---- !u!136 &136336409560514370
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1016277116160662}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!136 &136724585393171172
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506847332798804}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

@@ -20,6 +20,7 @@ public class TowerTypeUpgrade : MonoBehaviour
 
             Vector3 vec = Other.gameObject.transform.position;
             Destroy(Other.gameObject);
+            Destroy(gameObject);
 
             switch (type)
             {

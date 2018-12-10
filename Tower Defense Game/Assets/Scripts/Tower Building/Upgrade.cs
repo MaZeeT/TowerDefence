@@ -13,4 +13,18 @@ public class Upgrade : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnCollisionEnter(Collision Other) {
+
+        if (Other.gameObject.tag == "TowerUpgradeAble") {
+
+            StatsUpgrade Upgrading = Other.gameObject.GetComponent<StatsUpgrade>();
+            Upgrading.upgradeStats();
+            Destroy(gameObject);
+
+        }
+
+
+    }
+
 }

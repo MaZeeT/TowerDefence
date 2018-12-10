@@ -29,7 +29,8 @@ public class ButtonHandler : MonoBehaviour {
             }
             if (button3 && !buildingMenu.holding)
             {
-                //does not do anything
+                buildingMenu.holdingUpgrade = true;
+                buildingMenu.holding = true;
             }
         }
     }// OnTriggerEnter end
