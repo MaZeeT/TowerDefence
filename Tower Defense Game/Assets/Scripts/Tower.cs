@@ -116,8 +116,31 @@ public class Tower : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
+
+    //Getters and setters
     public GameObject GetTarget()
     {
         return target;
     }
+
+    public void setDamage(int damage)
+    {
+        this.damageAmount = damage;
+    }
+
+    public void setRange(float range)
+    {
+        this.range = range;
+    }
+
+    public float getRange()
+    {
+        return this.range;
+    }
+
+    public int getDamage()
+    {
+        return this.damageAmount;
+    }
+
 }

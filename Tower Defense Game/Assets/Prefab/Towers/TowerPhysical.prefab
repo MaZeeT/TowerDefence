@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4494877818464288}
   - component: {fileID: 114201512147113566}
+  - component: {fileID: 114357688610088312}
   m_Layer: 0
   m_Name: TowerPhysical
   m_TagString: TowerUpgradeAble
@@ -268,6 +269,22 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1831175801423330, guid: e36edb3e9af9a1f4382fb0aedd916f91,
     type: 2}
   firePoint: {fileID: 4433899742208862}
+--- !u!114 &114357688610088312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048337734162432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cda76457022a54ebad2a209bff5a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLevel: 5
+  upgradeLevel: 0
+  upgradeRange: 1
+  upgradeDamage: 1
+  testUpgrade: 0
 --- !u!136 &136058294582008266
 CapsuleCollider:
   m_ObjectHideFlags: 1

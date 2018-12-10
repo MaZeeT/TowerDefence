@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
     private GameObject target;
     private float speed;
-    private int damageAmount;
+    public int damageAmount;
     private string damageType;
 
     void Update()

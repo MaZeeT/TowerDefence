@@ -71,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4088491356812604}
   - component: {fileID: 114884406991547330}
+  - component: {fileID: 114425502914955476}
   m_Layer: 0
   m_Name: TowerLightning
   m_TagString: TowerUpgradeAble
@@ -246,6 +247,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243810730746224}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114425502914955476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859587430707632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cda76457022a54ebad2a209bff5a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLevel: 5
+  upgradeLevel: 0
+  upgradeRange: 1
+  upgradeDamage: 1
+  testUpgrade: 0
 --- !u!114 &114884406991547330
 MonoBehaviour:
   m_ObjectHideFlags: 1
