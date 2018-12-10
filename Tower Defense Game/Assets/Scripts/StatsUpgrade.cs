@@ -19,6 +19,7 @@ public class StatsUpgrade : MonoBehaviour {
 
     private void Update()
     {
+        //the test button, which add a level per click
         if (testUpgrade == true)
         {
             upgradeStates();
