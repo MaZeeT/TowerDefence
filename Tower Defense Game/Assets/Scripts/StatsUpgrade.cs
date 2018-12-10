@@ -29,18 +29,28 @@ public class StatsUpgrade : MonoBehaviour {
     public void upgradeStates()
     {
         if(upgradeLevel < maxLevel) { 
-        upgradeLevel++; 
-        
-        int damage;
-        damage = towerStats.getDamage() + upgradeDamage;
-        towerStats.setDamage(damage);
+        upgradeLevel++;
 
-        float range;
-        range = towerStats.getRange() + upgradeRange;
-        towerStats.setRange(range);
+            upDamage();
+            upRange();
+
+        
         }
     }
 
+    private void upDamage()
+    {
+        int damage;
+        damage = towerStats.getDamage() + upgradeDamage;
+        towerStats.setDamage(damage);
+    }
+
+    private void upRange()
+    {
+        float range;
+        range = towerStats.getRange() + upgradeRange;
+        towerStats.setRange(range);
+    }
 
 
     /*
