@@ -6,54 +6,36 @@ public class Spawner : MonoBehaviour {
 
     List<GameObject> pathList;
 
-    public GameObject testPath;
-    public GameObject testMinion;
-    public Vector3 spawnPoint;
-    public float time;
-    public float periode;
-
-    void Spawn(GameObject minionType, GameObject path)
-    {
-        Vector3 vector;
-        vector = transform.position;
+    //public Vector3 spawnPoint;
+    
+    public void Spawn(GameObject minionType, GameObject path)
+    {        
+        Vector3 vector = transform.position;       
         InstantiateMinion(minionType, vector, path);
-
-        //GameObject test = GameObject.Instantiate(Warrior, enemySpawnPoint, Quaternion.identity) as GameObject;
-
-        //pathList = path.GetPathList();
-        //Vector3 goTo = pathList[0].transform.position - transform.position;
-        //GameObject newMinion = GameObject.Instantiate(minionType, spawnLocation, Quaternion.identity) as GameObject;
-
-
-        // spawnPoint = transform.position;    
-        // GameObject minion = GameObject.Instantiate(minionType, spawnPoint, Quaternion.identity) as GameObject;
-        // minion.GetComponent<PathFinding>().setPathList(path);
-        Debug.Log("spawn() called");
     }
 
-    void InstantiateMinion(GameObject minion, Vector3 spawnPoint, GameObject path)
+    private void InstantiateMinion(GameObject minion, Vector3 spawnPoint, GameObject path)
     {
         GameObject newMinion;
         newMinion = GameObject.Instantiate(minion, spawnPoint, Quaternion.identity);
         newMinion.GetComponent<PathFinding>().setPathList(path);
-        Debug.Log("Instantiate called");
     }
 
-    void Test()
-    {
-        Spawn(testMinion, testPath);
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        
-        if (time > periode)
-        {           
+
+    // below is variables and Update function to test spawning 
+    [Header("testing Settings")]
+    public bool testing;
+    private float time;
+    public float periode = 2;    
+    public GameObject testPath;
+    public GameObject testMinion;
+
+    void Update () {
+        if (time > periode && testing == true)
+        {
             time = 0;
-            Test();
-            
+            Spawn(testMinion, testPath);
         }
         time = time + Time.deltaTime;
-
     }
 }
