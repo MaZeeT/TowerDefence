@@ -113,4 +113,8 @@ public class Tower : MonoBehaviour {
         return this.damageAmount;
     }
 
+    public string getDamageType()
+    {
+        return damageType.ToString();
+    }
 }

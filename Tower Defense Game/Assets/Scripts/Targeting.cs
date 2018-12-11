@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Targeting : MonoBehaviour {
-    public string targetTag = "Enemy";
+    public string targetTag;
 
     public GameObject FindTarget(float range)    
     {
