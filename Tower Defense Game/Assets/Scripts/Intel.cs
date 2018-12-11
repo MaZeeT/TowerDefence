@@ -6,8 +6,8 @@ public class Intel : MonoBehaviour
 {
     public bool reportIntel = false;
     public string intel;
-    private float health;
-    
+    private float health;    
+
     void Update()
     {
         health = GetComponent<Health>().health;
@@ -29,5 +29,5 @@ public class Intel : MonoBehaviour
 
     void clearIntel(){
         intel = null;
-    }
+    }    
 }

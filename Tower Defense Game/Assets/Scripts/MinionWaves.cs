@@ -21,7 +21,7 @@ public class MinionWaves : MonoBehaviour {
     public int minionsToSpawn = 0;        
     public bool isSpawning = false;
 
-    void SpawnWave(int waveSize)
+    public void SpawnWave(int waveSize)
     {
         this.waveSize = waveSize;
             minionsToSpawn = waveSize;
