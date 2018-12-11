@@ -6,7 +6,11 @@ public class Intel : MonoBehaviour
 {
     public bool reportIntel = false;
     public string intel;
-    private float health;    
+    public float spottingRange;
+    private float health;
+
+    public float range;
+    private List<GameObject> spottedList;
 
     void Update()
     {

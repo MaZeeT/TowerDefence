@@ -46,4 +46,13 @@ public class Health : MonoBehaviour
         overlord = GameObject.FindGameObjectWithTag("Overlord");
         overlord.GetComponent<Overlord>().IncreaseMinionCount();
     }
+
+    public void setResistanceProfil(int physical, int fire, int water, int lightning)
+    {
+        resistancePhysical = physical;
+        resistanceFire = fire;
+        resistanceWater = water;
+        resistanceLightning = lightning;
+
+}
 }
