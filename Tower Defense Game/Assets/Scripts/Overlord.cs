@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Overlord : MonoBehaviour {
 
-    float initialSpawntime = 30f;
-
     [Header("Setup")]
     public GameObject spawner;
     public GameObject knight;
