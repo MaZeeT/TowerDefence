@@ -42,15 +42,16 @@ public class PathFinding : MonoBehaviour {
         {
             pathIndex++;
         }
+        else if (Other.tag == "PathPoint" && reportIntel == true)
+        {
+            pathIndex--;
+        }
         else if (Other.tag == "EnemySpawn" && reportIntel == true)
         {
             EnemyWaves enemy = overlord.GetComponent<EnemyWaves>();
             Destroy(gameObject);
         }
-        else if (Other.tag == "PathPoint" && reportIntel == true)
-        {
-            pathIndex--;
-        }
+        
     }
 
     public void setPathList(GameObject pathList)

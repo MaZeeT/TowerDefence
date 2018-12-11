@@ -67,35 +67,15 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860467729049072}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a664a2a5840c70240a0e3911c3045edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Overlord: {fileID: 1860467729049072}
-  Warrior: {fileID: 1122271600642970, guid: 189b4ddd530dc39439aa53bf78d5cb81, type: 2}
-  TwoHandedWarrior: {fileID: 1023146183451214, guid: ce3802021916392448e805e7b3027575,
-    type: 2}
-  Archer: {fileID: 1861560617656914, guid: ad0f1e0182234114fabfd31d04d5b51a, type: 2}
-  BruteWarrior: {fileID: 1765212877789856, guid: 91a0c8f95bd8f2a4f9b0c8c9c83682ea,
-    type: 2}
-  Crossbow: {fileID: 1991001289301404, guid: 88ab572303559874ca10aac61ef2f0fb, type: 2}
-  HammerWarrior: {fileID: 1382382697999334, guid: 0bb33eec6d452984a9ac63b01e64dfa1,
-    type: 2}
-  KarateWarrior: {fileID: 1915544083161822, guid: 02f1875618068ec44ad3873b7f449103,
-    type: 2}
-  Mage: {fileID: 1955882942978132, guid: 59ee23c62d7a5fc4fb9d20e0cf602060, type: 2}
-  Ninja: {fileID: 1511590051978232, guid: 58e1595714b822848885da808836be7d, type: 2}
-  Sorceress: {fileID: 1215817438610824, guid: f95676f4fb7490f4dad33372d993bf6f, type: 2}
-  Spearman: {fileID: 1865220597463120, guid: 9384a072414c11b4fbb82d91e43f51f0, type: 2}
-  Swordsman: {fileID: 1045825206581364, guid: 1d68c4c8cc9ea8346ac46ab7e3475a82, type: 2}
-  enemySpawn: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
   msg: 
-  spawnTime: 3
-  waveCount: 0
-  count: 0
-  minionSpawning: 0
   minionsAlive: 0
+  spawnTime: 3
+  initialSpawntime: 30
 --- !u!114 &114898373756830064
 MonoBehaviour:
   m_ObjectHideFlags: 1
