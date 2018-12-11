@@ -49,8 +49,7 @@ public class PathFinding : MonoBehaviour {
             pathIndex--;
         }
         else if (Other.tag == "EnemySpawn" && isReportIntel == true)
-        {
-            EnemyWaves enemy = overlord.GetComponent<EnemyWaves>();
+        {            
             Destroy(gameObject);
         }
         else if (Other.tag == "Base")
