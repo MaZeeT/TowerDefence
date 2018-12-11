@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    private GameObject overlord;
 
     [Header("Defensive Stats")]
     public float health;
@@ -35,7 +36,14 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+            overlord.GetComponent<Overlord>().DecreaseMinionCount();
             Destroy(gameObject);
         }
-    }// Damaged end
+    }
+
+    void Start()
+    {
+        overlord = GameObject.FindGameObjectWithTag("Overlord");
+        overlord.GetComponent<Overlord>().IncreaseMinionCount();
+    }
 }
