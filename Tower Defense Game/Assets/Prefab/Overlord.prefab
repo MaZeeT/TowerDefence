@@ -54,14 +54,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
-  test: 0
-  knight: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-  archer: {fileID: 1861560617656914, guid: 5e0deb5e39c2e3b4e9ded2c285e26fd3, type: 2}
-  mage: {fileID: 1955882942978132, guid: 08496221e1a3359468017557391ffb35, type: 2}
-  path1: {fileID: 0}
-  path2: {fileID: 0}
-  path3: {fileID: 0}
-  minionsCount: 0
+  Warrior: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
+  msg: 
+  spawnTime: 0
+  waveCount: 0
+  count: 0
+  minionSpawning: 0
+  minionsAlive: 0
 --- !u!114 &114763127202052926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
+  path: {fileID: 0}
   knight: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   archer: {fileID: 1861560617656914, guid: 5e0deb5e39c2e3b4e9ded2c285e26fd3, type: 2}
   mage: {fileID: 1955882942978132, guid: 08496221e1a3359468017557391ffb35, type: 2}
@@ -96,5 +96,5 @@ MonoBehaviour:
   delayBetweenMinions: 2
   spawnTime: 0
   countDown: 0
-  minionsToSpawn: 25
+  minionsToSpawn: 0
   isSpawning: 0
