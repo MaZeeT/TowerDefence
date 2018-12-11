@@ -30,20 +30,14 @@ public class EnemyWaves : MonoBehaviour
     public int minionSpawning = 0;
     public int minionsAlive = 0;
 
-    Vector3 enemySpawnPoint;
     float initialCount = 4f;
     bool spawning = false, done = false, allDead;
 
-    // Use this for initialization
     void Start()
-    {
-        enemySpawnPoint = enemySpawn.transform.position;
-
-        count = initialCount;
-        //spawnTime = initialSpawntime;
-    }// Start end
-
-    // Update is called once per frame
+    {        
+        count = initialCount;        
+    }
+    
     void Update()
     {
         spawnTime -= Time.deltaTime;
@@ -53,7 +47,7 @@ public class EnemyWaves : MonoBehaviour
             Debug.Log("spawned");
         }
          SpawnWave();
-    }// Update end
+    }
 
     void SpawnWave() {
         if (spawnTime <= 0 && minionSpawning <= 0 && !done){
@@ -71,7 +65,7 @@ public class EnemyWaves : MonoBehaviour
                 spawning = false;
             }
         }
-    }// SpawnWave end
+    }
 
     public void MinionDead(int minionAmount)
     {
@@ -81,5 +75,5 @@ public class EnemyWaves : MonoBehaviour
             spawnTime = initialSpawntime;
             done = false;
         }
-    }/// MinionDead end
+    }
 }

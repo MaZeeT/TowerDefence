@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1140,6 +1140,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114763127202052926, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114623903217925466, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898373756830064, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
+        type: 2}
+      propertyPath: knight
+      value: 
+      objectReference: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c,
+        type: 2}
+    - target: {fileID: 114898373756830064, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
+        type: 2}
+      propertyPath: archer
+      value: 
+      objectReference: {fileID: 1861560617656914, guid: 5e0deb5e39c2e3b4e9ded2c285e26fd3,
+        type: 2}
+    - target: {fileID: 114898373756830064, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
+        type: 2}
+      propertyPath: mage
+      value: 
+      objectReference: {fileID: 1955882942978132, guid: 08496221e1a3359468017557391ffb35,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c0a860dfb0ecd41897398d7f38cf4b, type: 2}
   m_IsPrefabAsset: 0
