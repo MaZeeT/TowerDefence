@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4088491356812604}
   - component: {fileID: 114884406991547330}
+  - component: {fileID: 114434077517544140}
   - component: {fileID: 114425502914955476}
   - component: {fileID: 65088360108642576}
   m_Layer: 0
@@ -274,6 +275,18 @@ MonoBehaviour:
   upgradeRange: 1
   upgradeDamage: 1
   testUpgrade: 0
+--- !u!114 &114434077517544140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859587430707632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe43b2f499cb0408d20003a51b36a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Enemy
 --- !u!114 &114884406991547330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,7 +304,6 @@ MonoBehaviour:
   speed: 50
   damageAmount: 2
   damageType: 3
-  enemyTag: Enemy
   towerRotation: {fileID: 4329691073359826}
   projectilePrefab: {fileID: 1831175801423330, guid: 4a4735c8d6ef9f8469eba86c9121df60,
     type: 2}

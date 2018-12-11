@@ -116,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4503829657196466}
   - component: {fileID: 114221881551348064}
+  - component: {fileID: 114958490113052726}
   - component: {fileID: 114529110610279270}
   - component: {fileID: 114583793449680354}
   - component: {fileID: 65551390596797228}
@@ -865,7 +866,6 @@ MonoBehaviour:
   speed: 10
   damageAmount: 1
   damageType: 1
-  enemyTag: Enemy
   towerRotation: {fileID: 4126413236547094}
   projectilePrefab: {fileID: 1831175801423330, guid: 354490ae369a8264c90a321eda801b8e,
     type: 2}
@@ -898,6 +898,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flameThrower: {fileID: 1005599234516568}
+--- !u!114 &114958490113052726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1320856553919600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe43b2f499cb0408d20003a51b36a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Enemy
 --- !u!198 &198529951598276122
 ParticleSystem:
   m_ObjectHideFlags: 1

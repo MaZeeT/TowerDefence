@@ -18,7 +18,7 @@ public class Tower : MonoBehaviour {
     public DropDown damageType;
 
     [Header("Setup")]
-    public string enemyTag = "Enemy";
+    // public string enemyTag = "Enemy";
     public Transform towerRotation;
     public GameObject projectilePrefab;
     public Transform firePoint;
@@ -34,13 +34,12 @@ public class Tower : MonoBehaviour {
 
     void Start()
     {
-        InvokeRepeating("FindTarget", 0f, 0.5f);
-        reloadTime = 60.0f / roundsPerMinut;
+        reloadTime = 60.0f / roundsPerMinut;        
     }
 
     void Update()
     {
-        FindTarget();
+        target = GetComponent<Targeting>().FindTarget(range);
         if (target == null)
             return;       
         Aim(target);
@@ -63,35 +62,6 @@ public class Tower : MonoBehaviour {
             return false;
         }
     }
-
-    void FindTarget()
-    {
-        GameObject nearestTarget = null;
-        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float shortestDistance = Mathf.Infinity;
-         
-        foreach (GameObject target in allEnemies)
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, target.transform.position);
-
-            if (distanceToEnemy < shortestDistance)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestTarget = target; //.GetComponent<Health>().hitbox;
-            }
-        }
-
-        if (nearestTarget != null && shortestDistance <= range)
-        {
-            target = nearestTarget;
-        }
-        else
-        {
-            target = null;
-        }
-    }
-
-
 
     void Aim(GameObject target)
     {
