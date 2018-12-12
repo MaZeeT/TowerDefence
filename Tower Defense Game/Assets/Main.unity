@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -337,7 +337,7 @@ MonoBehaviour:
   holdingFoundation: 0
   holdingBall: 0
   holdingUpgrade: 0
-  buildVec: {x: 0, y: 0, z: 0}
+  validBuildVec: 0
 --- !u!114 &236448685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 4
   origin: {fileID: 0}
---- !u!114 &236448687
+--- !u!114 &236448689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,10 +359,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 236448678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1732e7636dfe9764d984e9625dfbfc32, type: 3}
+  m_Script: {fileID: 11500000, guid: d4e8a839a7c5b7e4580c59e305fb5f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 236448678}
+  active: 1
+  color: {r: 0, g: 1, b: 0.04350829, a: 0}
+  thickness: 0.002
+  holder: {fileID: 0}
+  pointer: {fileID: 0}
+  addRigidBody: 0
+  reference: {fileID: 0}
 --- !u!1001 &268960938
 Prefab:
   m_ObjectHideFlags: 0
