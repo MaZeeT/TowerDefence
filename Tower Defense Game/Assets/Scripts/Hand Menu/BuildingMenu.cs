@@ -23,7 +23,6 @@ public class BuildingMenu : MonoBehaviour
     public bool holdingFoundation;
     public bool holdingBall;
     public bool holdingUpgrade;
-    
 
     void Start()
     {
@@ -43,6 +42,7 @@ public class BuildingMenu : MonoBehaviour
         MenuOpen();
         CheckItemID();
         PlaceObject();
+        Debug.DrawRay(Hand.transform.position, Hand.transform.forward * 50, Color.red);
     } // Update end
 
     void MenuOpen()
@@ -83,20 +83,30 @@ public class BuildingMenu : MonoBehaviour
 
         var device = SteamVR_Controller.Input(3);
 
+        if (holdingFoundation || holdingBall || holdingUpgrade) {
+            Vector3 buildVec;
+            RaycastHit hit;
+            var ray = new Ray(Hand.transform.position, Hand.transform.forward);
 
+            if (Physics.Raycast(Hand.transform.position, Hand.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            {
+                Debug.DrawRay(Hand.transform.position, Hand.transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(Hand.transform.position, Hand.transform.TransformDirection(Vector3.forward) * 50, Color.red);
+            }
+        }
 
         if (holdingFoundation)
         {
-
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Debug.DrawRay(Hand.transform.position, Hand.transform.forward * 50, Color.red);
-
+                buildVec = hit.point;
             }
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Vector3 vec = new Vector3(Hand.transform.position.x, 0.1f, Hand.transform.position.z);
-                Instantiate(TowerFoundation, vec, Quaternion.identity);
+                Instantiate(TowerFoundation, buildVec, Quaternion.identity);
 
                 holdingFoundation = false;
                 holding = false;

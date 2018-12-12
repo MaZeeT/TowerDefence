@@ -337,6 +337,7 @@ MonoBehaviour:
   holdingFoundation: 0
   holdingBall: 0
   holdingUpgrade: 0
+  buildVec: {x: 0, y: 0, z: 0}
 --- !u!114 &236448685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +351,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 4
   origin: {fileID: 0}
+--- !u!114 &236448687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236448678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1732e7636dfe9764d984e9625dfbfc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 236448678}
 --- !u!1001 &268960938
 Prefab:
   m_ObjectHideFlags: 0
