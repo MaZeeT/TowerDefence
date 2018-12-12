@@ -7,8 +7,8 @@ public class Overlord : MonoBehaviour
     private List<GameObject> towerListPath1;
     private List<GameObject> towerListPath2;
     private List<GameObject> towerListPath3;
-    public int testPathNumber;
     public bool printList;
+    public DropDown whichPathToTest;
 
     [Header("Setup")]
     public GameObject spawner;
@@ -27,6 +27,13 @@ public class Overlord : MonoBehaviour
     [Header("Wave Stats")]
     public int minionsCount;
 
+    public enum DropDown
+    {   //the different paths to choose from
+        path1,
+        path2,
+        path3
+    };
+
     void Start()
     {
         towerListPath1 = new List<GameObject>();
@@ -41,15 +48,62 @@ public class Overlord : MonoBehaviour
             RandomSpawn(10);
         }
 
+        // test for printing objects of list into console depending on which path you wanna know about
         if (printList == true)
         {
-            if (testPathNumber == 1)
-            printListDebug(towerListPath1);
-            if (testPathNumber == 2)
+            if (whichPathToTest.ToString() == "path1")
+            {
+                printListDebug(towerListPath1);
+                printDamageValueAndTypeOfPath(towerListPath1);
+            }
+
+            if (whichPathToTest.ToString() == "path2")
+            {
                 printListDebug(towerListPath2);
-            if (testPathNumber == 3)
+                printDamageValueAndTypeOfPath(towerListPath2);
+            }
+
+            if (whichPathToTest.ToString() == "path3")
+            {
                 printListDebug(towerListPath3);
+                printDamageValueAndTypeOfPath(towerListPath3);
+            }
         }
+    }
+
+    void printDamageValueAndTypeOfPath(List<GameObject> path)
+    {
+        float dpmFire = 0;
+        float dpmWater= 0;
+        float dpmLightning = 0;
+        float dpmPhysical = 0;
+
+        for (int i = 0; i < path.Count; i++)
+        {
+            switch (path[i].GetComponent<Tower>().GetType().ToString())
+            {   
+                case "Fire":
+                dpmFire = dpmFire + path[i].GetComponent<Tower>().getDamagePerMinut();
+                break;
+           
+                case "Water":
+                dpmWater = dpmWater + path[i].GetComponent<Tower>().getDamagePerMinut();
+                break;
+               
+                case "Lightning":
+                dpmLightning = dpmLightning + path[i].GetComponent<Tower>().getDamagePerMinut();
+                break;
+               
+                case "Physical":
+                dpmPhysical = dpmPhysical + path[i].GetComponent<Tower>().getDamagePerMinut();
+                break;
+            }
+        }
+
+        Debug.Log("Fire dmg" + dpmFire);
+        Debug.Log("Water dmg" + dpmWater);
+        Debug.Log("Lightning dmg" + dpmLightning);
+        Debug.Log("Physical dmg" + dpmPhysical);
     }
 
     void RandomSpawn(int waveSize)

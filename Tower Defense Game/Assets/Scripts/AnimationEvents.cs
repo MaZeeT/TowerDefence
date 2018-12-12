@@ -24,4 +24,8 @@ public class AnimationEvents : MonoBehaviour {
 
     }
 
+    void FootL()
+    {
+
+    }
 }
