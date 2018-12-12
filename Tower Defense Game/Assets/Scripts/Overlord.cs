@@ -76,24 +76,18 @@ public class Overlord : MonoBehaviour
         float dpmFire = 0.0f;
         float dpmWater = 0.0f;
         float dpmLightning = 0.0f;
-        float dpmPhysical = 0.0f;
-        float dmgValue = 0.0f;
+        float dpmPhysical = 0.0f;       
 
         for (int i = 0; i < path.Count; i++)
         {
-            dmgValue += (float)path[i].GetComponent<Tower>().getDamagePerMinut();
-
-            Debug.Log("Type: " + path[i].GetComponent<Tower>().getDamageType());
-
             switch (path[i].GetComponent<Tower>().getDamageType().ToString())
             {   
                 case "fire":
                 dpmFire = dpmFire + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
                 break;
            
-                case "water":
-                    Debug.Log("Water dmg: " + path[i].GetComponent<Tower>().getDamagePerMinut());
-                    dpmWater = dpmWater + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
+                case "water":       
+                dpmWater = dpmWater + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
                 break;
                
                 case "lightning":
@@ -105,7 +99,7 @@ public class Overlord : MonoBehaviour
                 break;
             }
         }
-        //Debug.Log("Total dmg: " + dmgValue);
+        
         Debug.Log("Fire dmg: " + dpmFire);
         Debug.Log("Water dmg: " + dpmWater);
         Debug.Log("Lightning dmg: " + dpmLightning);

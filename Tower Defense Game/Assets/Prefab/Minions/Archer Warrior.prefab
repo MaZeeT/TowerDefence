@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca009196a9deb14a851f77bad0be8a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
+  health: 7
   resistancePhysical: 10
   resistanceFire: 10
   resistanceWater: 10

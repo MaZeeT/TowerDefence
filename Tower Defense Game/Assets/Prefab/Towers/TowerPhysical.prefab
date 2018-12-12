@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
-  roundsPerMinut: 30
+  roundsPerMinut: 120
   reloadProgress: 0
   speed: 50
   damageAmount: 2

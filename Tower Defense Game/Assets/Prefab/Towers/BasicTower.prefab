@@ -282,10 +282,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
-  roundsPerMinut: 30
+  roundsPerMinut: 60
   reloadProgress: 0
   speed: 50
-  damageAmount: 2
+  damageAmount: 1
   damageType: 0
   towerRotation: {fileID: 4987638170657778}
   projectilePrefab: {fileID: 1831175801423330, guid: e36edb3e9af9a1f4382fb0aedd916f91,
