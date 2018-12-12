@@ -100,14 +100,4 @@ public class Overlord : MonoBehaviour
     {
         this.minionsCount--;
     }
-
-    public void MinionDead(int minionAmount)
-    {
-        /*    minionsCount -= minionAmount;
-            if (minionsCount <= 0 && done)
-            {
-                spawnTime = initialSpawntime;
-                done = false;
-            }*/
-    }
 }
