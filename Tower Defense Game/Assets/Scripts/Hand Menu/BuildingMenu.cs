@@ -23,6 +23,8 @@ public class BuildingMenu : MonoBehaviour
     public bool holdingFoundation;
     public bool holdingBall;
     public bool holdingUpgrade;
+    Vector3 buildVec;
+    RaycastHit hit;
 
     void Start()
     {
@@ -84,8 +86,6 @@ public class BuildingMenu : MonoBehaviour
         var device = SteamVR_Controller.Input(3);
 
         if (holdingFoundation || holdingBall || holdingUpgrade) {
-            Vector3 buildVec;
-            RaycastHit hit;
             var ray = new Ray(Hand.transform.position, Hand.transform.forward);
 
             if (Physics.Raycast(Hand.transform.position, Hand.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
