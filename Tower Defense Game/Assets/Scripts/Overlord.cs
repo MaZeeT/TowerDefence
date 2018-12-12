@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Overlord : MonoBehaviour
 {
-    private List<GameObject> towerList;
+    private List<GameObject> towerListPath1;
+    private List<GameObject> towerListPath2;
+    private List<GameObject> towerListPath3;
+    public int testPathNumber;
     public bool printList;
 
     [Header("Setup")]
@@ -26,7 +29,9 @@ public class Overlord : MonoBehaviour
 
     void Start()
     {
-        towerList = new List<GameObject>();
+        towerListPath1 = new List<GameObject>();
+        towerListPath2 = new List<GameObject>();
+        towerListPath3 = new List<GameObject>();
     }
 
     void Update()
@@ -38,7 +43,12 @@ public class Overlord : MonoBehaviour
 
         if (printList == true)
         {
-            printListDebug();
+            if (testPathNumber == 1)
+            printListDebug(towerListPath1);
+            if (testPathNumber == 2)
+                printListDebug(towerListPath2);
+            if (testPathNumber == 3)
+                printListDebug(towerListPath3);
         }
     }
 
@@ -73,20 +83,30 @@ public class Overlord : MonoBehaviour
         return knight;
     }
 
-    public void receiveSpotList(List<GameObject> list)
+    public void receiveSpotList(List<GameObject> list, GameObject path)
     {
         for (int i = 0; i < list.Count; i++)
         {
-            if (!towerList.Contains(list[i]))
-                towerList.Add(list[i]);
+            if (path == path1 && !towerListPath1.Contains(list[i]))
+            {
+                towerListPath1.Add(list[i]);
+            }
+            else if(path == path2 && !towerListPath1.Contains(list[i]))
+                {
+                    towerListPath2.Add(list[i]);
+                }
+            else if (path == path3 && !towerListPath1.Contains(list[i]))
+            {
+                towerListPath3.Add(list[i]);
+            }
         }        
     }
 
-    void printListDebug()
+    void printListDebug(List<GameObject> path)
     {
-        for (int i = 0; i < towerList.Count; i++)
+        for (int i = 0; i < path.Count; i++)
         {
-            Debug.Log(towerList[i].name);
+            Debug.Log(path[i].name);
         }
         printList = false;
     }
