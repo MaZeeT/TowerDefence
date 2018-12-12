@@ -117,4 +117,9 @@ public class Tower : MonoBehaviour {
     {
         return damageType.ToString();
     }
+
+    public float getDamagePerMinut()
+    {
+        return damageAmount * roundsPerMinut;
+    }
 }

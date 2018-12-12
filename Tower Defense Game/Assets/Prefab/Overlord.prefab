@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4531932740352502}
   - component: {fileID: 114623903217925466}
-  - component: {fileID: 114763127202052926}
   - component: {fileID: 114898373756830064}
   m_Layer: 0
   m_Name: Overlord
@@ -53,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432d129362323cb4d9ddcdc67967ae91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  printList: 0
   spawner: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
   test: 0
   knight: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
@@ -62,21 +62,6 @@ MonoBehaviour:
   path2: {fileID: 0}
   path3: {fileID: 0}
   minionsCount: 0
---- !u!114 &114763127202052926
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860467729049072}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a664a2a5840c70240a0e3911c3045edd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  msg: 
-  minionsAlive: 0
-  spawnTime: 3
-  initialSpawntime: 30
 --- !u!114 &114898373756830064
 MonoBehaviour:
   m_ObjectHideFlags: 1
