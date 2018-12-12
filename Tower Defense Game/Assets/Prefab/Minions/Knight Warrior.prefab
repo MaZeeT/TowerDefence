@@ -1746,8 +1746,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reportIntel: 0
   intel: 
-  spottingRange: 0
-  range: 0
+  range: 10
+  printList: 0
 --- !u!114 &114940236059785722
 MonoBehaviour:
   m_ObjectHideFlags: 1

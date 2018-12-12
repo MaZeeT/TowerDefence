@@ -794,6 +794,7 @@ GameObject:
   - component: {fileID: 114859987311406620}
   - component: {fileID: 114716259893732142}
   - component: {fileID: 114937244657833012}
+  - component: {fileID: 114851032734260390}
   - component: {fileID: 114311548645117204}
   m_Layer: 0
   m_Name: Archer Warrior
@@ -1753,6 +1754,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathList: {fileID: 0}
   pathIndex: 0
+--- !u!114 &114851032734260390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861560617656914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe43b2f499cb0408d20003a51b36a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: TowerUpgradeAble
 --- !u!114 &114859987311406620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1778,6 +1791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reportIntel: 0
   intel: 
+  range: 10
+  printList: 0
 --- !u!137 &137027534891704730
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

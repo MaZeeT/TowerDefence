@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Targeting : MonoBehaviour {
-    public string targetTag;
+    public string targetTag;   
 
     public GameObject FindTarget(float range)    
     {
@@ -24,7 +24,7 @@ public class Targeting : MonoBehaviour {
 
         if (nearestTarget != null && shortestDistance <= range)
         {
-            return nearestTarget;
+            return nearestTarget as GameObject;           
         }
         else
         {

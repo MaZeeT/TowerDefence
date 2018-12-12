@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 114277761522832070}
   - component: {fileID: 114371693713303158}
   - component: {fileID: 114126320512313256}
+  - component: {fileID: 114840544547039228}
   - component: {fileID: 114640466283948080}
   m_Layer: 0
   m_Name: Mage Warrior
@@ -1664,6 +1665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reportIntel: 0
   intel: 
+  range: 10
+  printList: 0
 --- !u!114 &114277761522832070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1716,6 +1719,18 @@ MonoBehaviour:
   resistanceFire: 25
   resistanceWater: 25
   resistanceLightning: 25
+--- !u!114 &114840544547039228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955882942978132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fe43b2f499cb0408d20003a51b36a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: TowerUpgradeAble
 --- !u!137 &137547003508363640
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

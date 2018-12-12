@@ -89,12 +89,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1660142904681312, guid: e948d99d6b29c364393f5382f6023d29, type: 2}
-  knight: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
-  archer: {fileID: 1861560617656914, guid: 5e0deb5e39c2e3b4e9ded2c285e26fd3, type: 2}
-  mage: {fileID: 1955882942978132, guid: 08496221e1a3359468017557391ffb35, type: 2}
+  knight: {fileID: 0}
+  archer: {fileID: 0}
+  mage: {fileID: 0}
   waveSize: 10
-  delayBetweenMinions: 2
+  delayBetweenMinions: 1
   spawnTime: 0
   countDown: 0
-  minionsToSpawn: 0
+  minionsToSpawn: 10
   isSpawning: 0

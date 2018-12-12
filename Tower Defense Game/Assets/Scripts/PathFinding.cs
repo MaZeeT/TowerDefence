@@ -23,11 +23,16 @@ public class PathFinding : MonoBehaviour {
     }
 
     void Update()
-    {
-        if (pathIndex != 0) isReportIntel = intel.reportIntel;
+    {      
+        isReportIntel = intel.reportIntel; //get if Intel script want to report to overlord (return back the path)
 
-        if (movement.Reached(path[pathIndex]) && isReportIntel == true) pathIndex--;
+        // lower the pathIndex until at 0 for moving to spawner
+        if (movement.Reached(path[pathIndex]) && isReportIntel == true && pathIndex != 0) pathIndex--;
 
+        // if reporting so early that you haven't left spawner, this destroy gameobject sincec a collider will not happen
+        if (movement.Reached(path[0]) && isReportIntel == true) Destroy(gameObject);
+
+        // let you change direction of movement between 2 pathpoints
         if (isReportIntel)
         {
             movement.moveTo(path[pathIndex]);
@@ -40,6 +45,7 @@ public class PathFinding : MonoBehaviour {
 
     void OnTriggerEnter(Collider Other)
     {
+        // control the pathIndex depending on if moving toward base or spawner
         if (Other.tag == "PathPoint" && isReportIntel == false)
         {
             pathIndex++;
@@ -59,6 +65,8 @@ public class PathFinding : MonoBehaviour {
         }   
     }
 
+
+    // setters
     public void setPathList(GameObject pathList)
     {
         this.pathList = pathList;

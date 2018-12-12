@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class Intel : MonoBehaviour
 {
-    public bool reportIntel = false;
+    public bool reportIntel;
     public string intel;
-    public float spottingRange;
-    private float health;
-    private GameObject spottedTower;
-    private Targeting targeting;
-
     public float range;
+    private float health;
+    private Targeting targeting;
+    public bool printList;
+
+ 
     private List<GameObject> spottedList;
 
     private void Start()
-    {
+    {   
+        spottedList = new List<GameObject>();
         targeting = GetComponent<Targeting>();
-        spottedTower = null;
     }
+
 
     void Update()
     {
+        if (targeting.FindTarget(range) != null)
+        {   //add a non-null Tower-GameObject to the List
+            AddTarget(targeting.FindTarget(range));         
+        }
+
         health = GetComponent<Health>().health;
 
         if (health <= 3){
@@ -29,28 +35,17 @@ public class Intel : MonoBehaviour
             reportIntel = true;
         }
 
-        //spottedTower = GameObject.FindGameObjectWithTag("TowerUpgradeAble");
-        //spottedTower = targeting.FindTarget(spottingRange) as GameObject;
-
-        if (spottedTower != null)
-        {
-            //AddTarget(spottedTower);
-            Debug.Log("added");
-            Debug.Log(spottedTower.GetComponent<Tower>().getDamageType());
-        }
-        else
-        {
-            Debug.Log("not so much");
-        }
+        if (printList == true) printListDebug();
+        
     }
 
     void printListDebug()
     {
         for (int i = 0; i < spottedList.Count; i++)
         {
-           Debug.Log(spottedList[i].GetType());
+           Debug.Log(spottedList[i].name);
         }
-        
+        printList = false;
     }
     void AddTarget(GameObject target)
     {
