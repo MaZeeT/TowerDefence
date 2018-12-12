@@ -23,7 +23,9 @@ public class BuildingMenu : MonoBehaviour
     public bool holdingFoundation;
     public bool holdingBall;
     public bool holdingUpgrade;
-    
+    public bool validBuildVec;
+    Vector3 buildVec;
+    RaycastHit hit;
 
     void Start()
     {
@@ -33,9 +35,8 @@ public class BuildingMenu : MonoBehaviour
         holdingFoundation = false;
         holdingBall = false;
         holding = false;
-        holdingUpgrade = false;    
-        
-
+        holdingUpgrade = false;
+        validBuildVec = false;
     } // Start end
 
     void Update()
@@ -62,17 +63,20 @@ public class BuildingMenu : MonoBehaviour
                 buttonHolder.SetActive(false);
                 buttonEnabled = false;
             }
-            
+
         }
     }// MenuOpen end
 
     void CheckItemID()
     {
         var device = SteamVR_Controller.Input(4);
-        if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Axis0)) {
+        if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Axis0))
+        {
             itemID++;
             Debug.Log(itemID);
-        } else if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Axis1)) {
+        }
+        else if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Axis1))
+        {
             itemID--;
             Debug.Log(itemID);
         }
@@ -83,20 +87,39 @@ public class BuildingMenu : MonoBehaviour
 
         var device = SteamVR_Controller.Input(3);
 
+        if (holdingFoundation || holdingBall || holdingUpgrade)
+        {
+            Hand.GetComponent<SteamVR_LaserPointer>().pointer.active = true;
 
+            var ray = new Ray(Hand.transform.position, Hand.transform.forward);
+
+            if (Physics.Raycast(Hand.transform.position, Hand.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            {
+                validBuildVec = true;
+                Hand.GetComponent<SteamVR_LaserPointer>().pointer.GetComponent<MeshRenderer>().material.color = Color.green;
+            }
+            else
+            {
+                validBuildVec = false;
+                Hand.GetComponent<SteamVR_LaserPointer>().pointer.GetComponent<MeshRenderer>().material.color = Color.red;
+            }
+        }
+        else {
+            Hand.GetComponent<SteamVR_LaserPointer>().pointer.active = false;
+        }
 
         if (holdingFoundation)
         {
-
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Debug.DrawRay(Hand.transform.position, Hand.transform.forward * 50, Color.red);
-
+                if (validBuildVec)
+                {
+                    buildVec = hit.point;
+                }
             }
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Vector3 vec = new Vector3(Hand.transform.position.x, 0.1f, Hand.transform.position.z);
-                Instantiate(TowerFoundation, vec, Quaternion.identity);
+                Instantiate(TowerFoundation, buildVec, Quaternion.identity);
 
                 holdingFoundation = false;
                 holding = false;
@@ -108,29 +131,42 @@ public class BuildingMenu : MonoBehaviour
         {
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Debug.DrawRay(Hand.transform.position, Hand.transform.forward * 50, Color.red);
-
+                if (validBuildVec)
+                {
+                    buildVec = hit.point;
+                }
             }
 
             if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
             {
-                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y, Hand.transform.position.z);
-                Instantiate(BuildingBall, vec, Hand.transform.rotation);
+                if (validBuildVec)
+                {
+                    Instantiate(BuildingBall, buildVec, Hand.transform.rotation);
 
-                holdingBall = false;
-                holding = false;
-
+                    holdingBall = false;
+                    holding = false;
+                }
             }
         }
-        if (holdingUpgrade) {
+        if (holdingUpgrade)
+        {
 
-            if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger)) {
+            if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+            {
+                if (validBuildVec)
+                {
+                    buildVec = hit.point;
+                }
+            }
+            if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
+            {
+                if (validBuildVec)
+                {
+                    Instantiate(UpgradeObject, buildVec, Hand.transform.rotation);
 
-                Vector3 vec = new Vector3(Hand.transform.position.x, Hand.transform.position.y, Hand.transform.position.z);
-                Instantiate(UpgradeObject, vec, Hand.transform.rotation);
-
-                holdingUpgrade = false;
-                holding = false;
+                    holdingUpgrade = false;
+                    holding = false;
+                }
             }
 
         }
