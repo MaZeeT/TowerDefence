@@ -73,37 +73,43 @@ public class Overlord : MonoBehaviour
 
     void printDamageValueAndTypeOfPath(List<GameObject> path)
     {
-        float dpmFire = 0;
-        float dpmWater= 0;
-        float dpmLightning = 0;
-        float dpmPhysical = 0;
+        float dpmFire = 0.0f;
+        float dpmWater = 0.0f;
+        float dpmLightning = 0.0f;
+        float dpmPhysical = 0.0f;
+        float dmgValue = 0.0f;
 
         for (int i = 0; i < path.Count; i++)
         {
-            switch (path[i].GetComponent<Tower>().GetType().ToString())
+            dmgValue += (float)path[i].GetComponent<Tower>().getDamagePerMinut();
+
+            Debug.Log("Type: " + path[i].GetComponent<Tower>().getDamageType());
+
+            switch (path[i].GetComponent<Tower>().getDamageType().ToString())
             {   
-                case "Fire":
-                dpmFire = dpmFire + path[i].GetComponent<Tower>().getDamagePerMinut();
+                case "fire":
+                dpmFire = dpmFire + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
                 break;
            
-                case "Water":
-                dpmWater = dpmWater + path[i].GetComponent<Tower>().getDamagePerMinut();
+                case "water":
+                    Debug.Log("Water dmg: " + path[i].GetComponent<Tower>().getDamagePerMinut());
+                    dpmWater = dpmWater + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
                 break;
                
-                case "Lightning":
-                dpmLightning = dpmLightning + path[i].GetComponent<Tower>().getDamagePerMinut();
+                case "lightning":
+                dpmLightning = dpmLightning + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
                 break;
                
-                case "Physical":
-                dpmPhysical = dpmPhysical + path[i].GetComponent<Tower>().getDamagePerMinut();
+                case "physical":
+                dpmPhysical = dpmPhysical + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
                 break;
             }
         }
-
-        Debug.Log("Fire dmg" + dpmFire);
-        Debug.Log("Water dmg" + dpmWater);
-        Debug.Log("Lightning dmg" + dpmLightning);
-        Debug.Log("Physical dmg" + dpmPhysical);
+        //Debug.Log("Total dmg: " + dmgValue);
+        Debug.Log("Fire dmg: " + dpmFire);
+        Debug.Log("Water dmg: " + dpmWater);
+        Debug.Log("Lightning dmg: " + dpmLightning);
+        Debug.Log("Physical dmg: " + dpmPhysical);
     }
 
     void RandomSpawn(int waveSize)

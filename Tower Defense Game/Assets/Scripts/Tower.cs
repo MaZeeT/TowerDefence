@@ -120,6 +120,9 @@ public class Tower : MonoBehaviour {
 
     public float getDamagePerMinut()
     {
-        return damageAmount * roundsPerMinut;
+        float value;
+        value = (float)this.damageAmount * this.roundsPerMinut;
+//        Debug.Log("dmgValue from tower: " + value);
+        return value;
     }
 }
