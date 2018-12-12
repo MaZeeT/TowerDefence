@@ -55,7 +55,8 @@ public class PathFinding : MonoBehaviour {
             pathIndex--;
         }
         else if (Other.tag == "EnemySpawn" && isReportIntel == true)
-        {            
+        {
+            overlord.GetComponent<Overlord>().receiveSpotList(intel.getSpottedList());
             Destroy(gameObject);
         }
         else if (Other.tag == "Base")

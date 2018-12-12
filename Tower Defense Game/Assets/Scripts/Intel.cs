@@ -47,6 +47,7 @@ public class Intel : MonoBehaviour
         }
         printList = false;
     }
+
     void AddTarget(GameObject target)
     {
        // This statement adds spotted towers to a list of gameObjects rather than their types.
@@ -67,4 +68,9 @@ public class Intel : MonoBehaviour
     void clearIntel(){
         intel = null;
     }    
+
+    public List<GameObject> getSpottedList()
+    {
+        return spottedList;
+    }
 }

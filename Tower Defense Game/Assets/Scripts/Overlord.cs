@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Overlord : MonoBehaviour
 {
+    private List<GameObject> towerList;
+    public bool printList;
 
     [Header("Setup")]
     public GameObject spawner;
@@ -24,7 +26,7 @@ public class Overlord : MonoBehaviour
 
     void Start()
     {
-
+        towerList = new List<GameObject>();
     }
 
     void Update()
@@ -32,6 +34,11 @@ public class Overlord : MonoBehaviour
         if (test == true)
         {
             RandomSpawn(10);
+        }
+
+        if (printList == true)
+        {
+            printListDebug();
         }
     }
 
@@ -64,6 +71,24 @@ public class Overlord : MonoBehaviour
             case 2: return mage;
         }
         return knight;
+    }
+
+    public void receiveSpotList(List<GameObject> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (!towerList.Contains(list[i]))
+                towerList.Add(list[i]);
+        }        
+    }
+
+    void printListDebug()
+    {
+        for (int i = 0; i < towerList.Count; i++)
+        {
+            Debug.Log(towerList[i].name);
+        }
+        printList = false;
     }
 
     public void IncreaseMinionCount()
