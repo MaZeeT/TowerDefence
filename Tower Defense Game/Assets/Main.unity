@@ -1340,7 +1340,7 @@ MonoBehaviour:
   pathPoint6: {fileID: 0}
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
-  pathPoint9: {fileID: 1922080309571736, guid: 3af14ac630262b64aa53fbe504dabea3, type: 2}
+  pathPoint9: {fileID: 1745370965275334, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
   path: []
 --- !u!1 &628719072
 GameObject:
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   pathPoint6: {fileID: 0}
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
-  pathPoint9: {fileID: 1922080309571736, guid: 3af14ac630262b64aa53fbe504dabea3, type: 2}
+  pathPoint9: {fileID: 1745370965275334, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
   path: []
 --- !u!4 &1108126275
 Transform:
@@ -3422,7 +3422,7 @@ MonoBehaviour:
   pathPoint6: {fileID: 0}
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
-  pathPoint9: {fileID: 1922080309571736, guid: 3af14ac630262b64aa53fbe504dabea3, type: 2}
+  pathPoint9: {fileID: 1745370965275334, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
   path: []
 --- !u!1 &1601989034
 GameObject:
@@ -4568,7 +4568,7 @@ MonoBehaviour:
   pathPoint6: {fileID: 0}
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
-  pathPoint9: {fileID: 1922080309571736, guid: 3af14ac630262b64aa53fbe504dabea3, type: 2}
+  pathPoint9: {fileID: 1745370965275334, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
   path: []
 --- !u!1001 &2133763982
 Prefab:
