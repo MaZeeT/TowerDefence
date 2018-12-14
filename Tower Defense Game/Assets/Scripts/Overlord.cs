@@ -12,7 +12,13 @@ public class Overlord : MonoBehaviour
 
     [Header("Setup")]
     public GameObject spawner;
+    List<GameObject> SpecificSpawnList = new List<GameObject>();
+
     public bool test;
+    public float waveCountdown;
+
+    public bool testScouts = false;
+    public bool OverlordSend = false;
 
     [Header("Minions")]
     public GameObject knight;
@@ -39,16 +45,26 @@ public class Overlord : MonoBehaviour
         towerListPath1 = new List<GameObject>();
         towerListPath2 = new List<GameObject>();
         towerListPath3 = new List<GameObject>();
+
+        waveCountdown = 30f;
     }
 
     void Update()
+
     {
-        if (test == true)
-        {
-            RandomSpawn(10);
+        waveCountdown -= Time.deltaTime;
+
+        if (waveCountdown <= 0 && minionsCount == 0) {
+            OverlordSend = true;
         }
 
-        // test for printing objects of list into console depending on which path you wanna know about
+        if (OverlordSend)
+        {
+            SpawnScouts();
+            SpecificSpawn();
+            OverlordSend = false;
+        }
+
         if (printList == true)
         {
             if (whichPathToTest.ToString() == "path1")
@@ -73,42 +89,73 @@ public class Overlord : MonoBehaviour
 
     void printDamageValueAndTypeOfPath(List<GameObject> path)
     {
-        float dpmFire = 0.0f;
-        float dpmWater = 0.0f;
-        float dpmLightning = 0.0f;
-        float dpmPhysical = 0.0f;       
+        float dpmFire = 0;
+        float dpmWater = 0;
+        float dpmLightning = 0;
+        float dpmPhysical = 0;
 
         for (int i = 0; i < path.Count; i++)
         {
             switch (path[i].GetComponent<Tower>().getDamageType().ToString())
-            {   
-                case "fire":
-                dpmFire = dpmFire + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
-                break;
-           
-                case "water":       
-                dpmWater = dpmWater + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
-                break;
-               
-                case "lightning":
-                dpmLightning = dpmLightning + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
-                break;
-               
-                case "physical":
-                dpmPhysical = dpmPhysical + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
-                break;
+            {
+                case "Fire":
+                    dpmFire = dpmFire + path[i].GetComponent<Tower>().getDamagePerMinut();
+                    Debug.Log("FIRE DAMAGE INCREASED");
+
+                    break;
+
+                case "Water":
+                    dpmWater = dpmWater + path[i].GetComponent<Tower>().getDamagePerMinut();
+                    Debug.Log("W DAMAGE INCREASED");
+
+                    break;
+
+                case "Lightning":
+                    dpmLightning = dpmLightning + path[i].GetComponent<Tower>().getDamagePerMinut();
+                    Debug.Log("L DAMAGE INCREASED");
+
+                    break;
+
+                case "Physical":
+                    dpmPhysical = dpmPhysical + path[i].GetComponent<Tower>().getDamagePerMinut();
+                    Debug.Log("P DAMAGE INCREASED");
+
+                    break;
             }
         }
-        
-        Debug.Log("Fire dmg: " + dpmFire);
-        Debug.Log("Water dmg: " + dpmWater);
-        Debug.Log("Lightning dmg: " + dpmLightning);
-        Debug.Log("Physical dmg: " + dpmPhysical);
+        Debug.Log("Fire dmg " + dpmFire);
+        Debug.Log("Water dmg " + dpmWater);
+        Debug.Log("Lightning dmg " + dpmLightning);
+        Debug.Log("Physical dmg " + dpmPhysical);
     }
 
     void RandomSpawn(int waveSize)
     {
         GetComponent<MinionWaves>().SpawnWave(RandomMinion(), RandomPath(), waveSize);
+
+    }
+    void SpecificSpawn() {
+
+        GameObject myKnight = knight, myArcher = archer, myMage = mage;
+
+        myKnight.GetComponent<Health>().setResistanceProfil(100, 100, 100, 100);
+
+        SpecificSpawnList.Add(myKnight);
+        SpecificSpawnList.Add(archer);
+        SpecificSpawnList.Add(mage);
+
+        GetComponent<MinionWaves>().SpawnSpecificWave(SpecificSpawnList, RandomPath());
+    }
+    void SpawnScouts()
+    {
+        // Creates the list of Paths that the SpawnScouts method needs to send 1 scout in each direction. 
+        List<GameObject> pathList = new List<GameObject>();
+    
+        pathList.Add(path1);
+        pathList.Add(path2);
+        pathList.Add(path3);
+
+        GetComponent<MinionWaves>().SpawnScouts(archer,pathList);
     }
 
     GameObject RandomPath()
@@ -127,12 +174,12 @@ public class Overlord : MonoBehaviour
     private GameObject RandomMinion()
     {
         int rand;
-        rand = Random.Range(0, 3);
+        rand = Random.Range(0, 2);
         switch (rand)
         {
             case 0: return knight;
-            case 1: return archer;
-            case 2: return mage;
+            case 1: return mage;
+            case 2: return archer;
         }
         return knight;
     }
@@ -145,16 +192,17 @@ public class Overlord : MonoBehaviour
             {
                 towerListPath1.Add(list[i]);
             }
-            else if(path == path2 && !towerListPath1.Contains(list[i]))
-                {
-                    towerListPath2.Add(list[i]);
-                }
+            else if (path == path2 && !towerListPath1.Contains(list[i]))
+            {
+                towerListPath2.Add(list[i]);
+            }
             else if (path == path3 && !towerListPath1.Contains(list[i]))
             {
                 towerListPath3.Add(list[i]);
             }
-        }        
+        }
     }
+  
 
     void printListDebug(List<GameObject> path)
     {
