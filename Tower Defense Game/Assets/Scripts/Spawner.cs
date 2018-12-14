@@ -8,16 +8,17 @@ public class Spawner : MonoBehaviour {
 
     //public Vector3 spawnPoint;
     
-    public void Spawn(GameObject minionType)
+    public void Spawn(GameObject minionType, GameObject path)
     {        
         Vector3 vector = transform.position;       
-        InstantiateMinion(minionType, vector);
+        InstantiateMinion(minionType, vector, path);
     }
 
-    private void InstantiateMinion(GameObject minion, Vector3 spawnPoint)
+    private void InstantiateMinion(GameObject minion, Vector3 spawnPoint, GameObject path)
     {
         GameObject newMinion;
         newMinion = GameObject.Instantiate(minion, spawnPoint, Quaternion.identity);
+        newMinion.GetComponent<PathFinding>().setPathList(path);
     }
 
 
@@ -33,7 +34,7 @@ public class Spawner : MonoBehaviour {
         if (time > periode && testing == true)
         {
             time = 0;
-            Spawn(testMinion);
+            Spawn(testMinion, testPath);
         }
         time = time + Time.deltaTime;
     }

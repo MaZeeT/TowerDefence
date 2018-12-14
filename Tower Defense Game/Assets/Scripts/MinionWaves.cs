@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class MinionWaves : MonoBehaviour {
     public GameObject spawner;
-    List<GameObject> minionSpawnList;
+    private GameObject path;
 
     [Header ("Minions")]
     public GameObject knight;
     public GameObject archer;
     public GameObject mage;
+    private GameObject minion;
 
     [Header("Wave Stats")]
     public int waveSize;
@@ -21,19 +22,14 @@ public class MinionWaves : MonoBehaviour {
     public int minionsToSpawn = 0;        
     public bool isSpawning = false;
 
-    private void Start()
+    public void SpawnWave(GameObject minion, GameObject path, int waveSize)
     {
-        minionSpawnList = new List<GameObject>();
-    }
+        this.waveSize = waveSize;
+        this.minion = minion;
+        this.path = path;
 
-    public void SpawnWave(GameObject newMinion, GameObject path)
-    {
-        this.waveSize += 1;
-        GameObject minion = newMinion;
-        minion.GetComponent<PathFinding>().pathList = path;
-        minionSpawnList.Add(minion);
         minionsToSpawn = waveSize;
-        isSpawning = true;                            
+            isSpawning = true;                            
     }
     private void Update()
     {
@@ -44,8 +40,7 @@ public class MinionWaves : MonoBehaviour {
             if (minionsToSpawn > 0)
             {
                 minionsToSpawn--;
-                spawner.GetComponent<Spawner>().Spawn(minionSpawnList[minionSpawnList.Count-1]);
-                minionSpawnList.Remove(minionSpawnList[minionSpawnList.Count - 1]);
+                spawner.GetComponent<Spawner>().Spawn(minion, path);
             }
             else if (minionsToSpawn == 0)
             {

@@ -108,9 +108,7 @@ public class Overlord : MonoBehaviour
 
     void RandomSpawn(int waveSize)
     {
-        for (int i = 0; i < waveSize; i++) {
-            GetComponent<MinionWaves>().SpawnWave(RandomMinion(), RandomPath());
-        }
+        GetComponent<MinionWaves>().SpawnWave(RandomMinion(), RandomPath(), waveSize);
     }
 
     GameObject RandomPath()
