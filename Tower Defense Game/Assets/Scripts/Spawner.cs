@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
-
-    List<GameObject> pathList;
-
-    //public Vector3 spawnPoint;
     
     public void Spawn(GameObject minionType, GameObject path)
     {        
