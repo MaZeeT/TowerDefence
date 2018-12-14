@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// The purpose of this class is to enable prefabs to have health, and a set of resistense to different type of damage.
 public class Health : MonoBehaviour
 {
     private GameObject overlord;
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
     public int resistanceLightning;
     private int resistance;
 
+    // set resistance to the resisten of the specific damageType that is being dealt.
     public void TakeDamage(int damageValue, string damageType, string objTag)
     {
         switch (damageType)
@@ -34,6 +36,7 @@ public class Health : MonoBehaviour
 
         health = health - (float)damageValue * ((float)(100 - resistance) / 100);
 
+        // Take care of despawning the minion if killed
         if (health <= 0)
         {
             overlord.GetComponent<Overlord>().DecreaseMinionCount();
@@ -47,6 +50,7 @@ public class Health : MonoBehaviour
         overlord.GetComponent<Overlord>().IncreaseMinionCount();
     }
 
+    // function to set all the resistances of the minion
     public void setResistanceProfil(int physical, int fire, int water, int lightning)
     {
         resistancePhysical = physical;

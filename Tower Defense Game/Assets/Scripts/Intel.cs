@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// The purpose of this class is to gathere information about the towers and report this to the overlord.
 public class Intel : MonoBehaviour
 {
     public bool reportIntel;
@@ -30,6 +31,7 @@ public class Intel : MonoBehaviour
 
         health = GetComponent<Health>().health;
 
+        // return to overlord if health is 3 or lower
         if (health <= 3){
             generateIntel();
             reportIntel = true;
@@ -39,6 +41,7 @@ public class Intel : MonoBehaviour
         
     }
 
+    // a function to test if a minion got a list of towers.
     void printListDebug()
     {
         for (int i = 0; i < spottedList.Count; i++)

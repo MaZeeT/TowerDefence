@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// The purpose of this class is to add the feature to upgrade the stats of the towers,
+// it has predefined stats which it adds to the tower when upgradeStats() is called
 public class StatsUpgrade : MonoBehaviour {
     Tower towerStats;
     public int maxLevel;
@@ -39,6 +41,7 @@ public class StatsUpgrade : MonoBehaviour {
         }
     }
 
+    // unused functions, which is made to upgrade specific stats.
     private void upDamage()
     {
         int damage;

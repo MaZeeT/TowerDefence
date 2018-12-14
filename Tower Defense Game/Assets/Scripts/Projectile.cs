@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// The purpose of this clas is to different some behaivours to our projectiles fired from the towers
 public class Projectile : MonoBehaviour {
     private GameObject target;
     private float speed;
@@ -14,6 +15,7 @@ public class Projectile : MonoBehaviour {
         movement.setSpeed(speed);
         gotTarget();
 
+        // checks if the projectile will hit the target in the next frame, if true it will damage the target and despawn.
         if (gotTarget() == true)
         {
             if (movement.Reached(target))
@@ -26,6 +28,7 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    // check if the target is still alive else it despawns the projectile.
     bool gotTarget()
     {
         if(target == null)
@@ -38,6 +41,7 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    // damage target when hit
     void Damage(GameObject target)
     {
         target.GetComponent<Health>().TakeDamage(damageAmount, damageType, target.tag);
