@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//
-// The purpose of this class is to handle the spawning of minions on its own position.
-//
-
 public class Spawner : MonoBehaviour {
 
     List<GameObject> pathList;

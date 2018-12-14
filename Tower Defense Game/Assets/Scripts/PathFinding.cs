@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//
-// The purpose of this class is to enable a minion to move along a path, this is implementet by following a list of positions the minion will have to move to.
-//
-
 public class PathFinding : MonoBehaviour {
 
     GameObject overlord;

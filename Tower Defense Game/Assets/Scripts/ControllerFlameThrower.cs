@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//
-// The purpose of this Class is to enable and disable the flamethrower which is mounted on the fire tower
-//
-
 public class ControllerFlameThrower : MonoBehaviour {
 
     public GameObject flameThrower;
