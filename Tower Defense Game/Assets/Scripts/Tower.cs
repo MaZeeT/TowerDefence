@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
+// The purpose of this class is to add behavours to our towers
+//
+
 public class Tower : MonoBehaviour {
 
     private GameObject target;
@@ -37,6 +41,7 @@ public class Tower : MonoBehaviour {
         reloadTime = 60.0f / roundsPerMinut;        
     }
 
+    // loop betweening looking for a target, aiming and shooting if it got a target.
     void Update()
     {
         target = GetComponent<Targeting>().FindTarget(range);
@@ -50,6 +55,7 @@ public class Tower : MonoBehaviour {
         }
     }
 
+    // deplay between shots
     bool reloading()
     {
         if (reloadTime >= reloadProgress)
@@ -63,6 +69,7 @@ public class Tower : MonoBehaviour {
         }
     }
 
+    // the tower is rendered as aiming at the target 
     void Aim(GameObject target)
     {
         Vector3 dir = target.transform.position - transform.position;
@@ -71,6 +78,7 @@ public class Tower : MonoBehaviour {
         towerRotation.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
+    // shoot the given target, and set the instatianted projectile's stats 
     void Shoot(GameObject target)
     {
         GameObject bullet = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
@@ -81,13 +89,14 @@ public class Tower : MonoBehaviour {
         
     }
 
+    // draw range in unity
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
 
-    //Getters and setters
+    //Getters and setters below
     public GameObject GetTarget()
     {
         return target;
