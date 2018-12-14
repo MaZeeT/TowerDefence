@@ -1717,7 +1717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  resistancePhysical: 10
+  resistancePhysical: 25
   resistanceFire: 10
   resistanceWater: 10
   resistanceLightning: 10
