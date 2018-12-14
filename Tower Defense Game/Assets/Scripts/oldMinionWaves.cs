@@ -41,7 +41,7 @@ public class oldMinionWaves : MonoBehaviour
             if (minionsToSpawn > 0)
             {
                 minionsToSpawn--;
-         //       spawner.GetComponent<Spawner>().Spawn(minion, path);
+                spawner.GetComponent<Spawner>().Spawn(minion, path);
             }
             else if (minionsToSpawn == 0)
             {
