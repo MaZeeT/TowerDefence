@@ -26,6 +26,7 @@ public class Overlord : MonoBehaviour
 
     [Header("Wave Stats")]
     public int minionsCount;
+    public float WaveCountDown;
 
     public enum DropDown
     {   //the different paths to choose from
@@ -43,9 +44,18 @@ public class Overlord : MonoBehaviour
 
     void Update()
     {
+        if (minionsCount <= 0) {
+            WaveCountDown -= Time.deltaTime;
+            if (WaveCountDown <= 0) {
+            test = true;
+            }
+        }
+
         if (test == true)
         {
             RandomSpawn(10);
+            WaveCountDown = 30f;
+            test = false;
         }
 
         // test for printing objects of list into console depending on which path you wanna know about
