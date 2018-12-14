@@ -148,9 +148,9 @@ public class Overlord : MonoBehaviour
     }
     void SpawnScouts()
     {
-        // Creates the list of Paths that the SpawnScouts method needs to send 1 scout in each direction. 
+        // Creates the list of Paths that the SpawnScouts method needs to send 1 scout in each direction.
         List<GameObject> pathList = new List<GameObject>();
-    
+
         pathList.Add(path1);
         pathList.Add(path2);
         pathList.Add(path3);
@@ -202,7 +202,7 @@ public class Overlord : MonoBehaviour
             }
         }
     }
-  
+
 
     void printListDebug(List<GameObject> path)
     {

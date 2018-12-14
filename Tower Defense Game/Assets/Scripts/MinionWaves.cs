@@ -13,12 +13,11 @@ public class MinionWaves : MonoBehaviour
     public GameObject knight;
     public GameObject archer;
     public GameObject mage;
-    private GameObject minion;
 
     [Header("Wave Stats")]
     public int waveSize;
     public float delayBetweenMinions;
-    
+
 
     [Header("ReadOnly Info")]
     public float spawnTime;
@@ -29,15 +28,21 @@ public class MinionWaves : MonoBehaviour
     public bool isSpawning = false;
     public bool isSpecificSpawning = false;
     public bool isSpawningScout = false;
-   
 
-    public void SpawnWave(GameObject minion, GameObject path, int waveSize)
+
+    private void Start()
     {
 
         this.waveSize = waveSize;
         this.minion = minion;
         this.path = path;
 
+    public void SpawnWave(GameObject newMinion, GameObject path)
+    {
+        this.waveSize += 1;
+        GameObject minion = newMinion;
+        minion.GetComponent<PathFinding>().pathList = path;
+        minionSpawnList.Add(minion);
         minionsToSpawn = waveSize;
         isSpawning = true;
     }
@@ -48,12 +53,12 @@ public class MinionWaves : MonoBehaviour
         this.path = path;
         countDown = Time.deltaTime;
         isSpecificSpawning = true;
-      
+
         /*
         for (int i = 0; i < SpawnList.Count; i++)
         {
             GameObject minion;
-          
+
             minion = SpawnList[i];
             path = minion.GetComponent<PathFinding>().pathList;
             spawner.GetComponent<Spawner>().Spawn(minion, path);
@@ -71,7 +76,7 @@ public class MinionWaves : MonoBehaviour
         if (isSpawningScout)
         {
             Debug.Log("Entering For Loop");
-            
+
             for (int i = 0; i < ScoutPathList.Count; )
             {
                 countDown -= Time.deltaTime;
@@ -89,16 +94,17 @@ public class MinionWaves : MonoBehaviour
         // Counts down every frame
         countDown -= Time.deltaTime;
 
-        // This is statement checks if the SpawnWave method is running. And ensures that the time between the instantiateion 
-        // of each minion is larger than 0, to prevent the creation of mulitiple minions at once. 
+        // This is statement checks if the SpawnWave method is running. And ensures that the time between the instantiateion
+        // of each minion is larger than 0, to prevent the creation of mulitiple minions at once.
         if (isSpawning && countDown <= 0)
         {
             countDown = delayBetweenMinions;
-            // Counts down every Minion spawn. 
+            // Counts down every Minion spawn.
             if (minionsToSpawn > 0)
             {
                 minionsToSpawn--;
-                spawner.GetComponent<Spawner>().Spawn(minion, path);
+                spawner.GetComponent<Spawner>().Spawn(minionSpawnList[minionSpawnList.Count-1]);
+                minionSpawnList.Remove(minionSpawnList[minionSpawnList.Count - 1]);
             }
             else if (minionsToSpawn == 0)
             {

@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
+// The purpose of this class is to handle the spawning of minions on its own position.
+//
+
 public class Spawner : MonoBehaviour {
 
     List<GameObject> pathList;
 
     //public Vector3 spawnPoint;
     
-    public void Spawn(GameObject minionType, GameObject path)
+    public void Spawn(GameObject minionType)
     {        
         Vector3 vector = transform.position;       
-        InstantiateMinion(minionType, vector, path);
+        InstantiateMinion(minionType, vector);
     }
 
-    private void InstantiateMinion(GameObject minion, Vector3 spawnPoint, GameObject path)
+    private void InstantiateMinion(GameObject minion, Vector3 spawnPoint)
     {
         GameObject newMinion;
         newMinion = GameObject.Instantiate(minion, spawnPoint, Quaternion.identity);
-        newMinion.GetComponent<PathFinding>().setPathList(path);
     }
 
 
@@ -34,7 +37,7 @@ public class Spawner : MonoBehaviour {
         if (time > periode && testing == true)
         {
             time = 0;
-            Spawn(testMinion, testPath);
+            Spawn(testMinion);
         }
         time = time + Time.deltaTime;
     }
