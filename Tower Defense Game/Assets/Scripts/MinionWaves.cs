@@ -29,7 +29,7 @@ public class MinionWaves : MonoBehaviour {
         this.path = path;
 
         minionsToSpawn = waveSize;
-            isSpawning = true;                            
+        isSpawning = true;                            
     }
     private void Update()
     {
