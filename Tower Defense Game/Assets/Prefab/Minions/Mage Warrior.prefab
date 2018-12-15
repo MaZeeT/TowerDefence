@@ -1664,7 +1664,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reportIntel: 0
-  intel: 
   range: 10
   printList: 0
 --- !u!114 &114277761522832070
@@ -1715,10 +1714,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 6
-  resistancePhysical: 0
-  resistanceFire: 25
-  resistanceWater: 25
-  resistanceLightning: 25
+  resistancePhysical: 25
+  resistanceFire: 11
+  resistanceWater: 22
+  resistanceLightning: 11
 --- !u!114 &114840544547039228
 MonoBehaviour:
   m_ObjectHideFlags: 1

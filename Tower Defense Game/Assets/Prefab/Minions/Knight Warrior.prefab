@@ -1717,10 +1717,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  resistancePhysical: 25
-  resistanceFire: 10
-  resistanceWater: 10
-  resistanceLightning: 10
+  resistancePhysical: 38
+  resistanceFire: 37
+  resistanceWater: 38
+  resistanceLightning: 30
 --- !u!114 &114152070411865120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e5ec81b9d6dff4a8e2fabab61e7c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
 --- !u!114 &114235665365919554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1745,7 +1745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reportIntel: 0
-  intel: 
   range: 10
   printList: 0
 --- !u!114 &114940236059785722

@@ -1180,7 +1180,7 @@ Prefab:
     - target: {fileID: 114623903217925466, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
         type: 2}
       propertyPath: test
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114623903217925466, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
         type: 2}
@@ -1197,6 +1197,11 @@ Prefab:
       propertyPath: path3
       value: 
       objectReference: {fileID: 627882171}
+    - target: {fileID: 114623903217925466, guid: d6c0a860dfb0ecd41897398d7f38cf4b,
+        type: 2}
+      propertyPath: spawnNextWave
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: d6c0a860dfb0ecd41897398d7f38cf4b, type: 2}
@@ -1291,11 +1296,11 @@ MonoBehaviour:
   pathPoint2: {fileID: 1344762714}
   pathPoint3: {fileID: 1663215356}
   pathPoint4: {fileID: 1671818183}
-  pathPoint5: {fileID: 1776854672}
+  pathPoint5: {fileID: 0}
   pathPoint6: {fileID: 0}
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
-  pathPoint9: {fileID: 1745370965275334, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
+  pathPoint9: {fileID: 1776854672}
   path: []
 --- !u!1 &628719072
 GameObject:
@@ -1446,7 +1451,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4197183908709618, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4197183908709618, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2288,11 +2293,11 @@ MonoBehaviour:
   pathPoint2: {fileID: 1770461391}
   pathPoint3: {fileID: 1349286827}
   pathPoint4: {fileID: 1671818183}
-  pathPoint5: {fileID: 1776854672}
+  pathPoint5: {fileID: 0}
   pathPoint6: {fileID: 0}
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
-  pathPoint9: {fileID: 1745370965275334, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
+  pathPoint9: {fileID: 1776854672}
   path: []
 --- !u!4 &1108126275
 Transform:
@@ -3294,11 +3299,11 @@ MonoBehaviour:
   pathPoint2: {fileID: 1955578909}
   pathPoint3: {fileID: 1671818183}
   pathPoint4: {fileID: 0}
-  pathPoint5: {fileID: 1776854672}
+  pathPoint5: {fileID: 0}
   pathPoint6: {fileID: 0}
   pathPoint7: {fileID: 0}
   pathPoint8: {fileID: 0}
-  pathPoint9: {fileID: 1745370965275334, guid: 48836521ed162ce41be7c8a4ad9fdae6, type: 2}
+  pathPoint9: {fileID: 1776854672}
   path: []
 --- !u!1 &1601989034
 GameObject:
