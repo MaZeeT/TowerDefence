@@ -128,7 +128,6 @@ public class Tower : MonoBehaviour {
     {
         float value;
         value = (float)this.damageAmount * this.roundsPerMinut;
-//        Debug.Log("dmgValue from tower: " + value);
         return value;
     }
 }
