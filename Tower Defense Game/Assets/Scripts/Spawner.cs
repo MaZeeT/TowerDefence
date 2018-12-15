@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * The purpose of this script is to enable the spawner to instantiate minions depending on input 
+ * The purpose of this script is to enable the spawner to activet minions into the scene
  */
 
 public class Spawner : MonoBehaviour
 {
 
     // this instantiate the minion into the unity scene
-    private void InstantiateMinion(GameObject minion, Vector3 spawnPoint)
+    private void SpawnMinion(GameObject minion, Vector3 spawnPoint)
     {
-        GameObject newMinion;
-        newMinion = GameObject.Instantiate(minion, spawnPoint, Quaternion.identity);
+        minion.transform.position = spawnPoint;
+        minion.SetActive(true);
     }
 
     // here are 2 overloaded methods to pass this script a minion to spawn
@@ -21,13 +21,13 @@ public class Spawner : MonoBehaviour
     {
         Vector3 vector = transform.position;
         minionType.GetComponent<PathFinding>().SetPathList(path);
-        InstantiateMinion(minionType, vector);
+        SpawnMinion(minionType, vector);
     }
 
     public void Spawn(GameObject minionType)
     {
         Vector3 vector = transform.position;
-        InstantiateMinion(minionType, vector);
+        SpawnMinion(minionType, vector);
     }
 
     // below is variables and Update function to test spawning 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 /*
  * The purpose of this script is to control the behavior of the overlord
- * This includes building a list of minions and pass it to the spawner
+ * This includes building a list of instantiated minions and pass it to the spawner
  * Change the stats and paths of the minions before spawn
  * receive reports from returning minions
  */
@@ -102,7 +102,9 @@ public class Overlord : MonoBehaviour
 
         for (int i = 0; i < waveSize; i++)
         {
-            GameObject minion = RandomMinion();
+            //Instantiate a to change it stats from the prefab without interfering with other instantiated minions, and lastly disable it
+            GameObject minion = GameObject.Instantiate(RandomMinion());
+            minion.SetActive(false);
 
             // set path to minion
             GameObject path = RandomPath();
