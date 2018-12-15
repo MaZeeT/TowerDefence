@@ -5,44 +5,31 @@ using UnityEngine;
 public class MinionWaves : MonoBehaviour {
     public GameObject spawner;
     private GameObject path;
-
-    [Header ("Minions")]
-    public GameObject knight;
-    public GameObject archer;
-    public GameObject mage;
     private GameObject minion;
-
-    [Header("Wave Stats")]
-    public int waveSize;
+    private List<GameObject> minionList;
     public float delayBetweenMinions;
 
     [Header("ReadOnly Info")]
-    public float spawnTime;    
     public float countDown;
     public int minionsToSpawn = 0;        
     public bool isSpawning = false;
+    private int i;
 
-    public void SpawnWave(List<GameObject> minionWave)
+    public void SpawnWave(List<GameObject> minionList)
     {
-        this.waveSize = minionWave.Count;
+        this.minionList = minionList;
+        this.minionsToSpawn = minionList.Count;
 
-        for (int i = 0; i < waveSize; i++)
-        {
-            GameObject minion = minionWave[i];
-            GameObject path = minion.GetComponent<PathFinding>().GetPathList();
-            spawner.GetComponent<Spawner>().Spawn(minion, path);
-        }
     }
 
     public void SpawnWave(GameObject minion, GameObject path, int waveSize)
     {
-        this.waveSize = waveSize;
         this.minion = minion;
         this.path = path;
-
-        minionsToSpawn = waveSize;
+        this.minionsToSpawn = waveSize;
         isSpawning = true;                            
     }
+
     private void Update()
     {
         countDown -= Time.deltaTime;
@@ -52,11 +39,16 @@ public class MinionWaves : MonoBehaviour {
             if (minionsToSpawn > 0)
             {
                 minionsToSpawn--;
+                minion = minionList[i];
+                path = minion.GetComponent<PathFinding>().GetPathList();
                 spawner.GetComponent<Spawner>().Spawn(minion, path);
+
+                i++;    //will spawn next minion in the list
             }
             else if (minionsToSpawn == 0)
             {
                 isSpawning = false;
+                i = 0;
             }
         }        
     }
