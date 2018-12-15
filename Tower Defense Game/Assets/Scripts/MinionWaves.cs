@@ -19,7 +19,7 @@ public class MinionWaves : MonoBehaviour {
     {
         this.minionList = minionList;
         this.minionsToSpawn = minionList.Count;
-
+        isSpawning = true;
     }
 
     public void SpawnWave(GameObject minion, GameObject path, int waveSize)

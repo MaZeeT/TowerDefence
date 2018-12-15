@@ -98,14 +98,20 @@ public class Overlord : MonoBehaviour
     private List<GameObject> generateListToSpawn(int waveSize)
     {
         List<GameObject> list = new List<GameObject>();
+        GameObject minion = new GameObject();
+        GameObject path = new GameObject();
+
         for (int i = 0; i < waveSize; i++)
         {
-        // get a random minion
-        GameObject minion = RandomMinion();
-        // set a random path to minion
-        minion.GetComponent<PathFinding>().setPathList(RandomPath());
-        // add minion to the listToSpawn
-        list.Add(minion);
+            
+        
+            minion = RandomMinion();
+            path = RandomPath();
+        
+            minion.GetComponent<PathFinding>().setPathList(path);
+
+            // add minion to the listToSpawn
+            list.Add(minion);
         }
         return list;
     }
@@ -150,30 +156,30 @@ public class Overlord : MonoBehaviour
         GetComponent<MinionWaves>().SpawnWave(RandomMinion(), RandomPath(), waveSize);
     }
 
-    GameObject RandomPath()
+    private GameObject RandomPath()
     {
-        int rand;
-        rand = Random.Range(0, 3);
-        switch (rand)
+        int i = new int();
+        i = Random.Range(0, 3);
+        switch (i)
         {
             case 0: return path1;
             case 1: return path2;
             case 2: return path3;
         }
-        return path3; //Default fallover.
+        return path3; //Default fallover
     }
 
     private GameObject RandomMinion()
     {
-        int rand;
-        rand = Random.Range(0, 3);
-        switch (rand)
+        int i = new int();
+        i = Random.Range(0, 3);
+        switch (i)
         {
             case 0: return knight;
             case 1: return archer;
             case 2: return mage;
         }
-        return knight;
+        return knight; //Default fallover
     }
 
     public void receiveSpotList(List<GameObject> list, GameObject path)
