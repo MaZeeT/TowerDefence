@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         Movement movement = GetComponent<Movement>();
-        movement.setSpeed(speed);
+        movement.SetSpeed(speed);
         gotTarget();
 
         // checks if the projectile will hit the target in the next frame, if true it will damage the target and despawn.
@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
         {
             if (movement.Reached(target))
                 Damage(target);
-            movement.moveTo(target);
+            movement.MoveTo(target);
         }
         else
         {

@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// The purpose of this class is to move a object to a given position, it also have a function to check if it will reach the position within the next frame
-public class Movement : MonoBehaviour {
+/*
+* The purpose of this class is to move a object to a given position, 
+* it also have a function to check if it will reach the position within the next frame
+*/
 
+public class Movement : MonoBehaviour
+{
     [Header("Movement")]
     public float moveSpeed;
 
@@ -22,12 +26,12 @@ public class Movement : MonoBehaviour {
     }
 
     // this function handle the movement of the object.
-    private void move(Vector3 direction)
+    private void Move(Vector3 direction)
     {
         transform.Translate(direction.normalized * moveSpeed * Time.deltaTime, Space.World);
     }
 
-    public void setSpeed(float speed)
+    public void SetSpeed(float speed)
     {
         this.moveSpeed = speed;
     }
@@ -35,8 +39,8 @@ public class Movement : MonoBehaviour {
     // Public overloaded caller function for core logic
     public bool Reached(GameObject target)
     {
-            Vector3 dir = target.transform.position - transform.position;
-            return HaveReached(dir);   
+        Vector3 dir = target.transform.position - transform.position;
+        return HaveReached(dir);
     }
 
     // Below are the public functions which are overloaded to call the private move() function
@@ -47,15 +51,15 @@ public class Movement : MonoBehaviour {
         return HaveReached(dir);
     }
 
-    public void moveTo(GameObject point)
+    public void MoveTo(GameObject point)
     {
         Vector3 direction = point.transform.position - transform.position;
-        move(direction);
+        Move(direction);
     }
 
-    public void moveTo(Transform point)
+    public void MoveTo(Transform point)
     {
         Vector3 direction = point.position - transform.position;
-        move(direction);
+        Move(direction);
     }
 }

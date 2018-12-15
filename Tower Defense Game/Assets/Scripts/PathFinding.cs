@@ -39,11 +39,11 @@ public class PathFinding : MonoBehaviour
         // let you change direction of movement between 2 pathpoints
         if (isReportIntel)
         {
-            movement.moveTo(path[pathIndex]);
+            movement.MoveTo(path[pathIndex]);
         }
         else
         {
-            movement.moveTo(path[pathIndex + 1]);
+            movement.MoveTo(path[pathIndex + 1]);
         }
     }
 
