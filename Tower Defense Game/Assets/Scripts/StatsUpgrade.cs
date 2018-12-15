@@ -55,17 +55,4 @@ public class StatsUpgrade : MonoBehaviour {
         range = towerStats.getRange() + upgradeRange;
         towerStats.setRange(range);
     }
-
-
-    /*
-        [Header("Attributes")]
-        public float range;
-        public float roundsPerMinut;
-        private float reloadTime;
-        public float reloadProgress = 0f;
-
-        [Header("Projectile Settings")]
-        public float speed;
-        public int damageAmount;
-    */
 }
