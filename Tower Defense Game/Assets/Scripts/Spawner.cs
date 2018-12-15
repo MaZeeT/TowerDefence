@@ -6,8 +6,9 @@ using UnityEngine;
  * The purpose of this script is to enable the spawner to instantiate minions depending on input 
  */
 
-public class Spawner : MonoBehaviour {
-    
+public class Spawner : MonoBehaviour
+{
+
     // this instantiate the minion into the unity scene
     private void InstantiateMinion(GameObject minion, Vector3 spawnPoint)
     {
@@ -33,11 +34,12 @@ public class Spawner : MonoBehaviour {
     [Header("testing Settings")]
     public bool testing;
     private float time;
-    public float periode = 2;    
+    public float periode = 2;
     public GameObject testPath;
     public GameObject testMinion;
 
-    void Update () {
+    void Update()
+    {
         if (time > periode && testing == true)
         {
             time = 0;
