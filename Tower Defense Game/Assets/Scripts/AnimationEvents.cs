@@ -2,30 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationEvents : MonoBehaviour {
+/*
+ * the purpose of this script is to catch some calls the imported prefabs do,
+ * this will only prevent an error showing up in the console from the prefabs
+ */
 
-    void Attack1()
-    {
+public class AnimationEvents : MonoBehaviour
+{
+    void Attack1() { }
 
-    }
+    void Idle() { }
 
-    void Idle()
-    {
+    void Run() { }
 
-    }
+    void FootR() { }
 
-    void Run()
-    {
-
-    }
-
-    void FootR()
-    {
-
-    }
-
-    void FootL()
-    {
-
-    }
+    void FootL() { }
 }
