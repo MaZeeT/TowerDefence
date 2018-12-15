@@ -16,7 +16,7 @@ public class Intel : MonoBehaviour
     public bool printList; // to run test function
 
     private void Start()
-    {   
+    {
         spottedList = new List<GameObject>();
         targeting = GetComponent<Targeting>();
     }
@@ -25,29 +25,30 @@ public class Intel : MonoBehaviour
     {
         if (targeting.FindTarget(range) != null)
         {   //add a non-null Tower-GameObject to the List
-            AddTarget(targeting.FindTarget(range));         
+            AddTarget(targeting.FindTarget(range));
         }
 
         health = GetComponent<Health>().health;
 
         // return to overlord if health is 3 or lower
-        if (health <= 3){
+        if (health <= 3)
+        {
             reportIntel = true;
         }
 
         // runs test script
-        if (printList == true) PrintListDebug(); 
+        if (printList == true) PrintListDebug();
     }
 
     void AddTarget(GameObject target)
     {
-       // This statement adds spotted towers to a list of gameObjects rather than their types.
-       // This is to ensure that we dont end up with a list of strings so that a minion can spot multiple towers of the same type. 
-        if(!spottedList.Contains(target)) 
+        // This statement adds spotted towers to a list of gameObjects rather than their types.
+        // This is to ensure that we dont end up with a list of strings so that a minion can spot multiple towers of the same type. 
+        if (!spottedList.Contains(target))
         {
             spottedList.Add(target);
         }
-    }  
+    }
 
     // getter
     public List<GameObject> GetSpottedList()
