@@ -81,6 +81,22 @@ public class Overlord : MonoBehaviour
         }
     }
 
+    // generate a list of random minions with random paths
+    private List<GameObject> generateListToSpawn(int waveSize)
+    {
+        List<GameObject> list = new List<GameObject>();
+        for (int i = 0; i < waveSize; i++)
+        {
+        // get a random minion
+        GameObject minion = RandomMinion();
+        // set a random path to minion
+        minion.GetComponent<PathFinding>().setPathList(RandomPath());
+        // add minion to the listToSpawn
+        list.Add(minion);
+        }
+        return list;
+    }
+
     void printDamageValueAndTypeOfPath(List<GameObject> path)
     {
         float dpmFire = 0.0f;
