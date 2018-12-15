@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * The purpose of this script is to call the spawner scripts with each of 
+ * the minions in a list given to this script in a timely manner 
+ */
+
 public class MinionWaves : MonoBehaviour {
     public GameObject spawner;
     private GameObject path;
@@ -22,14 +27,6 @@ public class MinionWaves : MonoBehaviour {
         isSpawning = true;
     }
 
-    public void SpawnWave(GameObject minion, GameObject path, int waveSize)
-    {
-        this.minion = minion;
-        this.path = path;
-        this.minionsToSpawn = waveSize;
-        isSpawning = true;                            
-    }
-
     private void Update()
     {
         countDown -= Time.deltaTime;
@@ -39,13 +36,12 @@ public class MinionWaves : MonoBehaviour {
             if (minionsToSpawn > 0)
             {
                 minionsToSpawn--;
-                minion = minionList[i];
-                path = minion.GetComponent<PathFinding>().GetPathList();
-                spawner.GetComponent<Spawner>().Spawn(minion, path);
 
-                i++;    //will spawn next minion in the list
+                // call the spawner script with the minion on i position in the list
+                spawner.GetComponent<Spawner>().Spawn(minionList[i]);
+                i++;  
             }
-            else if (minionsToSpawn == 0)
+            else if (minionsToSpawn <= 0)
             {
                 isSpawning = false;
                 i = 0;
