@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * The purpose of this script is to control the behavior of the overlord
+ * This includes building a list of minions and pass it to the spawner
+ * Change the stats and paths of the minions before spawn
+ * receive reports from returning minions
+ */
+
 public class Overlord : MonoBehaviour
 {
     private List<GameObject> towerListPath1;
@@ -32,7 +39,7 @@ public class Overlord : MonoBehaviour
     public float WaveCountDown;
 
     public enum DropDown
-    {   //the different paths to choose from
+    {   //the different paths to choose from in a dropdown menu in unity inspector
         path1,
         path2,
         path3
@@ -47,9 +54,11 @@ public class Overlord : MonoBehaviour
 
     void Update()
     {
-        if (minionsCount <= 0) {
+        if (minionsCount <= 0)
+        {
             WaveCountDown -= Time.deltaTime;
-            if (WaveCountDown <= 0) {
+            if (WaveCountDown <= 0)
+            {
                 WaveCountDown = timeBetweenWaves;
                 spawnNextWave = true;
             }
@@ -57,9 +66,9 @@ public class Overlord : MonoBehaviour
 
         if (spawnNextWave == true)
         {
-            // this calls the SpawnWave function in the MinionWave Script
+            // this calls the SpawnWave function in the MinionWaves Script
             // where it add the list from generateListToSpawn to the constructur
-            GetComponent<MinionWaves>().SpawnWave(addMinionToSpawnList(waveSize));
+            GetComponent<MinionWaves>().SpawnWave(AddMinionToSpawnList(waveSize));
             spawnNextWave = false;
         }
 
@@ -68,26 +77,26 @@ public class Overlord : MonoBehaviour
         {
             if (whichPathToTest.ToString() == "path1")
             {
-                printListDebug(towerListPath1);
-                printDamageValueAndTypeOfPath(towerListPath1);
+                PrintListDebug(towerListPath1);
+                PrintDamageValueAndTypeOfPath(towerListPath1);
             }
 
             if (whichPathToTest.ToString() == "path2")
             {
-                printListDebug(towerListPath2);
-                printDamageValueAndTypeOfPath(towerListPath2);
+                PrintListDebug(towerListPath2);
+                PrintDamageValueAndTypeOfPath(towerListPath2);
             }
 
             if (whichPathToTest.ToString() == "path3")
             {
-                printListDebug(towerListPath3);
-                printDamageValueAndTypeOfPath(towerListPath3);
+                PrintListDebug(towerListPath3);
+                PrintDamageValueAndTypeOfPath(towerListPath3);
             }
         }
     }
 
     // generate a list of random minions with random paths
-    private List<GameObject> addMinionToSpawnList(int waveSize)
+    private List<GameObject> AddMinionToSpawnList(int waveSize)
     {
         List<GameObject> list = new List<GameObject>();
 
@@ -95,10 +104,12 @@ public class Overlord : MonoBehaviour
         {
             GameObject minion = RandomMinion();
 
-            GameObject path = RandomPath();      
+            // set path to minion
+            GameObject path = RandomPath();
             minion.GetComponent<PathFinding>().SetPathList(path);
 
-            minion = generateResistanceProfil(minion);
+            // add a resist profil to the minion
+            minion = GenerateResistanceProfil(minion);
 
             // add minion to the listToSpawn
             list.Add(minion);
@@ -107,7 +118,7 @@ public class Overlord : MonoBehaviour
     }
 
     // this will take a minion, generate and add a random resistProfile to the minion, and lastely return the minion with the new stats 
-    private GameObject generateResistanceProfil(GameObject minion)
+    private GameObject GenerateResistanceProfil(GameObject minion)
     {
         int physical = Random.Range(0, 50);
         int fire = Random.Range(0, 50);
@@ -118,7 +129,7 @@ public class Overlord : MonoBehaviour
     }
 
     // function to add information about reporting minions to the storage lists
-    public void receiveSpotList(List<GameObject> list, GameObject path)
+    public void ReceiveSpotList(List<GameObject> list, GameObject path)
     {
         for (int i = 0; i < list.Count; i++)
         {
@@ -126,15 +137,15 @@ public class Overlord : MonoBehaviour
             {
                 towerListPath1.Add(list[i]);
             }
-            else if(path == path2 && !towerListPath1.Contains(list[i]))
-                {
-                    towerListPath2.Add(list[i]);
-                }
+            else if (path == path2 && !towerListPath1.Contains(list[i]))
+            {
+                towerListPath2.Add(list[i]);
+            }
             else if (path == path3 && !towerListPath1.Contains(list[i]))
             {
                 towerListPath3.Add(list[i]);
             }
-        }        
+        }
     }
 
     // return a random minion to caller 
@@ -173,7 +184,7 @@ public class Overlord : MonoBehaviour
     }
 
     // this is a function to print the list of spotted towers to console depending on which path that is selected in unity
-    void printListDebug(List<GameObject> path)
+    void PrintListDebug(List<GameObject> path)
     {
         for (int i = 0; i < path.Count; i++)
         {
@@ -183,7 +194,7 @@ public class Overlord : MonoBehaviour
     }
 
     // this is a test function that print and evaluet the amount of damage over time a path will be able to deal 
-    void printDamageValueAndTypeOfPath(List<GameObject> path)
+    void PrintDamageValueAndTypeOfPath(List<GameObject> path)
     {
         float dpmFire = 0.0f;
         float dpmWater = 0.0f;
