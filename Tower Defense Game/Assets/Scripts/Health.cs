@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// The purpose of this class is to enable prefabs to have health, and a set of resistense to different type of damage.
+//
+// The purpose of this class is to enable prefabs to have health, and a set of resistense to different type of damage
+//
+
 public class Health : MonoBehaviour
 {
     private GameObject overlord;
@@ -21,16 +24,16 @@ public class Health : MonoBehaviour
         switch (damageType)
         {
             case "physical":
-                resistance = resistancePhysical;                
+                resistance = resistancePhysical;
                 break;
             case "fire":
-                resistance = resistanceFire;                
+                resistance = resistanceFire;
                 break;
             case "water":
-                resistance = resistanceWater;                
+                resistance = resistanceWater;
                 break;
             case "lightning":
-                resistance = resistanceLightning;                
+                resistance = resistanceLightning;
                 break;
         }
 
@@ -51,12 +54,11 @@ public class Health : MonoBehaviour
     }
 
     // function to set all the resistances of the minion
-    public void setResistanceProfil(int physical, int fire, int water, int lightning)
+    public void SetResistanceProfil(int physical, int fire, int water, int lightning)
     {
         resistancePhysical = physical;
         resistanceFire = fire;
         resistanceWater = water;
         resistanceLightning = lightning;
-
-}
+    }
 }

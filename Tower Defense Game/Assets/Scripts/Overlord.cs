@@ -113,7 +113,7 @@ public class Overlord : MonoBehaviour
         int fire = Random.Range(0, 50);
         int water = Random.Range(0, 50);
         int lightning = Random.Range(0, 50);
-        minion.GetComponent<Health>().setResistanceProfil(physical, fire, water, lightning);
+        minion.GetComponent<Health>().SetResistanceProfil(physical, fire, water, lightning);
         return minion;
     }
 
