@@ -7,7 +7,8 @@ using UnityEngine;
  * the minions in a list given to this script in a timely manner 
  */
 
-public class MinionWaves : MonoBehaviour {
+public class MinionWaves : MonoBehaviour
+{
     public GameObject spawner;
     private GameObject path;
     private GameObject minion;
@@ -16,7 +17,7 @@ public class MinionWaves : MonoBehaviour {
 
     [Header("ReadOnly Info")]
     public float countDown;
-    public int minionsToSpawn = 0;        
+    public int minionsToSpawn = 0;
     public bool isSpawning = false;
     private int i;
 
@@ -39,13 +40,13 @@ public class MinionWaves : MonoBehaviour {
 
                 // call the spawner script with the minion on i position in the list
                 spawner.GetComponent<Spawner>().Spawn(minionList[i]);
-                i++;  
+                i++;
             }
             else if (minionsToSpawn <= 0)
             {
                 isSpawning = false;
                 i = 0;
             }
-        }        
+        }
     }
 }
