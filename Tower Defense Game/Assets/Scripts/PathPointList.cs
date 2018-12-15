@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// The purpose of this path is to make a template where we can add gameobjects to, and generate a list a minion can follow.
-// in short this contains the route the minion have to follow
-public class PathPointList : MonoBehaviour {
+/*
+* The purpose of this path is to make a template where we can add gameobjects to, and generate a list a minion can follow.
+* in short this contains the route the minion have to follow
+*/
+
+public class PathPointList : MonoBehaviour
+{
     public GameObject pathPoint0;
     public GameObject pathPoint1;
     public GameObject pathPoint2;
@@ -17,7 +21,7 @@ public class PathPointList : MonoBehaviour {
     public GameObject pathPoint9;
 
     public List<GameObject> path = new List<GameObject>();
-    
+
     public List<GameObject> getPathList()
     {
         return path;
@@ -28,12 +32,13 @@ public class PathPointList : MonoBehaviour {
     {
         if (point != null)
         {
-            path.Add(point);            
+            path.Add(point);
         }
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         listAdder(pathPoint0);
         listAdder(pathPoint1);
         listAdder(pathPoint2);
@@ -45,9 +50,4 @@ public class PathPointList : MonoBehaviour {
         listAdder(pathPoint8);
         listAdder(pathPoint9);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
