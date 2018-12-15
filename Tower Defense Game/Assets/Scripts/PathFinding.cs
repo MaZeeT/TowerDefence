@@ -81,6 +81,6 @@ public class PathFinding : MonoBehaviour {
 
     public GameObject GetPathList()
     {
-        return path;
+        return this.pathList;
     }
 }

@@ -13,6 +13,7 @@ public class Overlord : MonoBehaviour
     [Header("Setup")]
     public GameObject spawner;
     public bool test;
+    public bool spawnNextWave;
 
     [Header("Minions")]
     public GameObject knight;
@@ -25,7 +26,9 @@ public class Overlord : MonoBehaviour
     public GameObject path3;
 
     [Header("Wave Stats")]
+    public int waveSize;
     public int minionsCount;
+    public float timeBetweenWaves;
     public float WaveCountDown;
 
     public enum DropDown
@@ -47,15 +50,17 @@ public class Overlord : MonoBehaviour
         if (minionsCount <= 0) {
             WaveCountDown -= Time.deltaTime;
             if (WaveCountDown <= 0) {
-            test = true;
+                WaveCountDown = timeBetweenWaves;
+                spawnNextWave = true;
             }
         }
 
-        if (test == true)
+        if (spawnNextWave == true)
         {
-            RandomSpawn(10);
-            WaveCountDown = 30f;
-            test = false;
+            // this calls the SpawnWave function in the MinionWave Script
+            // where it add the list from generateListToSpawn to the constructur
+            GetComponent<MinionWaves>().SpawnWave(generateListToSpawn(waveSize));
+            spawnNextWave = false;
         }
 
         // test for printing objects of list into console depending on which path you wanna know about
@@ -79,6 +84,14 @@ public class Overlord : MonoBehaviour
                 printDamageValueAndTypeOfPath(towerListPath3);
             }
         }
+
+        // when test is set to true in unity, this will run a test function which spawn random minion 10 times going a random path 
+        if (test == true)
+        {
+            RandomSpawn(10);
+            test = false;
+        }
+
     }
 
     // generate a list of random minions with random paths
