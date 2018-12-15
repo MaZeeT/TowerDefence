@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// The purpose of this class is to gathere information about the towers and report this to the overlord.
+/*
+* The purpose of this class is to gathere information about the towers and report this to the overlord
+*/
+
 public class Intel : MonoBehaviour
 {
     public bool reportIntel;
-    public string intel;
     public float range;
     private float health;
     private Targeting targeting;
-    public bool printList;
-
- 
     private List<GameObject> spottedList;
+    public bool printList; // to run test function
 
     private void Start()
     {   
         spottedList = new List<GameObject>();
         targeting = GetComponent<Targeting>();
     }
-
 
     void Update()
     {
@@ -33,22 +32,11 @@ public class Intel : MonoBehaviour
 
         // return to overlord if health is 3 or lower
         if (health <= 3){
-            generateIntel();
             reportIntel = true;
         }
 
-        if (printList == true) printListDebug();
-        
-    }
-
-    // a function to test if a minion got a list of towers.
-    void printListDebug()
-    {
-        for (int i = 0; i < spottedList.Count; i++)
-        {
-           Debug.Log(spottedList[i].name);
-        }
-        printList = false;
+        // runs test script
+        if (printList == true) PrintListDebug(); 
     }
 
     void AddTarget(GameObject target)
@@ -59,21 +47,21 @@ public class Intel : MonoBehaviour
         {
             spottedList.Add(target);
         }
-      
-    }
-    void generateIntel(){
-        intel = "I'm fucked";
-    }
-    void generateIntel(string msg)
-    {
-        intel = msg;
-    }
-    void clearIntel(){
-        intel = null;
-    }    
+    }  
 
-    public List<GameObject> getSpottedList()
+    // getter
+    public List<GameObject> GetSpottedList()
     {
         return spottedList;
+    }
+
+    // a function to test if a minion got a list of towers.
+    void PrintListDebug()
+    {
+        for (int i = 0; i < spottedList.Count; i++)
+        {
+            Debug.Log(spottedList[i].name);
+        }
+        printList = false;
     }
 }
