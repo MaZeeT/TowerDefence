@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     public void Spawn(GameObject minionType, GameObject path)
     {
         Vector3 vector = transform.position;
-        minionType.GetComponent<PathFinding>().setPathList(path);
+        minionType.GetComponent<PathFinding>().SetPathList(path);
         InstantiateMinion(minionType, vector);
     }
 

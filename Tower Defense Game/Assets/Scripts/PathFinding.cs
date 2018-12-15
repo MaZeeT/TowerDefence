@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
 // The purpose of this class is to enable a minion to move along a path, this is implementet by following a list of positions the minion will have to move to.
-public class PathFinding : MonoBehaviour {
+//
 
+public class PathFinding : MonoBehaviour
+{
     GameObject overlord;
     Movement movement;
     Intel intel;
@@ -24,7 +27,7 @@ public class PathFinding : MonoBehaviour {
     }
 
     void Update()
-    {      
+    {
         isReportIntel = intel.reportIntel; //get if Intel script want to report to overlord (return back the path)
 
         // lower the pathIndex until at 0 for moving to spawner
@@ -46,7 +49,7 @@ public class PathFinding : MonoBehaviour {
 
     void OnTriggerEnter(Collider Other)
     {
-        // control the pathIndex depending on if moving toward base or spawner
+        // control the pathIndex depending on if moving towards base or spawner
         if (Other.tag == "PathPoint" && isReportIntel == false)
         {
             pathIndex++;
@@ -64,20 +67,19 @@ public class PathFinding : MonoBehaviour {
         {
             Other.GetComponent<BaseSpecs>().ReduceHealth(1);
             Destroy(gameObject);
-        }   
+        }
     }
 
-
     // setters and getter
-    public void setPathList(GameObject pathList)
+    public void SetPathList(GameObject pathList)
     {
         this.pathList = pathList;
     }
 
-    public void setPathList(List<GameObject> pathList)
+    public void SetPathList(List<GameObject> pathList)
     {
         this.path = pathList;
-    }    
+    }
 
     public GameObject GetPathList()
     {

@@ -96,7 +96,7 @@ public class Overlord : MonoBehaviour
             GameObject minion = RandomMinion();
 
             GameObject path = RandomPath();      
-            minion.GetComponent<PathFinding>().setPathList(path);
+            minion.GetComponent<PathFinding>().SetPathList(path);
 
             minion = generateResistanceProfil(minion);
 
