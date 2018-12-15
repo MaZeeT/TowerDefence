@@ -68,7 +68,7 @@ public class PathFinding : MonoBehaviour {
     }
 
 
-    // setters
+    // setters and getter
     public void setPathList(GameObject pathList)
     {
         this.pathList = pathList;
@@ -78,4 +78,9 @@ public class PathFinding : MonoBehaviour {
     {
         this.path = pathList;
     }    
+
+    public GameObject GetPathList()
+    {
+        return path;
+    }
 }

@@ -22,6 +22,18 @@ public class MinionWaves : MonoBehaviour {
     public int minionsToSpawn = 0;        
     public bool isSpawning = false;
 
+    public void SpawnWave(List<GameObject> minionWave)
+    {
+        this.waveSize = minionWave.Count;
+
+        for (int i = 0; i < waveSize; i++)
+        {
+            GameObject minion = minionWave[i];
+            GameObject path = minion.GetComponent<PathFinding>().GetPathList();
+            spawner.GetComponent<Spawner>().Spawn(minion, path);
+        }
+    }
+
     public void SpawnWave(GameObject minion, GameObject path, int waveSize)
     {
         this.waveSize = waveSize;
