@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
     // this instantiate the minion into the unity scene
     private void SpawnMinion(GameObject minion, Vector3 spawnPoint)
     {
