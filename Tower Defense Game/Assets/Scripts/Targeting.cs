@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// the purpose of this class is to find a object with a given tag (set in unity) inside a given range
+/*
+* the purpose of this class is to find a object with a given tag (set in unity) inside a given range
+*/
+
 public class Targeting : MonoBehaviour {
     public string targetTag;   
 
