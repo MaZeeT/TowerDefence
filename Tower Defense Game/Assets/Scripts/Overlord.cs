@@ -26,6 +26,7 @@ public class Overlord : MonoBehaviour
     public GameObject knight;
     public GameObject archer;
     public GameObject mage;
+    public int maxResistPoints;
 
     [Header("Paths")]
     public GameObject path1;
@@ -37,6 +38,9 @@ public class Overlord : MonoBehaviour
     public int minionsCount;
     public float timeBetweenWaves;
     public float WaveCountDown;
+
+    [Header("Read Only")]
+    public int waveNumber;
 
     private float dpmFireRatio = 0.25f;
     private float dpmWaterRatio = 0.25f;
@@ -59,13 +63,16 @@ public class Overlord : MonoBehaviour
 
     void Update()
     {
-        if (minionsCount <= 0)
+        if (minionsCount < 1)
         {
+            minionsCount = 0;
             WaveCountDown -= Time.deltaTime;
+
             if (WaveCountDown <= 0)
             {
-                WaveCountDown = timeBetweenWaves;
+                WaveCountDown = timeBetweenWaves;    
                 spawnNextWave = true;
+                waveNumber++;
             }
         }
 
@@ -115,8 +122,25 @@ public class Overlord : MonoBehaviour
             GameObject path = RandomPath();
             minion.GetComponent<PathFinding>().SetPathList(path);
 
+            // add more health depending on which wave the game is at
+            float minionHealth = minion.GetComponent<Health>().health + waveNumber;
+            minion.GetComponent<Health>().health = minionHealth;
+
             // add a resist profil to the minion
-            minion = GenerateResistanceProfil(minion);
+            if (path == path1)
+            {
+                CalculateDamageRatios(towerListPath1);
+            }
+            else if (path == path2)
+            {
+                CalculateDamageRatios(towerListPath1);
+            }
+            else if (path == path3)
+            {
+                CalculateDamageRatios(towerListPath1);
+            }
+
+            minion = ApplyResistanceProfil(minion);
 
             // add minion to the listToSpawn
             list.Add(minion);
@@ -124,13 +148,14 @@ public class Overlord : MonoBehaviour
         return list;
     }
 
-    // this will take a minion, generate and add a random resistProfile to the minion, and lastely return the minion with the new stats 
-    private GameObject GenerateResistanceProfil(GameObject minion)
+    // this will take a minion, generate and add a resistProfile to the minion, and lastely return the minion with the new stats 
+    private GameObject ApplyResistanceProfil(GameObject minion)
     {
-        int physical = Random.Range(0, 50);
-        int fire = Random.Range(0, 50);
-        int water = Random.Range(0, 50);
-        int lightning = Random.Range(0, 50);
+        int physical = 10 + Mathf.RoundToInt(dpmPhysicalRatio);
+        int fire = 10 + Mathf.RoundToInt(dpmFireRatio);
+        int water = 10 + Mathf.RoundToInt(dpmWaterRatio);
+        int lightning = 10 + Mathf.RoundToInt(dpmLightningRatio);
+
         minion.GetComponent<Health>().SetResistanceProfil(physical, fire, water, lightning);
         return minion;
     }
@@ -190,17 +215,7 @@ public class Overlord : MonoBehaviour
         this.minionsCount--;
     }
 
-    // this is a function to print the list of spotted towers to console depending on which path that is selected in unity
-    void PrintListDebug(List<GameObject> path)
-    {
-        for (int i = 0; i < path.Count; i++)
-        {
-            Debug.Log(path[i].name);
-        }
-        printList = false;
-    }
-
-    // this is a test function that print and evaluet the amount of damage over time a path will be able to deal 
+    // this function evaluete the ratio of damage of the specific damage types from a given path
     void CalculateDamageRatios(List<GameObject> path)
     {
         float dpmFire = 0.0f;
@@ -232,16 +247,29 @@ public class Overlord : MonoBehaviour
             }
         }
 
-        dpmFireRatio = dpmFire / dpmTotal;
-        dpmWaterRatio = dpmWater / dpmTotal;
-        dpmLightningRatio = dpmLightning / dpmTotal;
-        dpmPhysicalRatio = dpmPhysical / dpmTotal;
-
+        if (dpmTotal != 0)
+        {
+            dpmFireRatio = dpmFire / dpmTotal * maxResistPoints;
+            dpmWaterRatio = dpmWater / dpmTotal * maxResistPoints;
+            dpmLightningRatio = dpmLightning / dpmTotal * maxResistPoints;
+            dpmPhysicalRatio = dpmPhysical / dpmTotal * maxResistPoints;
+        }
+        
         // output results in console
         Debug.Log("Fire dmg: " + dpmFire);
         Debug.Log("Water dmg: " + dpmWater);
         Debug.Log("Lightning dmg: " + dpmLightning);
         Debug.Log("Physical dmg: " + dpmPhysical);
         Debug.Log("Total dmg: " + dpmTotal);
+    }
+
+    // this is a function to print the list of spotted towers to console depending on which path that is selected in unity
+    void PrintListDebug(List<GameObject> path)
+    {
+        for (int i = 0; i < path.Count; i++)
+        {
+            Debug.Log(path[i].name);
+        }
+        printList = false;
     }
 }

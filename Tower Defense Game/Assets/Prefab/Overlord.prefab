@@ -60,6 +60,7 @@ MonoBehaviour:
   knight: {fileID: 1835083521099620, guid: 165df88e0b3301140b07b0d26af4c18c, type: 2}
   archer: {fileID: 1861560617656914, guid: 5e0deb5e39c2e3b4e9ded2c285e26fd3, type: 2}
   mage: {fileID: 1955882942978132, guid: 08496221e1a3359468017557391ffb35, type: 2}
+  maxResistPoints: 60
   path1: {fileID: 0}
   path2: {fileID: 0}
   path3: {fileID: 0}
@@ -67,6 +68,7 @@ MonoBehaviour:
   minionsCount: 0
   timeBetweenWaves: 5
   WaveCountDown: 0
+  waveNumber: 0
 --- !u!114 &114898373756830064
 MonoBehaviour:
   m_ObjectHideFlags: 1
