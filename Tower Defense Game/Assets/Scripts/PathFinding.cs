@@ -61,11 +61,13 @@ public class PathFinding : MonoBehaviour
         else if (Other.tag == "EnemySpawn" && isReportIntel == true)
         {
             overlord.GetComponent<Overlord>().ReceiveSpotList(intel.GetSpottedList(), pathList);
+            overlord.GetComponent<Overlord>().DecreaseMinionCount();
             Destroy(gameObject);
         }
         else if (Other.tag == "Base")
         {
             Other.GetComponent<BaseSpecs>().ReduceHealth(1);
+            overlord.GetComponent<Overlord>().DecreaseMinionCount();
             Destroy(gameObject);
         }
     }

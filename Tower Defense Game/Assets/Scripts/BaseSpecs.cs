@@ -25,17 +25,11 @@ public class BaseSpecs : MonoBehaviour
         if (Other.tag == "Enemy")
         {
             health--;
+            Destroy(Other.gameObject);
             if (health <= 0)
             {
                 gameover = true;
-                Destroy(Other.gameObject);
-                overlord.GetComponent<Overlord>().DecreaseMinionCount();
                 Destroy(gameObject);
-            }
-            else
-            {
-                Destroy(Other.gameObject);
-                overlord.GetComponent<Overlord>().DecreaseMinionCount();
             }
         }
     }
