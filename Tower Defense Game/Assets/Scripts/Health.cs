@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//
-// The purpose of this class is to enable prefabs to have health, and a set of resistense to different type of damage
-//
+/*
+* The purpose of this class is to enable prefabs to have health, and a set of resistense to different type of damage
+*/
 
 public class Health : MonoBehaviour
 {
