@@ -38,6 +38,11 @@ public class Overlord : MonoBehaviour
     public float timeBetweenWaves;
     public float WaveCountDown;
 
+    private float dpmFireRatio = 0.25f;
+    private float dpmWaterRatio = 0.25f;
+    private float dpmLightningRatio = 0.25f;
+    private float dpmPhysicalRatio = 0.25f;
+
     public enum DropDown
     {   //the different paths to choose from in a dropdown menu in unity inspector
         path1,
@@ -78,19 +83,19 @@ public class Overlord : MonoBehaviour
             if (whichPathToTest.ToString() == "path1")
             {
                 PrintListDebug(towerListPath1);
-                PrintDamageValueAndTypeOfPath(towerListPath1);
+                CalculateDamageRatios(towerListPath1);
             }
 
             if (whichPathToTest.ToString() == "path2")
             {
                 PrintListDebug(towerListPath2);
-                PrintDamageValueAndTypeOfPath(towerListPath2);
+                CalculateDamageRatios(towerListPath2);
             }
 
             if (whichPathToTest.ToString() == "path3")
             {
                 PrintListDebug(towerListPath3);
-                PrintDamageValueAndTypeOfPath(towerListPath3);
+                CalculateDamageRatios(towerListPath3);
             }
         }
     }
@@ -196,15 +201,17 @@ public class Overlord : MonoBehaviour
     }
 
     // this is a test function that print and evaluet the amount of damage over time a path will be able to deal 
-    void PrintDamageValueAndTypeOfPath(List<GameObject> path)
+    void CalculateDamageRatios(List<GameObject> path)
     {
         float dpmFire = 0.0f;
         float dpmWater = 0.0f;
         float dpmLightning = 0.0f;
         float dpmPhysical = 0.0f;
+        float dpmTotal = 0.0f;
 
         for (int i = 0; i < path.Count; i++)
         {
+            dpmTotal = dpmTotal + (float)path[i].GetComponent<Tower>().getDamagePerMinut();
             switch (path[i].GetComponent<Tower>().getDamageType().ToString())
             {
                 case "fire":
@@ -225,9 +232,16 @@ public class Overlord : MonoBehaviour
             }
         }
 
+        dpmFireRatio = dpmFire / dpmTotal;
+        dpmWaterRatio = dpmWater / dpmTotal;
+        dpmLightningRatio = dpmLightning / dpmTotal;
+        dpmPhysicalRatio = dpmPhysical / dpmTotal;
+
+        // output results in console
         Debug.Log("Fire dmg: " + dpmFire);
         Debug.Log("Water dmg: " + dpmWater);
         Debug.Log("Lightning dmg: " + dpmLightning);
         Debug.Log("Physical dmg: " + dpmPhysical);
+        Debug.Log("Total dmg: " + dpmTotal);
     }
 }
