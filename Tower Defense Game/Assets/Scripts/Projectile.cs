@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// The purpose of this clas is to different some behaivours to our projectiles fired from the towers
+/*
+* The purpose of this clas is to different some behaivours to our projectiles fired from the towers
+*/
+
 public class Projectile : MonoBehaviour
 {
     private GameObject target;
