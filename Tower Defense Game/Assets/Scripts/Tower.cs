@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// The purpose of this class is to add behavours to our towers
+/*
+* The purpose of this class is to add behaviours to the towers
+*/
+
 public class Tower : MonoBehaviour {
 
     private GameObject target;
@@ -31,7 +34,6 @@ public class Tower : MonoBehaviour {
         water,
         lightning
     };
-    
 
     void Start()
     {
