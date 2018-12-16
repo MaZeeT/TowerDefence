@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// The purpose of this class is to add the feature to upgrade the stats of the towers,
-// it has predefined stats which it adds to the tower when upgradeStats() is called
+/*
+* The purpose of this class is to add the feature to upgrade the stats of the towers,
+* it has predefined stats which it adds to the tower when upgradeStats() is called
+*/
+
 public class StatsUpgrade : MonoBehaviour
 {
     Tower towerStats;
@@ -12,7 +15,6 @@ public class StatsUpgrade : MonoBehaviour
     public float upgradeRange;
     public int upgradeDamage;
     public bool testUpgrade; // adds a button to unity inspector to test if upgrading stats works
-
 
     private void Start()
     {
