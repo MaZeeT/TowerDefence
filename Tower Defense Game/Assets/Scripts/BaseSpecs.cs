@@ -9,16 +9,10 @@ using UnityEngine;
 
 public class BaseSpecs : MonoBehaviour
 {
-    GameObject overlord;
     bool gameover = false;
 
     [Header("Setup")]
     public int health;
-
-    private void Start()
-    {
-        overlord = GameObject.FindGameObjectWithTag("Overlord");
-    }
 
     void OnTriggerEnter(Collider Other)
     {
