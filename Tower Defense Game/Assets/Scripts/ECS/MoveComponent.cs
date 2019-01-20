@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 
-public class MoveComponent : MonoBehaviour {
+
+public struct MoveComponent : IComponentData
+{
+    public float speed;
+}
+/*
+public class MoveComponent : IComponentData {
 
     public float movementSpeed;
-
 }
+*/
+public class MoveSpeedComponent : ComponentDataWrapper<MoveComponent> { }
