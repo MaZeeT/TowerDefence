@@ -7,19 +7,21 @@ public class MoveSystem : ComponentSystem {
 
     struct Components
     {
-        public Transform transform;
         public MoveComponent move;
         public DestinationComponent destination;
+        public Rigidbody rigidbody;
     }
 
     protected override void OnUpdate()
     {
-        foreach(var entities in GetEntities<Components>())
+        foreach (var entities in GetEntities<Components>())
         {
-            Vector3 direction = entities.transform.position - entities.destination.transform.position;
             float moveSpeed = entities.move.speed;
+            var moveVector = new Vector3(1, 0, 1);
+            var movePosition = entities.rigidbody.position 
+            + moveVector.normalized * moveSpeed * Time.deltaTime;
 
-            entities.transform.Translate(direction.normalized * moveSpeed * Time.deltaTime, Space.World);
+            entities.rigidbody.MovePosition(movePosition);
         }
     }
 }
