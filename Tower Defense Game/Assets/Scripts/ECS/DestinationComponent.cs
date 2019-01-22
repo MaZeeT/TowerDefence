@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class DestinationComponent : MonoBehaviour
 {
-     public GameObject destination;        
+    public Rigidbody rigidbody;
 }

@@ -17,7 +17,8 @@ public class MoveSystem : ComponentSystem {
         foreach (var entities in GetEntities<Components>())
         {
             float moveSpeed = entities.move.speed;
-            var moveVector = new Vector3(1, 0, 1);
+            var moveVector = (Vector3)(entities.destination.rigidbody.position 
+                                       - entities.rigidbody.position);
             var movePosition = entities.rigidbody.position 
             + moveVector.normalized * moveSpeed * Time.deltaTime;
 
